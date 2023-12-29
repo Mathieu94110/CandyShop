@@ -14,7 +14,7 @@ import Admin from './components/features/Admin/Admin';
 import TheHeader from "./components/TheHeader/TheHeader.vue";
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     TheHeader,
     User,
