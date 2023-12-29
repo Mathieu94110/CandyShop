@@ -1,5 +1,5 @@
 <template>
-  <form @submit="trySubmit" class="d-flex flex-column">
+  <form class="d-flex flex-column" @submit="trySubmit">
     <h4>Ajouter un produit :</h4>
     <hr class="w-100" />
     <div class="form-group">
@@ -19,7 +19,7 @@
       <input v-model.number="form.price" type="number" class="form-control" />
     </div>
     <ul v-if="errors.length">
-      <li class="text-danger" v-for="error in errors" :key="error">
+      <li v-for="error in errors" :key="error" class="text-danger">
         {{ error }}
       </li>
     </ul>
