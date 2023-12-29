@@ -44,22 +44,33 @@ export const eventBus = new Vue({
         price: "5.00",
       },
     ],
-    cart: [],
+    cart: [
+      
+    ],
+    page: 'Admin'
   },
   methods: {
     addProductToCart(product) {
-      if (!this.cart.map((i) => i.id).includes(product.id)) {
-        this.cart = [...this.cart, product];
-        this.$emit("update:cart", this.cart.slice());
+      if (!this.cart.map( i => i.id).includes(product.id)) {
+        this.cart = [ ...this.cart, product ];
+        this.$emit('update:cart', this.cart.slice());
       }
     },
     removeItemFromCart(item) {
-      this.cart = this.cart.slice().filter((i) => i.id !== item.id);
-      this.$emit("update:cart", this.cart.slice());
+      this.cart = this.cart.slice().filter( i => i.id !== item.id );
+      this.$emit('update:cart', this.cart.slice());
     },
-  },
-});
+    changePage(page) {
+      this.page = page;
+      this.$emit('update:page', this.page);
+    },
+    addProduct(product) {
+      this.products = [ ...this.products, { ...product, id: this.products.length + 1 + '' }],
+      this.$emit('update:products', this.products);
+    }
+  }
+})
 
 new Vue({
-  render: (h) => h(App),
-}).$mount("#app");
+  render: h => h(App)
+}).$mount('#app')

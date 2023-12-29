@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import { eventBus } from "../../main";
+import { eventBus } from  '../../../../main';
 
 export default {
   props: {
     item: {
-      type: Array,
+      type: Object,
       default() {
-        return [{ title: "", price: null }];
+        return { title: "", price: null};
       },
     },
   },

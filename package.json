@@ -41,7 +41,9 @@
         {
           "ignores": [
             "Shop",
-            "Cart"
+            "Cart",
+            "Admin",
+            "User"
           ]
         }
       ]

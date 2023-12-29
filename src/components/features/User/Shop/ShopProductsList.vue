@@ -20,7 +20,7 @@ export default {
   props: {
     products: {
       type: Array,
-       default() {
+      default() {
         return [{ img: "", title: "", description: "", price: "" }];
       },
     },

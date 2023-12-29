@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { eventBus } from "../../main";
+import { eventBus } from  '../../../../main';
 export default {
   props: {
     product: {
@@ -37,7 +37,6 @@ export default {
   },
   methods: {
     addProductToCart() {
-      console.log("call");
       eventBus.addProductToCart({ ...this.product });
     },
   },
