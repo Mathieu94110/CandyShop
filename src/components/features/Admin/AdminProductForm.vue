@@ -1,5 +1,5 @@
 <template>
-  <form class="d-flex flex-column" @submit="trySubmit">
+  <form @submit="trySubmit" class="d-flex flex-column">
     <h4>Ajouter un produit :</h4>
     <hr class="w-100" />
     <div class="form-group">
@@ -19,7 +19,7 @@
       <input v-model.number="form.price" type="number" class="form-control" />
     </div>
     <ul v-if="errors.length">
-      <li v-for="error in errors" :key="error" class="text-danger">
+      <li class="text-danger" v-for="error in errors" :key="error">
         {{ error }}
       </li>
     </ul>
@@ -28,8 +28,6 @@
 </template>
 
 <script>
-import { eventBus } from "../../../main";
-
 export default {
   data() {
     return {
@@ -46,9 +44,9 @@ export default {
     trySubmit(e) {
       e.preventDefault();
       if (this.formIsValid()) {
-        eventBus.addProduct({ ...this.form });
+        this.$store.dispatch("product/saveOne", { ...this.form });
         this.resetForm();
-        eventBus.changePage("User");
+        this.$router.push("/shop");
       }
     },
     resetForm() {

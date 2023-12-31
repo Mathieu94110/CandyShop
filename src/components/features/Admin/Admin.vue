@@ -5,15 +5,13 @@
 </template>
 
 <script>
-import AdminProductForm from './AdminProductForm';
+import AdminProductForm from "./AdminProductForm";
 
 export default {
   components: {
-    AdminProductForm
-  }
-}
-
+    AdminProductForm,
+  },
+};
 </script>
 
-<style>
-</style>
+<style></style>

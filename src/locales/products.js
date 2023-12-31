@@ -1,0 +1,51 @@
+export const products = [
+  {
+    id:"1",
+    img: "https://cdn.store-factory.com/www.confiserie-foraine.com/content/product_4936768b.jpg?v=1531989933",
+    title: "LUTTI bouteille Bubblizz ",
+    description: "Bonbons Lutti en vrac / sachet de 2 kg",
+    price: 13.0,
+  },
+  {
+    id:"2",
+    img: "https://cdn.store-factory.com/www.confiserie-foraine.com/content/product_5434123b.jpg?v=1524126219",
+    title: "HARIBO Dragibus",
+    description: "HARIBO Dragibus SOFT en sac de 2 kg",
+    price: 19.0,
+  },
+  {
+    id:"3",
+    img: "https://cdn.store-factory.com/www.confiserie-foraine.com/content/product_11421816b.jpg?v=1697119568",
+    title: "Fini TWIST marshmallow",
+    description: "Fini TWIST marshmallow torsadé en sachet de 125 unités",
+    price: 8.0,
+  },
+  {
+    id:"4",
+    img: "https://cdn.store-factory.com/www.confiserie-foraine.com/content/product_11760003b.jpg?v=1692958672",
+    title: "DULCEPLUS",
+    description: "DULCEPLUS Jumbo Acides MULTICOLORES x 30",
+    price: 11.0,
+  },
+  {
+    id:"5",
+    img: "https://cdn.store-factory.com/www.confiserie-foraine.com/content/product_1450804b.jpg?v=1530272073",
+    title: "Pralines",
+    description: "Pralines aux Cacahuètes - 5 Kg",
+    price: 27.0,
+  },
+  {
+    id:"6",
+    img: "https://cdn.store-factory.com/www.confiserie-foraine.com/content/product_10761207b.jpg?v=1561538654",
+    title: "Bonbons tendres fruités",
+    description: "Bonbons tendres aux goûts fruités assortis en sachet de 1 kg",
+    price: 5.0,
+  },
+  {
+    id:"7",
+    img: "https://www.eat-in-bio.fr/uploads/bonbon%20drag%C3%A9e%20chocolat_1583836316.jpg",
+    title: "Dragées",
+    description: "Dragées au chocolat",
+    price: 6.0,
+  },
+];

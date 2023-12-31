@@ -21,7 +21,7 @@ export default {
     products: {
       type: Array,
       default() {
-        return [{ img: "", title: "", description: "", price: "" }];
+        return [{ img: "", title: "", description: "", price: "", id: "" }];
       },
     },
   },

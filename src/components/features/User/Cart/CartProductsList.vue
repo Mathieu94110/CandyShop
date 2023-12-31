@@ -15,6 +15,7 @@
 
 <script>
 import CartProductItem from "./CartProductItem.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
@@ -29,12 +30,7 @@ export default {
     },
   },
   computed: {
-    total() {
-      return this.cart.reduce((acc, v) => {
-        acc += v.price;
-        return acc;
-      }, 0);
-    },
+    ...mapGetters("cart", ["total"]),
   },
 };
 </script>

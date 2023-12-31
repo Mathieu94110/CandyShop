@@ -5,28 +5,21 @@
 </template>
 
 <script>
-  import CartProductsList from './CartProductsList.vue';
-  import { eventBus } from  '../../../../main';
+import CartProductsList from "./CartProductsList.vue";
 
 export default {
   components: {
-    CartProductsList
+    CartProductsList,
   },
-  data() {
-    return {
-      cart: []
-    }
+  props: {
+    cart: {
+      type: Array,
+      default() {
+        return [{ img: "", title: "", description: "", price: "" }];
+      },
+    },
   },
-  created() {
-    this.cart = eventBus.cart;
-    eventBus.$on('update:cart', (cart) => {
-      this.cart = cart;
-    })
-  }
-}
-
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
