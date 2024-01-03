@@ -1,7 +1,15 @@
 <template>
   <transition appear>
-    <div class="navbar-container">
-      <div class="navbar">
+    <div v-resize="setDimensions" class="navbar-container">
+      <!-- On below dynamic style is used in order to change navbar 
+  size with transition when user scroll on main content -->
+      <div
+        class="navbar"
+        :style="{
+          height: scrollActive && width >= 1320 ? 80 + 'px' : '',
+          transition: 'height 0.8s',
+        }"
+      >
         <div class="burger-menu">
           <font-awesome-icon icon="fa-solid fa-bars" class="right-icons" />
           <span>Menu</span>
@@ -10,58 +18,37 @@
           <SearchInputVue />
         </div>
         <div class="navbar-brand">
-          <div class="logo">
+          <!-- Same case as above -->
+          <div
+            :class="[
+              scrollActive && width >= 1320 ? 'logo-scroll-active' : 'logo',
+            ]"
+          >
             <img src="../../assets/candy-shop.png" class="candy-img" />
             <h1>Créateur de bonbons et gâteaux</h1>
           </div>
         </div>
         <div class="navbar-right-links">
-          <ul class="clear-float">
-            <li class="navbar-li">
-              <font-awesome-icon
-                icon="fa-solid fa-magnifying-glass"
-                class="right-icons"
-              />
-              <span class="navbar-li-text pt-2">Rechercher</span>
-            </li>
-            <li class="navbar-li">
-              <font-awesome-icon
-                icon="fa-solid fa-mobile-retro"
-                class="right-icons"
-              />
-              <span class="navbar-li-text pt-2">0101010101</span>
-            </li>
-            <li class="navbar-li">
-              <font-awesome-icon icon="fa-solid fa-user" class="right-icons" />
-              <span class="navbar-li-text pt-2">Mon compte</span>
-            </li>
-            <li class="navbar-li">
-              <font-awesome-icon
-                icon="fa-solid fa-cart-shopping"
-                class="right-icons"
-              />
-              <span class="navbar-li-text pt-2">Mon panier</span>
-            </li>
-          </ul>
+          <HeaderRightLinksVue />
         </div>
       </div>
-      <div class="menu">
-        <ul class="menu-list">
-          <li v-for="item in menuList" :key="item.text">
-            {{ item.text }}
-          </li>
-        </ul>
-      </div>
+      <HeaderBottomLinksVue :menuList="menuList" />
     </div>
   </transition>
 </template>
 
 <script>
-import SearchInputVue from "../features/User/SearchInput/SearchInput.vue";
+import SearchInputVue from "./Components/SearchInput.vue";
+import HeaderRightLinksVue from "./Components/HeaderRightLinks.vue";
+import HeaderBottomLinksVue from "./Components/HeaderBottomLinks.vue";
+
 export default {
   data() {
+    // width and isScrollActive are used together in order to change navbar width only for screen size >= 1320px
     return {
       scrollPosition: 0,
+      width: document.documentElement.clientWidth,
+      isScrollActive: false,
       menuList: [
         { text: "Gâteaux de Bonbons" },
         { text: "Bonbons" },
@@ -75,32 +62,48 @@ export default {
   },
   components: {
     SearchInputVue,
+    HeaderRightLinksVue,
+    HeaderBottomLinksVue,
   },
   methods: {
     updateScroll() {
       this.scrollPosition = window.scrollY;
     },
+    setDimensions({ width }) {
+      this.width = width;
+    },
+  },
+  computed: {
+    scrollActive() {
+      return this.isScrollActive;
+    },
+  },
+  watch: {
+    scrollPosition(newValue) {
+      if (newValue > 0) {
+        if (this.width >= 1320) {
+          this.isScrollActive = true;
+        } else {
+          this.isScrollActive = false;
+        }
+      } else {
+        this.isScrollActive = false;
+      }
+    },
   },
   directives: {
-    triggerCollapse: {
+    resize: {
       inserted(el, binding) {
-        window.addEventListener("click", () => {
-          nav.classList.remove("show");
-        });
-        const nav = document.querySelector(`#${binding.value}`);
-        el.addEventListener("click", (e) => {
-          if (nav.classList.contains("show")) {
-            nav.classList.remove("show");
-          } else {
-            nav.classList.add("show");
-          }
-          e.stopPropagation();
+        const onResizeCallback = binding.value;
+        window.addEventListener("resize", () => {
+          const width = document.documentElement.clientWidth;
+          onResizeCallback({ width });
         });
       },
     },
   },
   mounted() {
-    window.addEventListener("scroll", this.updateScroll);
+    window.addEventListener("scroll", this.updateScroll, this.scrollActive);
   },
 };
 </script>
@@ -112,20 +115,21 @@ export default {
   margin-left: auto;
   background-color: #161616;
   border-bottom: 2px solid #2caec4;
+  position: sticky;
+  z-index: 2;
+  top: 0px;
 }
 .navbar {
-  height: 80px;
-  z-index: 10;
   display: flex;
   position: relative;
   max-width: 100%;
   padding: 16px 15px;
+  height: 80px;
 }
 .navbar-nav > :hover {
   cursor: pointer;
 }
 .candy-img {
-  width: 50px;
   height: 50px;
   margin: auto;
 }
@@ -134,7 +138,7 @@ export default {
   position: absolute;
   left: 0;
   top: 50%;
-  z-index: 9;
+  z-index: 3;
   width: 33px;
   padding-left: 0;
   transform: translate(0, -50%);
@@ -176,28 +180,11 @@ h1 {
   position: absolute;
   right: 0;
   top: 50%;
-  z-index: 99;
+  z-index: 3;
   width: 80px;
   min-width: 15px;
   transform: translate(0, -50%);
   -webkit-transform: translate(0, -50%);
-}
-.clear-float {
-  display: flex;
-  flex-direction: row;
-}
-.clear-float::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.navbar-li {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.menu {
-  display: none;
 }
 .search-text {
   display: none;
@@ -210,21 +197,6 @@ h1 {
   }
 }
 
-@media (max-width: 599px) {
-  .navbar-li {
-    width: 50%;
-    color: #fff;
-  }
-  .navbar-li:nth-child(-n + 2) {
-    display: none;
-  }
-  .navbar-li-text {
-    display: none;
-  }
-  .clear-float {
-    max-width: 100%;
-  }
-}
 .right-icons {
   height: 25px;
 }
@@ -281,69 +253,40 @@ h1 {
     display: block;
   }
   .navbar {
-    height: 180px;
-    padding: 8px 16px;
+    padding: 12px 16px;
     max-width: 1140px;
     margin: auto;
-  }
-  .menu {
-    display: flex;
-    background-color: #2b2b2b;
-  }
-  .menu-list {
-    color: #fff;
-    display: table;
-    text-align: center;
-    width: 100%;
-    max-width: 1220px;
-  }
-  .menu-list > li {
-    height: 64px;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    font-weight: 600;
-  }
-  .menu-list > li:hover {
-    background-color: #2caec4;
-    cursor: pointer;
-  }
-  .navbar-right-links {
-    width: 380px;
-  }
-  .clear-float {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .navbar-brand {
-    position: static;
-    transform: none;
-  }
-  .logo {
-    width: 275px;
-    height: 142px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .navbar-li:first-child {
-    display: none;
   }
   .navbar-li {
     width: calc(100% / 3);
     color: #fff;
     cursor: pointer;
   }
+  .navbar-li:first-child {
+    display: none;
+  }
   .navbar-li:hover {
     color: #ff4089;
   }
+  .navbar-right-links {
+    width: 380px;
+  }
+  .navbar-brand {
+    position: static;
+    transform: none;
+  }
+  .logo {
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: height 1s;
+  }
   .candy-img {
-    width: 160px;
-    height: 160px;
+    width: 60px;
     margin: 0;
   }
   .burger-menu {
@@ -351,18 +294,6 @@ h1 {
   }
   .search-text {
     display: flex;
-  }
-  .search-menu {
-    width: 100%;
-    border: none;
-    padding: 5px 35px 5px 10px;
-    color: #fff;
-    font: 14px "Gotham-Medium";
-    height: 42px;
-    background: #444444;
-    border-right: 10px solid #444444;
-    border-radius: 0;
-    -webkit-border-radius: 0;
   }
   .navbar-li-text {
     text-align: center;
@@ -372,14 +303,32 @@ h1 {
   }
   h1 {
     font-size: 14px;
+    margin-top: 0;
   }
 }
 @media only screen and (min-width: 1320px) {
+  .logo-scroll-active {
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: height 1s;
+  }
+  .logo-scroll-active > img {
+    height: 100%;
+    width: auto;
+  }
+  .candy-img {
+    height: 160px;
+    width: 160px;
+  }
   .navbar {
     max-width: 1300px;
-  }
-  .menu-list {
-    margin: auto;
+    height: 180px;
+    transition: height 1s;
   }
   .navbar-li {
     color: #fff;
@@ -387,6 +336,13 @@ h1 {
   }
   .navbar-li:hover {
     color: #ff4089;
+  }
+}
+@keyframes fromright {
+  from {
+    transform: translateX(20px);
+  }
+  to {
   }
 }
 </style>
