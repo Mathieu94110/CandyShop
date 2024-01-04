@@ -172,6 +172,7 @@ h1 {
   font-style: italic;
   font-size: 11px;
   margin: 6px 0;
+  font-weight: 600;
 }
 .v-enter-active {
   animation: fromtop 1s;
@@ -266,7 +267,7 @@ h1 {
     display: none;
   }
   .navbar-li:hover {
-    color: #ff4089;
+    color: var(--color-primary);
   }
   .navbar-right-links {
     width: 380px;
@@ -335,7 +336,7 @@ h1 {
     cursor: pointer;
   }
   .navbar-li:hover {
-    color: #ff4089;
+    color: var(--color-primary);
   }
 }
 @keyframes fromright {

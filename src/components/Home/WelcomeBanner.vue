@@ -61,12 +61,12 @@ export default {};
   font-size: 11px;
 }
 .welcome-title-text-third {
-  color: #2caec4;
+  color: var(--color-secondary);
   font-family: "Oleo Script";
   font-size: 13px;
 }
 .welcome-title-text-fourth {
-  color: #ff4089;
+  color: var(--color-primary);
   font-family: "Oleo Script";
   font-size: 13px;
 }

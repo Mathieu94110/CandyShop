@@ -17,7 +17,11 @@
     </li>
     <li class="navbar-li">
       <font-awesome-icon icon="fa-solid fa-cart-shopping" class="right-icons" />
-      <span class="navbar-li-text pt-2">Mon panier</span>
+      <span class="navbar-li-text pt-2"
+        ><router-link class="nav-link" to="/shop"
+          >Mon panier
+        </router-link></span
+      >
     </li>
   </ul>
 </template>
@@ -41,6 +45,7 @@ export default {};
   flex-direction: column;
   justify-content: space-between;
 }
+
 @media (max-width: 599px) {
   .clear-float {
     max-width: 100%;
@@ -58,12 +63,12 @@ export default {};
 }
 
 @media only screen and (max-width: 993px) and (min-width: 600px) {
-
   .navbar-li {
     width: 25%;
     color: #fff;
   }
   .navbar-li-text {
+    display: flex;
     text-align: center;
     font-size: 11px;
     font-weight: 600;
@@ -98,11 +103,11 @@ export default {};
     cursor: pointer;
   }
   .navbar-li:hover {
-    color: #ff4089;
+    color: var(--color-primary);
   }
   .navbar-li-text {
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media only screen and (min-width: 1320px) {
@@ -111,7 +116,7 @@ export default {};
     cursor: pointer;
   }
   .navbar-li:hover {
-    color: #ff4089;
+    color: var(--color-primary);
   }
 }
 </style>

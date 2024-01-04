@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-25 p-3 product-container d-flex flex-column justify-content-between"
+    class="p-3 product-container d-flex flex-column justify-content-between m-2"
   >
     <div class="d-flex flex-row justify-content-center">
       <img style="height: 150px" :src="product.img" />
@@ -12,10 +12,11 @@
     <div>
       <p>{{ product.description }}</p>
     </div>
-    <div>
-<span>{{ product.price | price }}</span>
+    <div class="mt-2">
+      <span class="product-price">{{ product.price | price }}</span>
       <button
-        class="btn btn-primary btn-sm float-right"
+        class="btn btn-sm float-right text-white btn-animation"
+        style="background: var(--color-secondary)"
         @click="addOne(product)"
       >
         Commander
@@ -25,33 +26,82 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations } from "vuex";
 export default {
   props: {
     product: {
       type: Object,
       default() {
-        return { img: "", title: "", description: "", price: "",id:"" };
+        return { img: "", title: "", description: "", price: "", id: "" };
       },
     },
   },
   methods: {
-    ...mapMutations('cart', ['addOne'])
-  }
+    ...mapMutations("cart", ["addOne"]),
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .product-container {
-  height: 400px;
+  height: auto;
+  width: 200px;
+  max-width: 200px;
+  border: 1px dashed #000;
+  margin: 0 10px 10px 0;
+}
+.product-price,
+h3 {
+  font: 600;
+  font-family: "Oleo Script";
+  color: var(--color-primary);
 }
 h3 {
   height: 68px;
   overflow: hidden;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 p {
   font-size: 12px;
   height: 36px;
-  overflow: hidden;
+  white-space: initial;
+  text-align: center;
+}
+button {
+  font-size: 11px;
+}
+@media only screen and (min-width: 600px) {
+  .product-container {
+    height: auto;
+    width: auto;
+    max-width: 300px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 12px;
+    height: 36px;
+  }
+  button {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .product-container {
+    height: auto;
+    width: 300px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+    height: 36px;
+  }
 }
 </style>

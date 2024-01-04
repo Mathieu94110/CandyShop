@@ -1,13 +1,14 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { products } from "@/locales/products";
-
+import { newProducts } from "@/locales/newProducts";
 Vue.use(Vuex);
 
 const product = {
   namespaced: true,
   state: {
     datas: [],
+    newProducts: [],
   },
   mutations: {
     addOne(state, product) {
@@ -16,12 +17,22 @@ const product = {
     addMany(state, products) {
       state.datas = products;
     },
+    addNewProducts(state, products) {
+      state.newProducts = products;
+    },
   },
   actions: {
     fetchDatas(context) {
       const data = products;
       context.commit(
         "addMany",
+        Object.keys(data).map((key) => data[key])
+      );
+    },
+    fetchNewProducts(context) {
+      const data = newProducts;
+      context.commit(
+        "addNewProducts",
         Object.keys(data).map((key) => data[key])
       );
     },

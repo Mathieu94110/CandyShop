@@ -8,7 +8,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   mode: "history",
   routes: [
-    { path: "", redirect: "/shop" },
+    { path: "", redirect: "/home" },
     { path: "/home", component: Home },
     { path: "/shop", component: User },
     { path: "/admin", component: Admin },

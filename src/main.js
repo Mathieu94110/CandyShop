@@ -11,9 +11,19 @@ import {
   faUser,
   faCartShopping,
   faBars,
+  faChevronLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faMagnifyingGlass, faMobileRetro, faUser, faCartShopping, faBars);
+library.add(
+  faMagnifyingGlass,
+  faMobileRetro,
+  faUser,
+  faCartShopping,
+  faBars,
+  faChevronLeft,
+  faChevronRight
+);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
 

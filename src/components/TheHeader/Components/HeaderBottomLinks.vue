@@ -51,7 +51,7 @@ export default {
     font-weight: 600;
   }
   .menu-list > li:hover {
-    background-color: #2caec4;
+    background-color: var(--color-secondary);
     cursor: pointer;
   }
 }
