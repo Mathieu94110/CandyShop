@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <the-header></the-header>
+    <TheHeader />
     <div class="d-flex flex-column w-100">
       <router-view></router-view>
     </div>
@@ -20,7 +20,7 @@ export default {
 
 <style>
 * {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Libre Baskerville", "Oleo Script", serif;
   box-sizing: border-box;
 }
 ul,

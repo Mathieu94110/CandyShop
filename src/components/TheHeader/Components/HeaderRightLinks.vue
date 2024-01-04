@@ -58,6 +58,7 @@ export default {};
 }
 
 @media only screen and (max-width: 993px) and (min-width: 600px) {
+
   .navbar-li {
     width: 25%;
     color: #fff;
@@ -67,6 +68,19 @@ export default {};
     font-size: 11px;
     font-weight: 600;
     padding: 0;
+  }
+  .candy-img {
+    width: 80px;
+    height: 80px;
+  }
+  .burger-menu {
+    position: static;
+    padding: 13px 0 0 6px;
+    transform: none;
+  }
+
+  h1 {
+    font-size: 14px;
   }
 }
 @media only screen and (min-width: 1000px) {
