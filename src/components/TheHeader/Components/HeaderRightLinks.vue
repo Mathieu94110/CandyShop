@@ -15,19 +15,29 @@
       <font-awesome-icon icon="fa-solid fa-user" class="right-icons" />
       <span class="navbar-li-text pt-2">Mon compte</span>
     </li>
-    <li class="navbar-li">
-      <font-awesome-icon icon="fa-solid fa-cart-shopping" class="right-icons" />
-      <span class="navbar-li-text pt-2"
-        ><router-link class="nav-link" to="/shop"
-          >Mon panier
-        </router-link></span
-      >
+    <li class="navbar-li" @click="goToShop()">
+      <span v-show="cartLength" class="navbar-cart-qty">{{ cartLength }}</span>
+      <font-awesome-icon
+        icon="fa-solid fa-cart-shopping"
+        class="right-icons position-relative"
+      />
+      <span class="navbar-li-text pt-2"> Mon panier </span>
     </li>
   </ul>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  methods: {
+    goToShop() {
+      this.$router.push("/shop");
+    },
+  },
+  computed: {
+    ...mapGetters("cart", ["cartLength"]),
+  },
+};
 </script>
 
 <style scoped>
@@ -44,6 +54,21 @@ export default {};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.navbar-cart-qty {
+  padding-top: 1px;
+  background: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  width: 20px;
+  position: absolute;
+  top: -1px;
+  right: 28px;
 }
 
 @media (max-width: 599px) {
@@ -62,14 +87,14 @@ export default {};
   }
 }
 
-@media only screen and (max-width: 993px) and (min-width: 600px) {
+@media only screen and (max-width: 999px) and (min-width: 600px) {
   .navbar-li {
     width: 25%;
     color: #fff;
   }
   .navbar-li-text {
     display: flex;
-    text-align: center;
+    margin: auto;
     font-size: 11px;
     font-weight: 600;
     padding: 0;
@@ -83,7 +108,10 @@ export default {};
     padding: 13px 0 0 6px;
     transform: none;
   }
-
+  .navbar-cart-qty {
+    top: 44px;
+    right: 88px;
+  }
   h1 {
     font-size: 14px;
   }
@@ -108,6 +136,13 @@ export default {};
   .navbar-li-text {
     text-align: center;
     font-size: 16px;
+  }
+  .navbar-cart-qty {
+    padding-top: 2px;
+    width: 22px;
+    height: 22px;
+    top: -4px;
+    right: 75px;
   }
 }
 @media only screen and (min-width: 1320px) {

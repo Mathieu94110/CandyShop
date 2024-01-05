@@ -54,6 +54,9 @@ const cart = {
         return acc;
       }, 0);
     },
+    cartLength(state) {
+      return state.datas.length;
+    },
   },
   mutations: {
     addOne(state, product) {

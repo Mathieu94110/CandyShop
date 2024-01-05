@@ -123,7 +123,6 @@ export default {
   display: flex;
   position: relative;
   max-width: 100%;
-  padding: 16px 15px;
   height: 80px;
 }
 .navbar-nav > :hover {
@@ -201,7 +200,7 @@ h1 {
 .right-icons {
   height: 25px;
 }
-@media only screen and (max-width: 993px) and (min-width: 600px) {
+@media only screen and (max-width: 999px) and (min-width: 600px) {
   .navbar-container {
     max-width: 100%;
   }
