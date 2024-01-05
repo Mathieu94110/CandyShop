@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h2 class="titre-top-content bloc-nouv-top">
-      <strong>Les délicieuses <span>nouveautés</span></strong>
-    </h2>
+    <category-separators>
+      <span slot="main">Les délicieuses</span>
+      <span slot="secondary">nouveautés</span>
+    </category-separators>
     <div class="carousel-container">
       <div class="carousel-chevron-container" @click="prev">
         <font-awesome-icon
@@ -30,6 +31,7 @@
 </template>
 
 <script>
+import CategorySeparators from "../../layout/CategorySeparators.vue";
 import ShopProductItem from "../features/User/Shop/ShopProductItem.vue";
 export default {
   data() {
@@ -99,6 +101,7 @@ export default {
   },
   components: {
     ShopProductItem,
+    CategorySeparators,
   },
   mounted() {
     this.setStep();
@@ -176,48 +179,10 @@ export default {
 </script>
 
 <style scoped>
-h2 {
-  font-weight: 500;
-  line-height: 1.2;
-  color: #212529;
-}
-.titre-top-content {
-  padding: 0;
-  position: relative;
-  text-align: center;
-}
-.titre-top-content > strong {
-  color: var(--color-primary);
-  display: inline-block;
-  font: 20px "Jackie-Bold";
-  padding: 15px 2%;
-  position: relative;
-  z-index: 9;
-  background: #ffffff;
-  line-height: 84%;
-}
-.titre-top-content > strong > span {
-  display: block;
-  font: 16px "Gotham-Bold";
-  color: #161616;
-  text-transform: uppercase;
-}
-
-.titre-top-content::after {
-  content: "";
-  width: 100%;
-  height: 1px;
-  border-top: 1px dotted rgb(0, 0, 0);
-  height: 1px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 50%;
-}
-
 .carousel-container {
   width: 100%;
   height: 400px;
+  padding: 0 10px;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -239,40 +204,34 @@ h2 {
   cursor: pointer;
 }
 .carousel-chevron {
-  height: 40px;
+  height: 24px;
 }
 .inner {
   display: flex;
   white-space: nowrap;
   height: 100%;
-}
-
-.inner {
   transition: transform 0.2s;
 }
 
 @media only screen and (min-width: 480px) {
-  .titre-top-content > strong > span {
-    font-size: 17px;
-  }
-  .titre-top-content > strong,
   .bitbag-page-content .h1.centered {
     font-size: 22px;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  .titre-top-content > strong > span {
-    font-size: 21px;
-  }
-  .titre-top-content > strong,
+  .carousel-container {
+  padding: 0 20px;
+}
+.carousel-chevron {
+  height: 30px;
+}
   .bitbag-page-content .h1.centered {
     font-size: 28px;
     line-height: 100%;
   }
 }
 @media only screen and (min-width: 767px) {
-  .titre-top-content > strong,
   .bitbag-page-content .h1.centered {
     padding: 10px 15px;
     font-size: 30px;
@@ -280,14 +239,10 @@ h2 {
 }
 @media only screen and (min-width: 992px) {
   .carousel-chevron {
-    height: 20px;
+    height: 40px;
   }
-  .titre-top-content > strong,
   .bitbag-page-content .h1.centered {
     font: 49px "Jackie-Bold";
-  }
-  .titre-top-content > strong > span {
-    font-size: 24px;
   }
 }
 </style>
