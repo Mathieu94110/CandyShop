@@ -236,7 +236,7 @@ h1 {
     transform: none;
   }
   .navbar-li-text {
-    text-align: center;
+    margin: auto;
     font-size: 11px;
     font-weight: 600;
   }

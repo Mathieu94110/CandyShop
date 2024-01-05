@@ -4,35 +4,17 @@
       <span slot="main">Les délicieuses</span>
       <span slot="secondary">nouveautés</span>
     </category-separators>
-    <div class="carousel-container">
-      <div class="carousel-chevron-container" @click="prev">
-        <font-awesome-icon
-          icon="fa-solid fa-chevron-left"
-          class="carousel-chevron"
-        />
-      </div>
-      <div class="carousel">
-        <div class="inner" ref="inner" :style="innerStyles">
-          <ShopProductItem
-            v-for="product in cards"
-            :key="product.id"
-            :product="product"
-          />
-        </div>
-      </div>
-      <div class="carousel-chevron-container" @click="next">
-        <font-awesome-icon
-          icon="fa-solid fa-chevron-right"
-          class="carousel-chevron"
-        />
+    <div class="new-product-content">
+      <div class="carousel-container">
+        <carousel-layout :cards="cards" @prev="prev" @next="next" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CarouselLayout from "../../layout/CarouselLayout.vue";
 import CategorySeparators from "../../layout/CategorySeparators.vue";
-import ShopProductItem from "../features/User/Shop/ShopProductItem.vue";
 export default {
   data() {
     return {
@@ -100,149 +82,30 @@ export default {
     };
   },
   components: {
-    ShopProductItem,
     CategorySeparators,
-  },
-  mounted() {
-    this.setStep();
-    this.resetTranslate();
+    CarouselLayout,
   },
 
   methods: {
-    // the step below allows to calculate the location where the element must be moved
-    setStep() {
-      const innerWidth = this.$refs.inner.scrollWidth;
-      const totalCards = this.cards.length;
-      this.step = `${innerWidth / totalCards}px`;
+    // i removed last element who is the current param on prev() and i add it at the begin of the cards table
+    prev(value) {
+      this.cards.pop();
+      this.cards.unshift(value);
     },
-
-    next() {
-      if (this.transitioning) return;
-
-      this.transitioning = true;
-
-      this.moveLeft();
-
-      this.afterTransition(() => {
-        const card = this.cards.shift();
-        this.cards.push(card);
-        this.resetTranslate();
-        this.transitioning = false;
-      });
-    },
-
-    prev() {
-      if (this.transitioning) return;
-
-      this.transitioning = true;
-
-      this.moveRight();
-
-      this.afterTransition(() => {
-        const card = this.cards.pop();
-        this.cards.unshift(card);
-        this.resetTranslate();
-        this.transitioning = false;
-      });
-    },
-
-    moveLeft() {
-      this.innerStyles = {
-        transform: `translateX(-${this.step})
-                    translateX(-${this.step})`,
-      };
-    },
-
-    moveRight() {
-      this.innerStyles = {
-        transform: `translateX(${this.step})
-                    translateX(-${this.step})`,
-      };
-    },
-
-    afterTransition(callback) {
-      const listener = () => {
-        callback();
-        this.$refs.inner.removeEventListener("transitionend", listener);
-      };
-      this.$refs.inner.addEventListener("transitionend", listener);
-    },
-
-    resetTranslate() {
-      this.innerStyles = {
-        transition: "none",
-        transform: `translateX(-${this.step})`,
-      };
+    // same logic reversed
+    next(value) {
+      this.cards.shift();
+      this.cards.push(value);
     },
   },
 };
 </script>
 
 <style scoped>
-.carousel-container {
-  width: 100%;
+.new-product-content {
   height: 400px;
-  padding: 0 10px;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-.carousel {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  margin: auto;
   display: flex;
-}
-.carousel-chevron-container {
-  width: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carousel-chevron-container:hover {
-  cursor: pointer;
-}
-.carousel-chevron {
-  height: 24px;
-}
-.inner {
-  display: flex;
-  white-space: nowrap;
-  height: 100%;
-  transition: transform 0.2s;
-}
-
-@media only screen and (min-width: 480px) {
-  .bitbag-page-content .h1.centered {
-    font-size: 22px;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .carousel-container {
-  padding: 0 20px;
-}
-.carousel-chevron {
-  height: 30px;
-}
-  .bitbag-page-content .h1.centered {
-    font-size: 28px;
-    line-height: 100%;
-  }
-}
-@media only screen and (min-width: 767px) {
-  .bitbag-page-content .h1.centered {
-    padding: 10px 15px;
-    font-size: 30px;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .carousel-chevron {
-    height: 40px;
-  }
-  .bitbag-page-content .h1.centered {
-    font: 49px "Jackie-Bold";
-  }
+  position: relative;
 }
 </style>

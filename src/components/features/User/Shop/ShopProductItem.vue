@@ -49,6 +49,7 @@ export default {
   max-width: 200px;
   border: 1px dashed #000;
   margin: 0 10px 10px 0;
+  background-color: #fff;
 }
 .product-price,
 h3 {

@@ -54,4 +54,22 @@ hr {
   opacity: 0.8;
   transform: translateY(2px);
 }
+.carousel-container {
+  width: 100%;
+  height: 400px;
+  padding: 0 10px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 600px) {
+  .carousel-container {
+    padding: 0 20px;
+  }
+}
 </style>
