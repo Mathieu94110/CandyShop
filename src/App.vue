@@ -4,16 +4,19 @@
     <div class="d-flex flex-column w-100">
       <router-view></router-view>
     </div>
+    <TheFooter />
   </div>
 </template>
 
 <script>
 import TheHeader from "./components/TheHeader/TheHeader.vue";
+import TheFooter from "./components/TheFooter/TheFooter.vue";
 
 export default {
   name: "App",
   components: {
     TheHeader,
+    TheFooter,
   },
 };
 </script>

@@ -14,6 +14,12 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInstagram,
+  faFacebook,
+  faPinterest,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faMagnifyingGlass,
@@ -22,7 +28,11 @@ library.add(
   faCartShopping,
   faBars,
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
+  faInstagram,
+  faFacebook,
+  faPinterest,
+  faYoutube
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
