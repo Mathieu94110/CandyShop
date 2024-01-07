@@ -15,7 +15,11 @@
           <span>Menu</span>
         </div>
         <div class="search-text">
-          <SearchInputVue />
+          <SearchInputVue
+            :inputData="searchInput"
+            :filteredList="filteredResults"
+            @input="setInputValue"
+          />
         </div>
         <div class="navbar-brand">
           <!-- Same case as above -->
@@ -29,7 +33,7 @@
           </div>
         </div>
         <div class="navbar-right-links">
-          <HeaderRightLinksVue />
+          <HeaderRightLinksVue v-on="$listeners" />
         </div>
       </div>
       <HeaderBottomLinksVue :menuList="menuList" />
@@ -43,13 +47,18 @@ import HeaderRightLinksVue from "./Components/HeaderRightLinks.vue";
 import HeaderBottomLinksVue from "./Components/HeaderBottomLinks.vue";
 
 export default {
-  props:{
+  components: {
+    SearchInputVue,
+    HeaderRightLinksVue,
+    HeaderBottomLinksVue,
+  },
+  props: {
     menuList: {
-      type:Array,
-      default() {
-        return [{ text: "" }];
-      },
-    }
+      type: Array,
+    },
+    products: {
+      type: Array,
+    },
   },
   data() {
     // width and isScrollActive are used together in order to change navbar width only for screen size >= 1320px
@@ -57,12 +66,10 @@ export default {
       scrollPosition: 0,
       width: document.documentElement.clientWidth,
       isScrollActive: false,
+      searchInput: "",
+      filteredResults: [],
+      isSearchModalVisible: false,
     };
-  },
-  components: {
-    SearchInputVue,
-    HeaderRightLinksVue,
-    HeaderBottomLinksVue,
   },
   methods: {
     updateScroll() {
@@ -70,6 +77,19 @@ export default {
     },
     setDimensions({ width }) {
       this.width = width;
+    },
+    setInputValue(value) {
+      this.searchInput = value.toLowerCase();
+      if (value.length) {
+        this.filteredResults = this.products.filter((p) =>
+          p.title.toLowerCase().includes(this.searchInput.toLowerCase())
+        );
+      } else {
+        this.filteredResults = [];
+      }
+    },
+    showModal() {
+      this.$store.dispatch("product/switchModalDisplay");
     },
   },
   computed: {
@@ -216,6 +236,7 @@ h1 {
   .navbar-brand {
     position: static;
     transform: none;
+    padding: 0;
   }
   .navbar-li {
     width: 25%;
@@ -225,8 +246,9 @@ h1 {
     padding: 0;
   }
   .candy-img {
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
   }
   .burger-menu {
     position: static;
@@ -239,7 +261,7 @@ h1 {
     font-weight: 600;
   }
   h1 {
-    font-size: 14px;
+    display: none;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -331,7 +353,6 @@ h1 {
   }
   .navbar-li {
     color: #fff;
-    cursor: pointer;
   }
   .navbar-li:hover {
     color: var(--color-primary);

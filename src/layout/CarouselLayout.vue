@@ -140,7 +140,7 @@ export default {
 }
 .carousel-chevron {
   height: 24px;
-  color: var(--color-primary);
+  color: var(--color-tertiary);
 }
 .inner {
   display: flex;

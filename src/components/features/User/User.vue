@@ -27,11 +27,6 @@ export default {
       cart: "datas",
     }),
   },
-  created() {
-    if (!this.products.length) {
-      this.$store.dispatch("product/fetchDatas");
-    }
-  },
 };
 </script>
 

@@ -9,6 +9,7 @@ const product = {
   state: {
     datas: [],
     newProducts: [],
+    isSearchModalVisible: false,
   },
   mutations: {
     addOne(state, product) {
@@ -19,6 +20,9 @@ const product = {
     },
     addNewProducts(state, products) {
       state.newProducts = products;
+    },
+    changeModalDisplay(state) {
+      state.isSearchModalVisible = !state.isSearchModalVisible;
     },
   },
   actions: {
@@ -38,6 +42,9 @@ const product = {
     },
     saveOne(context, product) {
       context.commit("addOne", product);
+    },
+    switchModalDisplay(context) {
+      context.commit("changeModalDisplay", product);
     },
   },
 };

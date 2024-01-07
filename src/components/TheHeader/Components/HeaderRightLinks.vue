@@ -5,7 +5,9 @@
         icon="fa-solid fa-magnifying-glass"
         class="right-icons"
       />
-      <span class="navbar-li-text pt-2">Rechercher</span>
+      <span class="navbar-li-text pt-2" @click="$emit('switch-modal-display')"
+        >Rechercher</span
+      >
     </li>
     <li class="navbar-li">
       <font-awesome-icon icon="fa-solid fa-mobile-retro" class="right-icons" />
@@ -54,6 +56,10 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
+}
+.navbar-li:hover {
+  color: var(--color-primary);
 }
 .navbar-cart-qty {
   padding-top: 1px;
@@ -128,10 +134,6 @@ export default {
   .navbar-li {
     width: calc(100% / 3);
     color: #fff;
-    cursor: pointer;
-  }
-  .navbar-li:hover {
-    color: var(--color-primary);
   }
   .navbar-li-text {
     text-align: center;
@@ -148,7 +150,6 @@ export default {
 @media only screen and (min-width: 1320px) {
   .navbar-li {
     color: #fff;
-    cursor: pointer;
   }
   .navbar-li:hover {
     color: var(--color-primary);
