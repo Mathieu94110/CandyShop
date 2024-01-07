@@ -15,7 +15,7 @@ export default {
     cart: {
       type: Array,
       default() {
-        return [{ img: "", title: "", description: "", price: "" }];
+        return [];
       },
     },
   },

@@ -25,7 +25,7 @@ export default {
     cart: {
       type: Array,
       default() {
-        return [{ title: "", price: null }];
+   return [];
       },
     },
   },

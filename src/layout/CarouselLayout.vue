@@ -31,7 +31,7 @@ export default {
     cards: {
       type: Array,
       default() {
-        return [{ img: "", title: "", description: "", price: "", id: "" }];
+        return [];
       },
     },
   },

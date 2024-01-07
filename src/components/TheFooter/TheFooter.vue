@@ -56,35 +56,13 @@
 
 <script>
 export default {
-  data() {
-    return {
-      leftItems: [
-        {
-          commandes: [
-            "Suivi de commande",
-            "Délais de livraison",
-            "Echange et remboursement",
-            "Moyen de paiement",
-          ],
-        },
-        {
-          "votre boutique": [
-            "A propos",
-            "Conditions générales de vente",
-            "Charte de confidentialité",
-            "Notre showroom",
-          ],
-        },
-        {
-          "nous contacter": [
-            "Nous contacter",
-            "Faqs",
-            "Livraison & expédition",
-            "Modalités de retour",
-          ],
-        },
-      ],
-    };
+  props: {
+    leftItems: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
   },
 };
 </script>

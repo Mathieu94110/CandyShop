@@ -43,21 +43,20 @@ import HeaderRightLinksVue from "./Components/HeaderRightLinks.vue";
 import HeaderBottomLinksVue from "./Components/HeaderBottomLinks.vue";
 
 export default {
+  props:{
+    menuList: {
+      type:Array,
+      default() {
+        return [{ text: "" }];
+      },
+    }
+  },
   data() {
     // width and isScrollActive are used together in order to change navbar width only for screen size >= 1320px
     return {
       scrollPosition: 0,
       width: document.documentElement.clientWidth,
       isScrollActive: false,
-      menuList: [
-        { text: "Gâteaux de Bonbons" },
-        { text: "Bonbons" },
-        { text: "Bonbons Rétro" },
-        { text: "Bonbons Végan" },
-        { text: "Bonbons Halal" },
-        { text: "Ballons" },
-        { text: "Idées cadeaux" },
-      ],
     };
   },
   components: {

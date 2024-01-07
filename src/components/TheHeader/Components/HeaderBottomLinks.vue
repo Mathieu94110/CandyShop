@@ -14,7 +14,7 @@ export default {
     menuList: {
       type: Array,
       default() {
-        return [{ text: "" }];
+     return [];
       },
     },
   },

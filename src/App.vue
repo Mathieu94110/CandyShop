@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <TheHeader />
+    <TheHeader :menuList="menuList" />
     <div class="d-flex flex-column w-100">
       <router-view></router-view>
     </div>
-    <TheFooter />
+    <TheFooter :leftItems="leftItems" />
   </div>
 </template>
 
 <script>
 import TheHeader from "./components/TheHeader/TheHeader.vue";
 import TheFooter from "./components/TheFooter/TheFooter.vue";
+import menuList from "./locales/menuList.json";
+import leftItems from "./locales/headerLeftItems.json";
 
 export default {
   name: "App",
+  data() {
+    return {
+      menuList: menuList.list,
+      leftItems: leftItems.items,
+    };
+  },
   components: {
     TheHeader,
     TheFooter,
