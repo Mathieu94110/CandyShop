@@ -9,6 +9,7 @@ const product = {
   state: {
     datas: [],
     newProducts: [],
+    productDetails: null,
     isSearchModalVisible: false,
   },
   mutations: {
@@ -20,6 +21,9 @@ const product = {
     },
     addNewProducts(state, products) {
       state.newProducts = products;
+    },
+    setProductDetails(state, productDetails) {
+      state.productDetails = productDetails;
     },
     changeModalDisplay(state) {
       state.isSearchModalVisible = !state.isSearchModalVisible;
@@ -43,8 +47,20 @@ const product = {
     saveOne(context, product) {
       context.commit("addOne", product);
     },
+    getProductDetails(context, productId) {
+      const data = products;
+      context.commit(
+        "setProductDetails",
+        data.filter((v) => v.id === productId)
+      );
+    },
     switchModalDisplay(context) {
       context.commit("changeModalDisplay", product);
+    },
+  },
+  getters: {
+    productInfo(state) {
+      return state.productDetails;
     },
   },
 };

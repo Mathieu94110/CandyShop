@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import User from "./components/features/User/User";
 import Admin from "./components/features/Admin/Admin";
 import Home from "./views/HomeView";
+import Product from "./views/ProductView";
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -12,6 +13,7 @@ const router = new VueRouter({
     { path: "/home", component: Home },
     { path: "/shop", component: User },
     { path: "/admin", component: Admin },
+    { path: "/product/:productId", component: Product },
     { path: "**", redirect: "/shop" },
   ],
 });

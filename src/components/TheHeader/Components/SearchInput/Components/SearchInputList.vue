@@ -5,6 +5,7 @@
         v-for="product in filteredList"
         :key="product.id"
         class="search-input-product-item"
+        @click="goToPageDetails(product.id)"
       >
         <span>{{ product.title }}</span>
         <span><img :src="product.img" class="search-input-product-img" /></span>
@@ -38,7 +39,12 @@ export default {
         this.isSearchActive = false;
       }
     },
+    goToPageDetails(productId) {
+      this.$emit("remove-list");
+      this.$router.push({ path: "product/" + productId });
+    },
   },
+
   //watcher below is used to not display no results text when filteredResults is set to [] on TheHeader
   watch: {
     inputData(newValue) {
