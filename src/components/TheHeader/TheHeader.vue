@@ -19,6 +19,8 @@
             :inputData="searchInput"
             :filteredList="filteredResults"
             @input="setInputValue"
+            @remove-list="removeFilteredResults"
+            v-on="$listeners"
           />
         </div>
         <div class="navbar-brand">
@@ -42,7 +44,7 @@
 </template>
 
 <script>
-import SearchInputVue from "./Components/SearchInput.vue";
+import SearchInputVue from "./Components/SearchInput/SearchInput.vue";
 import HeaderRightLinksVue from "./Components/HeaderRightLinks.vue";
 import HeaderBottomLinksVue from "./Components/HeaderBottomLinks.vue";
 
@@ -87,6 +89,9 @@ export default {
       } else {
         this.filteredResults = [];
       }
+    },
+    removeFilteredResults() {
+      this.filteredResults = [];
     },
     showModal() {
       this.$store.dispatch("product/switchModalDisplay");
