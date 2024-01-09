@@ -28,6 +28,7 @@
             v-for="product in filteredList"
             :key="product.id"
             class="search-input-modal-product-item"
+            @click="navigateToProduct(product.id)"
           >
             <span>{{ product.title }}</span
             ><span
@@ -72,6 +73,10 @@ export default {
       } else {
         this.filteredResults = [];
       }
+    },
+    navigateToProduct(id) {
+      this.$emit("switch-modal-display");
+      this.$router.push({ name: "product", params: { productId: id } });
     },
   },
   computed: {

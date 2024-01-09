@@ -39,9 +39,9 @@ export default {
         this.isSearchActive = false;
       }
     },
-    goToPageDetails(productId) {
+    goToPageDetails(id) {
       this.$emit("remove-list");
-      this.$router.push({ path: "product/" + productId });
+      this.$router.push({ name: "product", params: { productId: id } });
     },
   },
 

@@ -13,7 +13,7 @@ const router = new VueRouter({
     { path: "/home", component: Home },
     { path: "/shop", component: User },
     { path: "/admin", component: Admin },
-    { path: "/product/:productId", component: Product },
+    { path: "/product/:productId", name: "product", component: Product },
     { path: "**", redirect: "/shop" },
   ],
 });

@@ -119,6 +119,12 @@ button {
   background: rgba(0, 0, 0, 0.8);
   z-index: 2;
 }
+.color-primary {
+  color: var(--color-primary);
+}
+.color-tertiary {
+  color: var(--color-tertiary);
+}
 @media only screen and (min-width: 600px) {
   .carousel-container {
     padding: 0 20px;

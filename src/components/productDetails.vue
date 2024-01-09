@@ -5,39 +5,38 @@
         <div class="product-details-img-container">
           <img class="product-details-img" :src="info.img" alt="" />
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 product-details-info">
           <h1 class="my-4">
-            <span class="product-details-title">{{ info.title }}</span>
+            {{ info.title }}
           </h1>
           <h2>{{ info.price }}€</h2>
-          <h2 class="product-details-qty">
-            <svg width="36" height="36" viewBox="0 0 24 24">
-              <path
-                d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4h2L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z"
-              />
-            </svg>
+          <div class="product-details-qty">
+            <font-awesome-icon
+              icon="fa-solid fa-cart-shopping"
+              class="product-details-cart-icon"
+            />
             <span class="product-details-qty-selector minus">
               <font-awesome-icon
-                @click="removeFromCart"
+                @click="decrease"
                 icon="fa-solid fa-circle-minus"
-                class="social-networks-icon"
             /></span>
 
-            <span class="product-details-qty-value">{{ cart }}</span>
+            <span class="product-details-qty-value">{{ quantity }}</span>
             <span class="product-details-qty-selector plus">
               <font-awesome-icon
-                @click="addToCart"
+                @click="increase"
                 icon="fa-solid fa-circle-plus"
-                class="social-networks-icon"
             /></span>
-          </h2>
-          <h2 class="my-3">Details</h2>
+          </div>
+          <h2 class="my-3">Details :</h2>
 
           <p class="product-details-description">{{ info.description }}</p>
 
           <button
             type="button"
-            class="btn btn-outline-primary btn-lg btn-block btn-custom-color cart-button"
+            :disabled="quantity === 0"
+            class="btn btn-outline-primary btn-block btn-custom-color cart-button"
+            @click="addToCart"
           >
             Ajouter au panier
           </button>
@@ -51,19 +50,21 @@
 export default {
   data() {
     return {
-      cart: 0,
-      activeClass: 0,
+      quantity: 0,
     };
   },
   props: {
     info: Object,
   },
   methods: {
-    addToCart: function () {
-      this.cart += 1;
+    increase() {
+      this.quantity += 1;
     },
-    removeFromCart: function () {
-      this.cart - 1 >= 0 ? (this.cart -= 1) : (this.cart = 0);
+    decrease() {
+      this.quantity - 1 >= 0 ? (this.quantity -= 1) : (this.quantity = 0);
+    },
+    addToCart() {
+      this.$emit("add-to-cart", { ...this.info, quantity: this.quantity });
     },
   },
 };
@@ -71,41 +72,46 @@ export default {
 
 <style scoped>
 h1 {
-  font-size: 28px;
+  font-size: 16px;
+  color: var(--color-primary);
 }
 h2 {
-  font-size: 26px;
+  font-size: 14px;
 }
-
+button {
+  font-size: 14px;
+}
 .product-details {
-  margin: 40px auto;
-  background-color: #eeeeee;
+  margin: auto;
+  max-width: 1200px;
 }
 .product-details-img-container {
-  flex: 0 0 50%;
-  max-width: 50%;
-  position: relative;
   width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
+  position: relative;
+  text-align: center;
+  padding: 15px;
 }
 .product-details-img {
-  height: 100%;
-}
-.product-details-title {
-  color: var(--color-primary);
+  width: 60%;
+  height: auto;
 }
 .product-details-qty {
   margin: 20px 0;
   display: flex;
   align-items: center;
 }
-.product-details-qty-selector {
+.product-details-qty-selector,
+.product-details-cart-icon {
   padding: 0 10px;
+  font-size: 20px;
+}
+.product-details-cart-icon {
+  padding-left: 0;
 }
 .product-details-qty-selector:hover {
   cursor: pointer;
 }
+
 .minus {
   color: #f44336;
 }
@@ -117,11 +123,12 @@ h2 {
   text-align: center;
 }
 .product-details-description {
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: 600;
 }
 .btn-custom-color {
-  border: 2px solid var(--color-tertiary);
-  color: var(--color-tertiary);
+  border: 2px solid #2b2b2b;
+  color: #2b2b2b;
 }
 .btn-custom-color:hover {
   border: 2px solid var(--color-tertiary);
@@ -129,6 +136,68 @@ h2 {
   color: #ffffff;
 }
 .cart-button {
-  margin: 20px 0;
+  margin: 15px 0;
+}
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  button {
+    font-size: 16px;
+  }
+  .product-details {
+    padding: 40px auto;
+  }
+  .product-details-img-container {
+    flex: 0 0 50%;
+    max-width: 50%;
+    min-height: 1px;
+    padding-right: 15px;
+  }
+  .product-details-img {
+    height: 100%;
+  }
+  .product-details-description {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .product-details-info {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .product-details-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .product-details-img-container {
+    padding: 0;
+    text-align: left;
+  }
+  .product-details-info {
+    flex: 0 0 60%;
+    max-width: 40%;
+  }
+  .product-details-img {
+    height: 100%;
+  }
+  .product-details-qty-selector,
+  .product-details-cart-icon {
+    font-size: 26px;
+  }
 }
 </style>
