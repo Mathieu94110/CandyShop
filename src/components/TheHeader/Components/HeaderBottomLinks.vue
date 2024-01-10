@@ -1,11 +1,13 @@
 <template>
-  <div class="menu">
+  <nav class="menu">
     <ul class="menu-list">
       <li v-for="item in menuList" :key="item.text">
-        {{ item.text }}
+        <router-link :to="{ path: item.path }" :class="{ active: active }">
+          {{ item.text }}</router-link
+        >
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -14,7 +16,7 @@ export default {
     menuList: {
       type: Array,
       default() {
-     return [];
+        return [];
       },
     },
   },
@@ -22,11 +24,6 @@ export default {
 </script>
 
 <style scoped>
-.logo {
-  display: flex;
-  flex-direction: column;
-}
-
 .menu {
   display: none;
 }
@@ -42,14 +39,22 @@ export default {
     text-align: center;
     width: 100%;
     max-width: 1319px;
+    height: 64px;
   }
   .menu-list > li {
-    height: 64px;
+    height: 100%;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
     font-weight: 600;
   }
+  .menu-list > li > a {
+    color: #fff;
+  }
+  .menu-list > li > a.router-link-exact-active {
+    color: var(--color-primary);
+  }
+
   .menu-list > li:hover {
     background-color: var(--color-secondary);
     cursor: pointer;

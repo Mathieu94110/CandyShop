@@ -1,11 +1,11 @@
 {
   "list": [
-    { "text": "Recherche approfondie" },
-    { "text": "Gâteaux de Bonbons" },
-    { "text": "Bonbons" },
-    { "text": "Bonbons Rétro" },
-    { "text": "Bonbons Végan" },
-    { "text": "Bonbons Halal" },
-    { "text": "Idées cadeaux" }
+    { "text": "Recherche approfondie", "path": "/advanced-search" },
+    { "text": "Gâteaux de Bonbons", "path": "/" },
+    { "text": "Bonbons", "path": "/" },
+    { "text": "Bonbons Rétro", "path": "/" },
+    { "text": "Bonbons Végan", "path": "/" },
+    { "text": "Bonbons Halal", "path": "/" },
+    { "text": "Idées cadeaux", "path": "/" }
   ]
 }

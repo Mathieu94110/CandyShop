@@ -79,9 +79,15 @@ input,
   margin: 0;
   padding: 0;
 }
-a:visited {
-  color: #fff;
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
 }
+
 li {
   list-style-type: none;
 }

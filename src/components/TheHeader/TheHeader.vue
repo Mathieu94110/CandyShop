@@ -309,7 +309,7 @@ h1 {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: height 1s;
+    transition: height 0.8s;
   }
   .candy-img {
     width: 60px;
@@ -341,7 +341,7 @@ h1 {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: height 1s;
+    transition: height 0.8s;
   }
   .logo-scroll-active > img {
     height: 100%;
@@ -350,12 +350,12 @@ h1 {
   .candy-img {
     height: 160px;
     width: 160px;
-    transition: height 1s;
+    transition: height 0.8s;
   }
   .navbar {
     max-width: 1300px;
     height: 180px;
-    transition: height 1s;
+    transition: height 0.8s;
   }
   .navbar-li {
     color: #fff;
