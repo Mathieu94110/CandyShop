@@ -5,7 +5,7 @@
       <span slot="secondary">d'assortiments</span>
     </category-separators>
     <div class="assortment-selection-content">
-      <div class="carousel-container">
+      <div class="assortment-carousel-container">
         <carousel-layout :cards="cards" @prev="prev" @next="next" />
       </div>
       <div class="assortment-selection-left-side item"></div>
@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      cards: newProducts.items,
+      cards: [...newProducts.items],
     };
   },
   methods: {
@@ -52,6 +52,18 @@ export default {
   display: flex;
   position: relative;
 }
+.assortment-carousel-container {
+  width: 100%;
+  height: 350px;
+  padding: 0 10px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 .item {
   height: 100%;
 }
@@ -62,5 +74,11 @@ export default {
 .assortment-selection-right-side {
   background-color: #ffe469;
   flex-grow: 1;
+}
+
+@media only screen and (min-width: 600px) {
+  .assortment-carousel-container {
+    padding: 0 20px;
+  }
 }
 </style>

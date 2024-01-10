@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-3 product-container d-flex flex-column justify-content-between m-2"
+    class="p-3 product-container d-flex flex-column justify-content-between mx-2"
   >
     <div class="d-flex flex-row justify-content-center">
       <img style="height: 150px" :src="product.img" />
@@ -48,7 +48,7 @@ export default {
   width: 200px;
   max-width: 200px;
   border: 1px dashed #000;
-  margin: 0 10px 10px 0;
+  margin: 0 10px;
   background-color: #fff;
 }
 .product-price,

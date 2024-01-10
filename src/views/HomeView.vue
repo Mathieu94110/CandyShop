@@ -1,10 +1,8 @@
 <template>
   <div class="home">
-    <div class="top">
-      <WelcommeBanner />
-      <NewProduct />
-      <AssortmentSelection />
-    </div>
+    <WelcommeBanner />
+    <NewProduct />
+    <AssortmentSelection />
   </div>
 </template>
 
@@ -24,9 +22,6 @@ export default {
 <style>
 .home {
   width: 100%;
-}
-.top {
-  margin-top: 80px;
-  width: 100%;
+  margin: 80px 0;
 }
 </style>

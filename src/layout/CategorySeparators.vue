@@ -9,15 +9,14 @@ export default {};
 </script>
 
 <style scoped>
-h2 {
-  font-weight: 500;
-  line-height: 1.2;
-  color: #212529;
-}
 .categories-separator-title {
+  margin: 20px 0;
   padding: 0;
   position: relative;
   text-align: center;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #212529;
 }
 .categories-separator-title > strong {
   color: var(--color-primary);

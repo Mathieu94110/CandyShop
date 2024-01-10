@@ -5,7 +5,7 @@
       <span slot="secondary">nouveautés</span>
     </category-separators>
     <div class="new-product-content">
-      <div class="carousel-container">
+      <div class="new-product-carousel-container">
         <carousel-layout :cards="cards" @prev="prev" @next="next" />
       </div>
     </div>
@@ -19,7 +19,7 @@ import newProducts from "../../locales/newProducts.json";
 export default {
   data() {
     return {
-      cards: newProducts.items,
+      cards: [...newProducts.items],
       innerStyles: {},
       step: "",
       transitioning: false,
@@ -47,9 +47,26 @@ export default {
 
 <style scoped>
 .new-product-content {
-  height: 400px;
+  height: 350px;
   width: 100%;
   display: flex;
   position: relative;
+}
+.new-product-carousel-container {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (min-width: 600px) {
+  .new-product-carousel-container {
+    padding: 0 20px;
+  }
 }
 </style>

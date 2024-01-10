@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex w-100 position-absolute top-0 left-0">
+  <div class="d-flex w-100 position-absolute top-0 left-0 h-100">
     <div class="carousel-chevron-container" @click="prev">
       <font-awesome-icon
         icon="fa-solid fa-chevron-left"
@@ -124,9 +124,8 @@ export default {
 <style scoped>
 .carousel {
   width: 100%;
-  height: 100%;
   overflow: hidden;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
 }
 .carousel-chevron-container {
