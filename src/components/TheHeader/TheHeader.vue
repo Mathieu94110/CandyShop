@@ -350,6 +350,7 @@ h1 {
   .candy-img {
     height: 160px;
     width: 160px;
+    transition: height 1s;
   }
   .navbar {
     max-width: 1300px;
@@ -361,13 +362,6 @@ h1 {
   }
   .navbar-li:hover {
     color: var(--color-primary);
-  }
-}
-@keyframes fromright {
-  from {
-    transform: translateX(20px);
-  }
-  to {
   }
 }
 </style>

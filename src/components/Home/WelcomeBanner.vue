@@ -48,6 +48,7 @@ export default {};
   height: 100px;
   line-height: 1.4em;
   text-align-last: justify;
+  animation: welcomeAnimation 0.8s linear;
 }
 .welcome-title-text {
   font-size: 10px;
@@ -69,6 +70,21 @@ export default {};
   color: var(--color-primary);
   font-family: "Oleo Script";
   font-size: 13px;
+}
+
+@keyframes welcomeAnimation {
+  0% {
+    top: 15%;
+    opacity: 0.1;
+  }
+  50% {
+    top: 30%;
+    opacity: 0.5;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
 }
 
 @media only screen and (min-width: 420px) {
