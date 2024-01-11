@@ -73,7 +73,7 @@ const cart = {
   getters: {
     total(state) {
       return state.datas.reduce((acc, p) => {
-        acc += p.price * p.quantity;
+        acc += p.quantity * p.price;
         return acc;
       }, 0);
     },
@@ -85,9 +85,9 @@ const cart = {
     addOne(state, product) {
       const productIndex = state.datas.findIndex((p) => p.id === product.id);
       if (productIndex >= 0) {
-        state.datas[productIndex].quantity += product.quantity;
+        state.datas[productIndex].quantity += 1;
       } else {
-        state.datas.push({ ...product });
+        state.datas.push({ ...product, quantity: 1 });
       }
     },
     deleteOne(state, id) {
