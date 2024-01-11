@@ -57,7 +57,7 @@ export default {
 }
 .bg-white-category {
   background: #fff;
-  padding: 20px 25px;
+  padding: 17px 20px;
   margin-top: 10px;
 }
 .advanced-search-title {

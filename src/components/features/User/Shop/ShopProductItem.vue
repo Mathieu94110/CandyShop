@@ -1,6 +1,7 @@
 <template>
   <div
     class="p-3 product-container d-flex flex-column justify-content-between mx-2"
+    @click="goToDetails(product.id)"
   >
     <div class="d-flex flex-row justify-content-center">
       <img style="height: 150px" :src="product.img" />
@@ -10,14 +11,14 @@
       <hr />
     </div>
     <div>
-      <p>{{ product.description }}</p>
+      <p class="product-description">{{ product.description }}</p>
     </div>
     <div class="mt-2">
       <span class="product-price">{{ product.price | price }}</span>
       <button
         class="btn btn-sm float-right text-white btn-animation"
         style="background: var(--color-secondary)"
-        @click="addOne(product)"
+        @click.stop="addOne(product)"
       >
         Commander
       </button>
@@ -38,6 +39,9 @@ export default {
   },
   methods: {
     ...mapMutations("cart", ["addOne"]),
+    goToDetails(id) {
+      this.$router.push({ name: "product", params: { productId: id } });
+    },
   },
 };
 </script>
@@ -50,7 +54,14 @@ export default {
   border: 1px dashed #000;
   margin: 0 10px;
   background-color: #fff;
+  cursor: pointer;
 }
+.product-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .product-price,
 h3 {
   font: 600;

@@ -72,6 +72,8 @@ export default {
   background: #444444;
   width: 100%;
   z-index: 4;
+  max-height: 300px;
+  overflow-y: scroll;
 }
 .search-input-product-item,
 .item-not-found {
