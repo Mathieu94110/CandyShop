@@ -6,7 +6,6 @@
           <font-awesome-icon icon="arrow-left" class="go-back-button-icon" />
         </button>
       </div>
-
       <ProductDetails :info="productInfo[0]" @add-to-cart="addOne" />
     </div>
   </div>
@@ -25,7 +24,7 @@ export default {
     ProductDetails,
   },
   created() {
-    let productId = this.$route.params.productId;
+    let productId = Number(this.$route.params.productId);
     if (productId) {
       this.$store.dispatch("product/getProductDetails", productId);
     }
@@ -71,6 +70,7 @@ export default {
   width: 36px;
   padding: 4px;
   color: #2b2b2b;
+  background: #fff;
   font-weight: 600;
   cursor: pointer;
 }

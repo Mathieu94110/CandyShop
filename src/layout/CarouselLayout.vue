@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import ShopProductItem from "../components/features/User/Shop/ShopProductItem.vue";
+import ShopProductItem from "../components/Shop/ShopProductItem.vue";
 export default {
   props: {
     cards: {

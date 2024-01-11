@@ -21,13 +21,14 @@
       </h2>
     </div>
     <SearchCategoriesForm />
-    <User />
+    <ShopAndCard />
   </div>
 </template>
 
 <script>
-import User from "../components/features/User/User.vue";
+import ShopAndCard from '../components/ShopAndCard/ShopAndCard.vue';
 import SearchCategoriesForm from "../components/SearchCategoriesForm/SearchCategoriesForm.vue";
+
 export default {
   data() {
     return {
@@ -35,7 +36,7 @@ export default {
     };
   },
   components: {
-    User,
+    ShopAndCard,
     SearchCategoriesForm,
   },
 };

@@ -85,9 +85,13 @@ const cart = {
     addOne(state, product) {
       const productIndex = state.datas.findIndex((p) => p.id === product.id);
       if (productIndex >= 0) {
-        state.datas[productIndex].quantity += 1;
+        product && product.quantity >= 1
+          ? (state.datas[productIndex].quantity += product.quantity)
+          : (state.datas[productIndex].quantity += 1);
       } else {
-        state.datas.push({ ...product, quantity: 1 });
+        product && product.quantity
+          ? state.datas.push({ ...product, quantity: product.quantity })
+          : state.datas.push({ ...product, quantity: 1 });
       }
     },
     deleteOne(state, id) {

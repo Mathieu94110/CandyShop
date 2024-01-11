@@ -8,7 +8,7 @@
         :item="item"
       ></cart-product-item>
       <hr class="w-100" />
-      <span>Total : {{ total }} €</span>
+      <span>Total : {{ total.toFixed(2) }} €</span>
     </template>
     <template v-else>Votre panier est vide</template>
   </div>

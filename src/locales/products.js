@@ -669,4 +669,148 @@ export const products = [
       ],
     },
   },
+  {
+    id: 36,
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/06/3a/08820d6918bee03a3a95e76e7d15.jpeg",
+    title: "Boule de Noel",
+    category: "candy cake",
+    description: "Boule de Noel Transparente Gourmande (M)",
+    price: 5.99,
+    batch: {
+      exist: true,
+      quantity: [
+        { quantity: 1, price: 5.99 },
+        { quantity: 3, price: 13 },
+      ],
+    },
+    bag: {
+      exist: false,
+    },
+  },
+  {
+    id: 37,
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/f5/e3/e9cab507cc21be1c55ace7883dab.jpeg",
+    title: "Boule de Noel",
+    category: "candy cake",
+    description: "Boule de Noel Transparente Gourmande (S)",
+    price: 3.99,
+    batch: {
+      exist: true,
+      quantity: [
+        { quantity: 1, price: 3.99 },
+        { quantity: 3, price: 8.5 },
+      ],
+    },
+    bag: {
+      exist: false,
+    },
+  },
+  {
+    id: 38,
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/25/da/bdfc01d54019a06ef8803c1c1e32.jpeg",
+    title: "Gateau",
+    category: "candy cake",
+    description: "Gateau de Bonbons Merry Christmas",
+    price: 10.99,
+    batch: {
+      exist: true,
+      quantity: [
+        { quantity: 1, price: 10.99 },
+        { quantity: 3, price: 22 },
+      ],
+    },
+    bag: {
+      exist: false,
+    },
+  },
+  {
+    id: 39,
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/cf/bc/152cef96c86eff702a54855e5158.jpeg",
+    title: "Gâteau de Bonbons",
+    category: "candy cake",
+    description: "Gâteau de Bonbons Sapin de de Noël",
+    price: 19.99,
+    batch: {
+      exist: true,
+      quantity: [
+        { quantity: 1, price: 19.99 },
+        { quantity: 3, price: 50 },
+      ],
+    },
+    bag: {
+      exist: false,
+    },
+  },
+  {
+    id: 40,
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/3f/4f/6e5e6d9be19da8beecb5f99e2cf5.jpeg",
+    title: "Gâteau de Bonbons",
+    category: "candy cake",
+    description: "Gâteau de Bonbons Grand Sapin de de Noël",
+    price: 24.9,
+    batch: {
+      exist: true,
+      quantity: [
+        { quantity: 1, price: 24.99 },
+        { quantity: 3, price: 60 },
+      ],
+    },
+    bag: {
+      exist: false,
+    },
+  },
+  {
+    id: 41,
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/2d/bc/b73c22e5d17a339e4985b04e5c92.jpeg",
+    title: "Fraise des bois",
+    category: "candy",
+    description: "Fraise des bois Acidulé",
+    price: 1.1,
+    batch: {
+      exist: false,
+    },
+    bag: {
+      exist: true,
+      quantity: [
+        { quantity: "50g", price: 1.1 },
+        { quantity: "500g", price: 6 },
+      ],
+    },
+  },
+  {
+    id: 42,
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/d8/11/d787690f3fc16eb11ba64f328a3d.jpeg",
+    title: "Cordos",
+    category: "candy",
+    description: "Cordos Fruits des bois Acidulé Hitschler",
+    price: 1.99,
+    batch: {
+      exist: false,
+    },
+    bag: {
+      exist: true,
+      quantity: [
+        { quantity: "50g", price: 1.99 },
+        { quantity: "500g", price: 6 },
+      ],
+    },
+  },
+  {
+    id: 43,
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/eb/22/cb8e6cf807399487d90d39448cd7.jpeg",
+    title: "Cordos",
+    category: "candy",
+    description: "Cordos Pomme sauvage Acidulé Hitschler",
+    price: 1.99,
+    batch: {
+      exist: false,
+    },
+    bag: {
+      exist: true,
+      quantity: [
+        { quantity: "50g", price: 1.99 },
+        { quantity: "500g", price: 6 },
+      ],
+    },
+  },
 ];

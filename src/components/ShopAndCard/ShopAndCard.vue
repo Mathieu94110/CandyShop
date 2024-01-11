@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import Shop from "./Shop/Shop.vue";
-import Cart from "./Cart/Cart.vue";
+import Shop from "../Shop/Shop.vue";
+import Cart from "../Cart/Cart.vue";
 import { mapState } from "vuex";
 
 export default {
