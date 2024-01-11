@@ -18,11 +18,15 @@
       <span class="navbar-li-text pt-2">Mon compte</span>
     </li>
     <li class="navbar-li" @click="goToShop()">
-      <span v-show="cartLength" class="navbar-cart-qty">{{ cartLength }}</span>
-      <font-awesome-icon
-        icon="fa-solid fa-cart-shopping"
-        class="right-icons position-relative"
-      />
+      <div class="cart-li">
+        <span v-show="cartLength" class="navbar-cart-qty">{{
+          cartLength
+        }}</span>
+        <font-awesome-icon
+          icon="fa-solid fa-cart-shopping"
+          class="right-icons position-relative"
+        />
+      </div>
       <span class="navbar-li-text pt-2"> Mon panier </span>
     </li>
   </ul>
@@ -58,23 +62,24 @@ export default {
   justify-content: space-between;
   cursor: pointer;
 }
+.cart-li {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .navbar-li:hover {
   color: var(--color-primary);
 }
 .navbar-cart-qty {
-  padding-top: 1px;
-  background: red;
-  width: 20px;
-  height: 20px;
   border-radius: 50%;
-  display: inline-block;
-  font-weight: bold;
-  line-height: 20px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
-  width: 20px;
-  position: absolute;
-  top: -1px;
-  right: 28px;
+  background: red;
+  font-size: 12px;
+  border-radius: 50%;
 }
 
 @media (max-width: 599px) {
@@ -114,10 +119,6 @@ export default {
     padding: 13px 0 0 6px;
     transform: none;
   }
-  .navbar-cart-qty {
-    top: 44px;
-    right: 88px;
-  }
   h1 {
     font-size: 14px;
   }
@@ -140,11 +141,9 @@ export default {
     font-size: 16px;
   }
   .navbar-cart-qty {
-    padding-top: 2px;
     width: 22px;
     height: 22px;
-    top: -4px;
-    right: 75px;
+    line-height: 22px;
   }
 }
 @media only screen and (min-width: 1320px) {
