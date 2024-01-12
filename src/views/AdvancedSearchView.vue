@@ -21,12 +21,13 @@
       </h2>
     </div>
     <SearchCategoriesForm />
-    <ShopAndCard />
+    <Shop :products="products" />
   </div>
 </template>
 
 <script>
-import ShopAndCard from '../components/ShopAndCard/ShopAndCard.vue';
+import { mapState } from "vuex";
+import Shop from "../components/Shop/Shop.vue";
 import SearchCategoriesForm from "../components/SearchCategoriesForm/SearchCategoriesForm.vue";
 
 export default {
@@ -36,8 +37,13 @@ export default {
     };
   },
   components: {
-    ShopAndCard,
+    Shop,
     SearchCategoriesForm,
+  },
+  computed: {
+    ...mapState("product", {
+      products: "datas",
+    }),
   },
 };
 </script>
@@ -59,12 +65,11 @@ export default {
 .bg-white-category {
   background: #fff;
   padding: 17px 20px;
-  margin-top: 10px;
 }
 .advanced-search-title {
   font-size: 20px;
   color: #ff4089;
-  padding: 0 0 20px 0;
+  padding: 10px;
   line-height: 80%;
   margin: 2% 0;
 }

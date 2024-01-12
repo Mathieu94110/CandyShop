@@ -37,7 +37,7 @@ import { mapGetters } from "vuex";
 export default {
   methods: {
     goToShop() {
-      this.$router.push("/shop");
+      if (this.$route.path !== "/shop") this.$router.push("/shop");
     },
   },
   computed: {

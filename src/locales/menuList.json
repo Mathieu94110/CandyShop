@@ -1,11 +1,31 @@
 {
   "list": [
     { "text": "Recherche approfondie", "path": "/advanced-search" },
-    { "text": "Gâteaux de Bonbons", "path": "/" },
-    { "text": "Bonbons", "path": "/" },
-    { "text": "Bonbons Rétro", "path": "/" },
-    { "text": "Bonbons Végan", "path": "/" },
-    { "text": "Bonbons Halal", "path": "/" },
-    { "text": "Idées cadeaux", "path": "/" }
+    {
+      "text": "Gâteaux de Bonbons",
+      "name": "candy cake",
+      "path": "/categories-list"
+    },
+    { "text": "Bonbons", "name": "candy", "path": "/categories-list" },
+    {
+      "text": "Bonbons Rétro",
+      "name": "retro candy",
+      "path": "/categories-list"
+    },
+    {
+      "text": "Bonbons Végan",
+      "name": "vegan candy",
+      "path": "/categories-list"
+    },
+    {
+      "text": "Bonbons Halal",
+      "name": "halal candy",
+      "path": "/categories-list"
+    },
+    {
+      "text": "Idées cadeaux",
+      "name": "gift ideas",
+      "path": "/categories-list"
+    }
   ]
 }

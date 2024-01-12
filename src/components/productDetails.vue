@@ -35,7 +35,7 @@
           <button
             type="button"
             :disabled="quantity === 0"
-            class="btn btn-outline-primary btn-block btn-custom-color cart-button"
+            class="btn btn-outline-primary btn-block cart-button"
             @click="addToCart"
           >
             Ajouter au panier
@@ -125,15 +125,6 @@ button {
 .product-details-description {
   font-size: 12px;
   font-weight: 600;
-}
-.btn-custom-color {
-  border: 2px solid #2b2b2b;
-  color: #2b2b2b;
-}
-.btn-custom-color:hover {
-  border: 2px solid var(--color-tertiary);
-  background-color: var(--color-tertiary);
-  color: #ffffff;
 }
 .cart-button {
   margin: 15px 0;

@@ -673,7 +673,7 @@ export const products = [
     id: 36,
     img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/06/3a/08820d6918bee03a3a95e76e7d15.jpeg",
     title: "Boule de Noel",
-    category: "candy cake",
+    category: "gift ideas",
     description: "Boule de Noel Transparente Gourmande (M)",
     price: 5.99,
     batch: {
@@ -691,7 +691,7 @@ export const products = [
     id: 37,
     img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/f5/e3/e9cab507cc21be1c55ace7883dab.jpeg",
     title: "Boule de Noel",
-    category: "candy cake",
+    category: "gift ideas",
     description: "Boule de Noel Transparente Gourmande (S)",
     price: 3.99,
     batch: {
@@ -709,7 +709,7 @@ export const products = [
     id: 38,
     img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/25/da/bdfc01d54019a06ef8803c1c1e32.jpeg",
     title: "Gateau",
-    category: "candy cake",
+    category: "gift ideas",
     description: "Gateau de Bonbons Merry Christmas",
     price: 10.99,
     batch: {
@@ -727,7 +727,7 @@ export const products = [
     id: 39,
     img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/cf/bc/152cef96c86eff702a54855e5158.jpeg",
     title: "Gâteau de Bonbons",
-    category: "candy cake",
+    category: "gift ideas",
     description: "Gâteau de Bonbons Sapin de de Noël",
     price: 19.99,
     batch: {
@@ -745,7 +745,7 @@ export const products = [
     id: 40,
     img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/3f/4f/6e5e6d9be19da8beecb5f99e2cf5.jpeg",
     title: "Gâteau de Bonbons",
-    category: "candy cake",
+    category: "gift ideas",
     description: "Gâteau de Bonbons Grand Sapin de de Noël",
     price: 24.9,
     batch: {

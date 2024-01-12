@@ -1,11 +1,17 @@
 <template>
   <nav class="menu">
     <ul class="menu-list">
-      <li v-for="item in menuList" :key="item.text">
-        <router-link :to="{ path: item.path }" :class="{ active: active }">
-          {{ item.text }}</router-link
-        >
-      </li>
+      <router-link
+        tag="li"
+        v-for="item in menuList"
+        :key="item.text"
+        :to="{
+          path: item.name ? `/categories-list/${item.name}` : item.path,
+        }"
+        :class="{ active: active }"
+      >
+        {{ item.text }}</router-link
+      >
     </ul>
   </nav>
 </template>

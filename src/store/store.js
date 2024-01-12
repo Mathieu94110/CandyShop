@@ -9,6 +9,7 @@ const product = {
   state: {
     datas: [],
     newProducts: [],
+    categoryList: [],
     productDetails: null,
     isSearchModalVisible: false,
   },
@@ -27,6 +28,11 @@ const product = {
     },
     changeModalDisplay(state) {
       state.isSearchModalVisible = !state.isSearchModalVisible;
+    },
+    getListByCategory(state, category) {
+      state.categoryList = state.datas.filter(
+        (data) => data.category === category
+      );
     },
   },
   actions: {
@@ -57,10 +63,16 @@ const product = {
     switchModalDisplay(context) {
       context.commit("changeModalDisplay", product);
     },
+    getCategoryList(context, payload) {
+      context.commit("getListByCategory", payload);
+    },
   },
   getters: {
     productInfo(state) {
       return state.productDetails;
+    },
+    categoryList(state) {
+      return state.categoryList;
     },
   },
 };
