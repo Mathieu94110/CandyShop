@@ -69,17 +69,17 @@ export default {
 .go-back-button {
   width: 36px;
   padding: 4px;
-  color: #2b2b2b;
+  color: var(--color-dark-light);
   background: #fff;
   font-weight: 600;
   cursor: pointer;
 }
 .go-back-button:hover {
-  background-color: #2b2b2b;
+  background-color: var(--color-dark-light);
   color: #ffffff;
 }
 .go-back-button-icon {
-  color: #2b2b2b;
+  color: var(--color-dark-light);
 }
 .go-back-button:hover .go-back-button-icon {
   color: #ffffff;

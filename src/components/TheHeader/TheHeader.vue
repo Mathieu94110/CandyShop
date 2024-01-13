@@ -137,7 +137,7 @@ export default {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  background-color: #161616;
+  background-color: var(--color-dark);
   border-bottom: 2px solid #2caec4;
   position: sticky;
   z-index: 2;

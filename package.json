@@ -50,7 +50,8 @@
             "Shop",
             "Cart",
             "Admin",
-            "User"
+            "User",
+            "Pagination"
           ]
         }
       ]

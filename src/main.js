@@ -16,6 +16,8 @@ import {
   faArrowLeft,
   faMinusCircle,
   faPlusCircle,
+  faLeftLong,
+  faRightLong,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faInstagram,
@@ -38,7 +40,9 @@ library.add(
   faYoutube,
   faArrowLeft,
   faMinusCircle,
-  faPlusCircle
+  faPlusCircle,
+  faLeftLong,
+  faRightLong
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;

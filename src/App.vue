@@ -58,7 +58,8 @@ export default {
 :root {
   --color-primary: #ff4089;
   --color-secondary: #2caec4;
-  --color-tertiary: #4aae9b;
+  --color-dark: #161616;
+  --color-dark-light: #2b2b2b;
 }
 
 * {
@@ -117,6 +118,6 @@ button {
   color: var(--color-primary);
 }
 .color-tertiary {
-  color: var(--color-tertiary);
+  color: var(--color-secondary);
 }
 </style>

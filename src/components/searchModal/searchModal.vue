@@ -116,7 +116,7 @@ export default {
 .modal-header {
   position: relative;
   border-bottom: 1px solid #eeeeee;
-  color: var(--color-tertiary);
+  color: var(--color-secondary);
   justify-content: space-between;
 }
 
@@ -151,7 +151,7 @@ export default {
 }
 .search-input-modal-product-item:hover {
   cursor: pointer;
-  background: var(--color-tertiary);
+  background: var(--color-secondary);
   color: #fff;
 }
 .search-input-modal-product-item > span {
@@ -172,14 +172,14 @@ export default {
   font-size: 20px;
   padding: 10px;
   font-weight: bold;
-  color: var(--color-tertiary);
+  color: var(--color-secondary);
   background: transparent;
 }
 
 .btn-green {
   color: white;
-  background: var(--color-tertiary);
-  border: 1px solid var(--color-tertiary);
+  background: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
   border-radius: 2px;
 }
 

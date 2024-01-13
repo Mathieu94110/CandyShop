@@ -37,7 +37,7 @@ export default {
 @media only screen and (min-width: 1000px) {
   .menu {
     display: flex;
-    background-color: #2b2b2b;
+    background-color: var(--color-dark-light);
   }
   .menu-list {
     color: #fff;

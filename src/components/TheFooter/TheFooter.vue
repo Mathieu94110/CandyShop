@@ -71,7 +71,7 @@ export default {
 .footer {
   width: 100%;
   padding: 20px;
-  background-color: #161616;
+  background-color: var(--color-dark);
   color: #fff;
 }
 .footer-top-container,

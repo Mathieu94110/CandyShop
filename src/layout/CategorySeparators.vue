@@ -30,7 +30,7 @@ export default {};
 .categories-separator-title > strong > span:nth-child(2) {
   display: block;
   font: 18px "Gotham-Bold";
-  color: #161616;
+  color: var(--color-dark);
   text-transform: uppercase;
 }
 
