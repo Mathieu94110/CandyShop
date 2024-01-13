@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex flex-row">
-    <div class="d-flex flex-col justify-between flex-wrap p-1">
+    <div class="shop-products-list">
       <shop-product-item
         v-for="product in products"
         :key="product.id"
@@ -21,11 +21,17 @@ export default {
     products: {
       type: Array,
       default() {
-    return [];
+        return [];
       },
     },
   },
 };
 </script>
 
-<style></style>
+<style>
+.shop-products-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px 20px;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="product">
-    <div class="product-container">
+  <div class="product-container">
+    <div class="product">
       <div class="go-back">
         <button class="go-back-button" @click.prevent="goBack()">
           <font-awesome-icon icon="arrow-left" class="go-back-button-icon" />
@@ -50,12 +50,12 @@ export default {
 };
 </script>
 
-<style>
-.product {
+<style scoped>
+.product-container {
   padding: 10px;
   background-color: #ffe469;
 }
-.product-container {
+.product {
   max-width: 1200px;
   margin: auto;
 }
@@ -86,16 +86,16 @@ export default {
 }
 
 @media only screen and (max-width: 767px) and (min-width: 450px) {
-  .product-container {
+  .product {
     width: 70%;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .product {
+  .product-container {
     padding: 20px;
   }
-  .product-container {
+  .product {
     margin: 50px auto;
   }
   .go-back {

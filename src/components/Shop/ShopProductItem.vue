@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-3 product-container d-flex flex-column justify-content-between mx-2"
+    class="p-3 product-container d-flex flex-column justify-content-between"
     @click="goToDetails(product.id)"
   >
     <div class="d-flex flex-row justify-content-center">
@@ -52,7 +52,6 @@ export default {
   width: 200px;
   max-width: 200px;
   border: 1px dashed #000;
-  margin: 0 10px;
   background-color: #fff;
   cursor: pointer;
 }
@@ -88,7 +87,6 @@ button {
 @media only screen and (min-width: 600px) {
   .product-container {
     height: auto;
-    width: auto;
     max-width: 300px;
   }
   h3 {

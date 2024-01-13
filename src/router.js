@@ -4,7 +4,6 @@ import ShopAndCard from "./components/ShopAndCard/ShopAndCard";
 import Admin from "./components/Admin/Admin";
 import Home from "./views/HomeView";
 import Product from "./views/ProductView";
-import advancedSearch from "./views/AdvancedSearchView";
 import CategoriesList from "./views/CategoriesListView";
 
 Vue.use(VueRouter);
@@ -16,11 +15,15 @@ const router = new VueRouter({
     { path: "/home", component: Home },
     { path: "/shop", component: ShopAndCard },
     { path: "/admin", component: Admin },
-    { path: "/advanced-search", component: advancedSearch },
     {
       path: "/product/:productId",
       name: "product",
       component: Product,
+    },
+    {
+      path: "/categories-list",
+      name: "categories-list",
+      component: CategoriesList,
     },
     {
       path: "/categories-list/:category",
