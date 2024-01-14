@@ -1,38 +1,27 @@
 <template>
-  <div class="filter-category">
-    <div class="category-filter">
-      <div class="category-filter-title">Filtrer</div>
-      <div class="category-filter-inputs-container">
-        <div class="category-filter-inputs">
-          <form submit.prevent>
-            <select v-model="selected.category" class="select-input">
-              <option disabled value="">Catégories</option>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
-
-            <select v-model="selected.price" class="select-input">
-              <option disabled value="">Prix</option>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
-
-            <select v-model="selected.batch" class="select-input">
-              <option disabled value="">Lot de:</option>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
-
-            <select v-model="selected.bag" class="select-input">
-              <option disabled value="">Sachet de:</option>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
-          </form>
+  <div class="search-categories-form">
+    <div class="search-categories-form-filter">
+      <div class="search-categories-form-filter-title">Filtrer</div>
+      <div class="search-categories-form-filter-inputs-container">
+        <div class="search-categories-form-filter-inputs">
+          <div>
+            <SearchCategory
+              :productFilters="productFilters.price"
+              v-on="$listeners"
+            />
+            <SearchCategory
+              :productFilters="productFilters.category"
+              v-on="$listeners"
+            />
+            <SearchCategory
+              :productFilters="productFilters.bag"
+              v-on="$listeners"
+            />
+            <SearchCategory
+              :productFilters="productFilters.batch"
+              v-on="$listeners"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -40,44 +29,38 @@
 </template>
 
 <script>
+import productsFiltersList from "../../locales/productFilters.json";
+import SearchCategory from "./Components/SearchCategory.vue";
 export default {
+  components: {
+    SearchCategory,
+  },
   data() {
     return {
-      selected: { category: "", price: "", batch: "", bag: "" },
+      productFilters: productsFiltersList,
+      isDropdownOpen: false,
+      selectedOptions: [],
     };
   },
 };
 </script>
 
 <style scoped>
-.category-filter {
+.search-categories-form-filter {
   display: table;
   width: 100%;
   color: #333333;
   font-size: 13px;
 }
-.category-filter-inputs-container {
+.search-categories-form-filter-inputs-container {
   margin: 0 20px;
 }
-.filter-category {
+.search-categories-form {
   background: #ff4089;
-  padding: 15px 20px;
+  padding: 5px 8px;
   color: #333333;
 }
-
-.select-input {
-  margin: 10px 20px;
-  height: 38px;
-  padding: 10px 20px 12px 15px;
-  max-width: 220px;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  font: 13px "Gotham-Bold";
-  text-transform: uppercase;
-}
-
-.category-filter-title {
+.search-categories-form-filter-title {
   margin-bottom: 10px;
   width: 80px;
   color: #fff;
@@ -85,29 +68,31 @@ export default {
   font-size: 16px;
 }
 @media only screen and (min-width: 601px) {
-  .category-filter-inputs {
+  .search-categories-form {
+    padding: 15px 20px;
+  }
+  .search-categories-form-filter-inputs {
     display: block;
     height: auto;
   }
 }
-
 @media only screen and (max-width: 1024px) {
-  .category-filter-inputs {
+  .search-categories-form-filter-inputs {
     margin: 0 0 0 -10px;
   }
 }
 
 @media only screen and (max-width: 992px) {
-  .category-filter > div {
+  .search-categories-form-filter > div {
     display: block;
   }
 }
-.category-filter > div {
+.search-categories-form-filter > div {
   display: table-cell;
   vertical-align: middle;
 }
 @media only screen and (max-width: 992px) {
-  .category-filter-title {
+  .search-categories-form-filter-title {
     padding-top: 0;
     padding-left: 0;
     width: 100%;

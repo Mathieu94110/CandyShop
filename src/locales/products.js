@@ -6,16 +6,11 @@ export const products = [
     category: "candy",
     description: "Bonbons Lutti en vrac / sachet de 2 kg",
     price: 13.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 3 },
-        { quantity: "500g", price: 10 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 3 },
+      { quantity: "500g", price: 10 },
+    ],
+    batch: null,
   },
   {
     id: 2,
@@ -24,16 +19,11 @@ export const products = [
     category: "candy",
     description: "HARIBO Dragibus SOFT en sac de 2 kg",
     price: 19.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 3 },
-        { quantity: "500g", price: 10 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 3 },
+      { quantity: "500g", price: 10 },
+    ],
+    batch: null,
   },
   {
     id: 3,
@@ -42,16 +32,11 @@ export const products = [
     category: "candy",
     description: "Fini TWIST marshmallow torsadé en sachet de 125 unités",
     price: 8.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 2 },
-        { quantity: "500g", price: 6 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 2 },
+      { quantity: "500g", price: 6 },
+    ],
+    batch: null,
   },
   {
     id: 4,
@@ -60,16 +45,11 @@ export const products = [
     category: "candy",
     description: "DULCEPLUS Jumbo Acides MULTICOLORES x 30",
     price: 11.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 3 },
-        { quantity: "500g", price: 6 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 3 },
+      { quantity: "500g", price: 6 },
+    ],
+    batch: null,
   },
   {
     id: 5,
@@ -78,16 +58,11 @@ export const products = [
     category: "retro candy",
     description: "Pralines aux Cacahuètes - 5 Kg",
     price: 27.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 2 },
-        { quantity: "500g", price: 6 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 2 },
+      { quantity: "500g", price: 6 },
+    ],
+    batch: null,
   },
   {
     id: 6,
@@ -96,16 +71,11 @@ export const products = [
     category: "candy",
     description: "Bonbons tendres aux goûts fruités assortis en sachet de 1 kg",
     price: 5.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 2 },
-        { quantity: "500g", price: 6 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 2 },
+      { quantity: "500g", price: 6 },
+    ],
+    batch: null,
   },
   {
     id: 7,
@@ -114,16 +84,11 @@ export const products = [
     catgeory: "retro candy",
     description: "Dragées au chocolat",
     price: 6.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 2 },
-        { quantity: "500g", price: 6 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 2 },
+      { quantity: "500g", price: 6 },
+    ],
+    batch: null,
   },
   {
     id: 8,
@@ -132,16 +97,11 @@ export const products = [
     category: "candy",
     description: "Bonbons Lutti en vrac / sachet de 2 kg",
     price: 13.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 3 },
-        { quantity: "500g", price: 10 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 3 },
+      { quantity: "500g", price: 10 },
+    ],
+    batch: null,
   },
   {
     id: 9,
@@ -150,16 +110,11 @@ export const products = [
     category: "candy",
     description: "HARIBO Dragibus SOFT en sac de 2 kg",
     price: 19.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 3 },
-        { quantity: "500g", price: 10 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 3 },
+      { quantity: "500g", price: 10 },
+    ],
+    batch: null,
   },
   {
     id: 10,
@@ -168,16 +123,11 @@ export const products = [
     category: "candy",
     description: "Fini TWIST marshmallow torsadé en sachet de 125 unités",
     price: 8.0,
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 5.0 },
-        { quantity: 10, price: 9.0 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 5.0 },
+      { quantity: 10, price: 9.0 },
+    ],
   },
   {
     id: 11,
@@ -186,16 +136,11 @@ export const products = [
     category: "candy",
     description: "DULCEPLUS Jumbo Acides MULTICOLORES x 30",
     price: 11.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 3 },
-        { quantity: "500g", price: 10 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 3 },
+      { quantity: "500g", price: 10 },
+    ],
+    batch: null,
   },
   {
     id: 12,
@@ -204,16 +149,11 @@ export const products = [
     category: "retro candy",
     description: "Pralines aux Cacahuètes - 5 Kg",
     price: 27.0,
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "100g", price: 3 },
-        { quantity: "500g", price: 10 },
-      ],
-    },
-    batch: {
-      exist: false,
-    },
+    bag: [
+      { quantity: "150g", price: 3 },
+      { quantity: "500g", price: 10 },
+    ],
+    batch: null,
   },
   {
     id: 13,
@@ -222,16 +162,11 @@ export const products = [
     category: "candy",
     description: "Bonbons tendres aux goûts fruités assortis en sachet de 1 kg",
     price: 5.0,
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 5.0 },
-        { quantity: 10, price: 9.0 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 5.0 },
+      { quantity: 10, price: 9.0 },
+    ],
   },
   {
     id: 14,
@@ -240,16 +175,11 @@ export const products = [
     category: "retro candy",
     description: "Dragées au chocolat",
     price: 6.0,
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 6.0 },
-        { quantity: 10, price: 10.0 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 6.0 },
+      { quantity: 10, price: 10.0 },
+    ],
   },
   {
     id: 15,
@@ -259,16 +189,11 @@ export const products = [
     price: 2.99,
     description:
       "Découvrez ou redécouvrez le chewing-gum en rouleau de 1m80 au bon goût de fraise acidulée. Le célèbre bonbon des années 80 est de retour chez Happy Candy. Ravivez des souvenirs de votre enfance. Pour tous les nostalgiques des bonbons d’avantLe bonbon qui gagne le cœur des Français depuis des générations et des générations.",
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 2.99 },
-        { quantity: 10, price: 4.99 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 2.99 },
+      { quantity: 10, price: 4.99 },
+    ],
   },
 
   {
@@ -279,16 +204,11 @@ export const products = [
     price: 2.99,
     description:
       "Découvrez ou redécouvrez le chewing-gum en rouleau de 1m80 au bon goût de fraise acidulée. Le célèbre bonbon des années 80 est de retour chez Happy Candy. Ravivez des souvenirs de votre enfance. Pour tous les nostalgiques des bonbons d’avantLe bonbon qui gagne le cœur des Français depuis des générations et des générations.",
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 2.99 },
-        { quantity: 10, price: 4.99 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 2.99 },
+      { quantity: 10, price: 4.99 },
+    ],
   },
   {
     id: 17,
@@ -298,16 +218,11 @@ export const products = [
     price: 2.99,
     description:
       "Découvrez ou redécouvrez le chewing-gum en rouleau de 1m80 au bon goût de fraise acidulée. Le célèbre bonbon des années 80 est de retour chez Happy Candy. Ravivez des souvenirs de votre enfance. Pour tous les nostalgiques des bonbons d’avantLe bonbon qui gagne le cœur des Français depuis des générations et des générations.",
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 2.99 },
-        { quantity: 10, price: 4.99 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 2.99 },
+      { quantity: 10, price: 4.99 },
+    ],
   },
   {
     id: 18,
@@ -317,16 +232,11 @@ export const products = [
     price: 1.9,
     description:
       "Voici les sticks pik Hitschler appelé aussi les petits câbles fourrés acidulés au bon goût de fraise.",
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 2.99 },
-        { quantity: 10, price: 4.99 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 2.99 },
+      { quantity: 10, price: 4.99 },
+    ],
   },
   {
     id: 19,
@@ -336,16 +246,11 @@ export const products = [
     price: 1.9,
     description:
       "La friandise incontournable des fêtes foraines et luna park débarquent chez Happy Candy. Ces bonbons géants au bon goût mesurent 67cm et pèsent environ 60g pièce.",
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 4.99 },
-        { quantity: 10, price: 8.99 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 4.99 },
+      { quantity: 10, price: 8.99 },
+    ],
   },
 
   {
@@ -356,16 +261,11 @@ export const products = [
     price: 1.9,
     description:
       "La friandise incontournable des fêtes foraines et luna park débarquent chez Happy Candy. Ces bonbons géants au bon goût mesurent 67cm et pèsent environ 60g pièce.",
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 4.99 },
-        { quantity: 10, price: 8.99 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 4.99 },
+      { quantity: 10, price: 8.99 },
+    ],
   },
   {
     id: 21,
@@ -375,16 +275,11 @@ export const products = [
     price: 1.9,
     description:
       "La friandise incontournable des fêtes foraines et luna park débarquent chez Happy Candy. Ces bonbons géants au bon goût mesurent 67cm et pèsent environ 60g pièce.",
-    bag: {
-      exist: false,
-    },
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 5, price: 4.99 },
-        { quantity: 10, price: 8.99 },
-      ],
-    },
+    bag: null,
+    batch: [
+      { quantity: 5, price: 4.99 },
+      { quantity: 10, price: 8.99 },
+    ],
   },
 
   {
@@ -395,17 +290,12 @@ export const products = [
     price: 2.4,
     description:
       "Happy Candy vous propose la Guimauve Géante Torsadé Fini pour la confection d'un Gâteau de Bonbons ou simplement pour les Fans de Guimauve. C'est un vrai Délice.",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.4 },
-        { quantity: "150g", price: 3.7 },
-        { quantity: "500g", price: 9.99 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.4 },
+      { quantity: "150g", price: 3.7 },
+      { quantity: "500g", price: 9.99 },
+    ],
   },
 
   {
@@ -416,17 +306,12 @@ export const products = [
     price: 2.4,
     description:
       "Fondez de plaisir pour la Guimauve Balle de Golf Rose de Bulgari au bon goût de Fraise. Idéal pour confectionner vos brochettes de bonbons, gâteaux de bonbons ou pour réaliser un Candy Bar pour tous vos événements : Mariage, Baptême, Fêtes, Anniversaires, Baby Shower, …",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.4 },
-        { quantity: "150g", price: 3.7 },
-        { quantity: "500g", price: 9.99 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.4 },
+      { quantity: "150g", price: 3.7 },
+      { quantity: "500g", price: 9.99 },
+    ],
   },
   {
     id: 24,
@@ -436,17 +321,12 @@ export const products = [
     price: 2.4,
     description:
       "Fondez de plaisir pour la Guimauve Balle de Golf Rose de Bulgari au bon goût vanille. Idéal pour confectionner vos brochettes de bonbons, gâteaux de bonbons ou pour réaliser un Candy Bar pour tous vos événements : Mariage, Baptême, Fêtes, Anniversaires, Baby Shower, …",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.4 },
-        { quantity: "150g", price: 3.7 },
-        { quantity: "500g", price: 9.99 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.4 },
+      { quantity: "150g", price: 3.7 },
+      { quantity: "500g", price: 9.99 },
+    ],
   },
 
   {
@@ -457,17 +337,12 @@ export const products = [
     price: 2.4,
     description:
       "Fondez de plaisir pour la Guimauve Balle de Golf Orange de Bulgari au bon goût de Pêche. Idéal pour confectionner vos brochettes de bonbons, gâteaux de bonbons ou pour réaliser un Candy Bar pour tous vos événements : Mariage, Baptême, Fêtes, Anniversaires, Baby Shower, …",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.3 },
-        { quantity: "150g", price: 3.5 },
-        { quantity: "500g", price: 9.99 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.3 },
+      { quantity: "150g", price: 3.5 },
+      { quantity: "500g", price: 9.99 },
+    ],
   },
 
   {
@@ -478,17 +353,12 @@ export const products = [
     price: 2.4,
     description:
       "Fondez de plaisir pour la Guimauve Marguerite de chez Bulgari au bon goût de Vanille Crème. Idéal pour confectionner vos brochettes de bonbons, gâteaux de bonbons ou pour réaliser un Candy Bar pour tous vos événements : Mariage, Baptême, Fêtes, Anniversaires, Baby Shower, ",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.3 },
-        { quantity: "150g", price: 3.5 },
-        { quantity: "500g", price: 9.99 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.3 },
+      { quantity: "150g", price: 3.5 },
+      { quantity: "500g", price: 9.99 },
+    ],
   },
 
   {
@@ -499,17 +369,12 @@ export const products = [
     price: 2.4,
     description:
       "Fondez de plaisir pour la Guimauve Marguerite de chez Bulgari au bon goût de Vanille Crème. Idéal pour confectionner vos brochettes de bonbons, gâteaux de bonbons ou pour réaliser un Candy Bar pour tous vos événements : Mariage, Baptême, Fêtes, Anniversaires, Baby Shower, ",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.3 },
-        { quantity: "150g", price: 3.5 },
-        { quantity: "500g", price: 9.99 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.3 },
+      { quantity: "150g", price: 3.5 },
+      { quantity: "500g", price: 9.99 },
+    ],
   },
 
   {
@@ -520,17 +385,12 @@ export const products = [
     price: 0.7,
     description:
       "L'incontournable Bonbon à la Menthe Starmint Haribo. Petit et pratique, tient facilement dans la poche. Disponible chez Happy Candy.",
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 10, price: 0.7 },
-        { quantity: 20, price: 1.35 },
-        { quantity: 30, price: 2.6 },
-      ],
-    },
-    bag: {
-      exist: false,
-    },
+    batch: [
+      { quantity: 10, price: 0.7 },
+      { quantity: 20, price: 1.35 },
+      { quantity: 30, price: 2.6 },
+    ],
+    bag: null,
   },
   {
     id: 29,
@@ -539,16 +399,11 @@ export const products = [
     img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/a5/69/8f12ecff2b0a61e7332791c5dec3.jpeg",
     price: 0.7,
     description: "Boule de Mammouth Zed Candy",
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 1, price: 1.99 },
-        { quantity: 3, price: 4.99 },
-      ],
-    },
-    bag: {
-      exist: false,
-    },
+    batch: [
+      { quantity: 1, price: 1.99 },
+      { quantity: 3, price: 4.99 },
+    ],
+    bag: null,
   },
   {
     id: 30,
@@ -558,16 +413,11 @@ export const products = [
     price: 0.7,
     description:
       "C'est pour de faux ! Dégustez des Billets de Banque Euro à la vanille. Un Bonbon complètement Fou !",
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 10, price: 1.9 },
-        { quantity: 20, price: 3 },
-      ],
-    },
-    bag: {
-      exist: false,
-    },
+    batch: [
+      { quantity: 10, price: 1.9 },
+      { quantity: 20, price: 3 },
+    ],
+    bag: null,
   },
   {
     id: 31,
@@ -577,16 +427,11 @@ export const products = [
     price: 0.7,
     description:
       "Souvenez-vous des petites graines de tournesol au goût salées. Déguster la comme a l'époque. Retrouver la nostalgie des bonbons d’antan sur la e-boutique Happy Candy.",
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 1, price: 0.5 },
-        { quantity: 5, price: 1.5 },
-      ],
-    },
-    bag: {
-      exist: false,
-    },
+    batch: [
+      { quantity: 1, price: 0.5 },
+      { quantity: 5, price: 1.5 },
+    ],
+    bag: null,
   },
 
   {
@@ -597,16 +442,11 @@ export const products = [
     price: 0.7,
     description:
       "Idéal pour l'élu(e) de votre coeur, Happy Candy vous propose bonbon bouche Fini qui veut dire 'je t'aime'",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.3 },
-        { quantity: "500g", price: 8 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.3 },
+      { quantity: "500g", price: 8 },
+    ],
   },
 
   {
@@ -617,16 +457,11 @@ export const products = [
     price: 0.7,
     description:
       "Petite friandise tendre et délicieuse recouverte de petites perles bleues croquante sur le dessus. Une couleur inimitable ! La mûre bleue offre un goût unique de framboise avec un petit coté croquant ... Miam miam. Happy Candy vous permet de retrouver le goût de votre enfance. Vive les souvenirs d'école.",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.3 },
-        { quantity: "500g", price: 8.5 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.3 },
+      { quantity: "500g", price: 8.5 },
+    ],
   },
 
   {
@@ -637,16 +472,11 @@ export const products = [
     price: 0.7,
     description:
       "Avec son parfum unique, le Bonbon Pastèque Fini offre un vrai bon goût de pastèque. Un petit bout d'été au coeur fondant. Impossible d'y résister. Happy Candy adore ça. Vive l'été.",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.1 },
-        { quantity: "500g", price: 9 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.1 },
+      { quantity: "500g", price: 9 },
+    ],
   },
 
   {
@@ -658,16 +488,11 @@ export const products = [
     description:
       "Bonbons Footballeurs bleu et rouge tâche langue. Le bonbon qui colore la langue. Voici le bonbons gélifiés en forme de footballeur. En plus d’être très bon il colore la langue en bleu. Le Bonbon footballeur bleu et rouge est un bonbon Halal. (gélatine bovine Helal). Le JOUEUR de FOOTBALL de couleur bleu, et son BALLON de couleur rouge. Ambiance garantie pour les anniversaires des petits et des grands.",
     category: "halal candy",
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.1 },
-        { quantity: "500g", price: 9 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.1 },
+      { quantity: "500g", price: 9 },
+    ],
   },
   {
     id: 36,
@@ -676,16 +501,11 @@ export const products = [
     category: "gift ideas",
     description: "Boule de Noel Transparente Gourmande (M)",
     price: 5.99,
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 1, price: 5.99 },
-        { quantity: 3, price: 13 },
-      ],
-    },
-    bag: {
-      exist: false,
-    },
+    batch: [
+      { quantity: 1, price: 5.99 },
+      { quantity: 3, price: 13 },
+    ],
+    bag: null,
   },
   {
     id: 37,
@@ -694,16 +514,11 @@ export const products = [
     category: "gift ideas",
     description: "Boule de Noel Transparente Gourmande (S)",
     price: 3.99,
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 1, price: 3.99 },
-        { quantity: 3, price: 8.5 },
-      ],
-    },
-    bag: {
-      exist: false,
-    },
+    batch: [
+      { quantity: 1, price: 3.99 },
+      { quantity: 3, price: 8.5 },
+    ],
+    bag: null,
   },
   {
     id: 38,
@@ -712,16 +527,11 @@ export const products = [
     category: "gift ideas",
     description: "Gateau de Bonbons Merry Christmas",
     price: 10.99,
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 1, price: 10.99 },
-        { quantity: 3, price: 22 },
-      ],
-    },
-    bag: {
-      exist: false,
-    },
+    batch: [
+      { quantity: 1, price: 10.99 },
+      { quantity: 3, price: 22 },
+    ],
+    bag: null,
   },
   {
     id: 39,
@@ -730,16 +540,11 @@ export const products = [
     category: "gift ideas",
     description: "Gâteau de Bonbons Sapin de de Noël",
     price: 19.99,
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 1, price: 19.99 },
-        { quantity: 3, price: 50 },
-      ],
-    },
-    bag: {
-      exist: false,
-    },
+    batch: [
+      { quantity: 1, price: 19.99 },
+      { quantity: 3, price: 50 },
+    ],
+    bag: null,
   },
   {
     id: 40,
@@ -748,16 +553,11 @@ export const products = [
     category: "gift ideas",
     description: "Gâteau de Bonbons Grand Sapin de de Noël",
     price: 24.9,
-    batch: {
-      exist: true,
-      quantity: [
-        { quantity: 1, price: 24.99 },
-        { quantity: 3, price: 60 },
-      ],
-    },
-    bag: {
-      exist: false,
-    },
+    batch: [
+      { quantity: 1, price: 24.99 },
+      { quantity: 3, price: 60 },
+    ],
+    bag: null,
   },
   {
     id: 41,
@@ -766,16 +566,11 @@ export const products = [
     category: "candy",
     description: "Fraise des bois Acidulé",
     price: 1.1,
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.1 },
-        { quantity: "500g", price: 6 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.1 },
+      { quantity: "500g", price: 6 },
+    ],
   },
   {
     id: 42,
@@ -784,16 +579,11 @@ export const products = [
     category: "candy",
     description: "Cordos Fruits des bois Acidulé Hitschler",
     price: 1.99,
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.99 },
-        { quantity: "500g", price: 6 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.99 },
+      { quantity: "500g", price: 6 },
+    ],
   },
   {
     id: 43,
@@ -802,15 +592,10 @@ export const products = [
     category: "candy",
     description: "Cordos Pomme sauvage Acidulé Hitschler",
     price: 1.99,
-    batch: {
-      exist: false,
-    },
-    bag: {
-      exist: true,
-      quantity: [
-        { quantity: "50g", price: 1.99 },
-        { quantity: "500g", price: 6 },
-      ],
-    },
+    batch: null,
+    bag: [
+      { quantity: "50g", price: 1.99 },
+      { quantity: "500g", price: 6 },
+    ],
   },
 ];

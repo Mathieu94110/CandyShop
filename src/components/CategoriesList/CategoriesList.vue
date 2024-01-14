@@ -35,6 +35,12 @@ export default {
       productList: [],
     };
   },
+  props: {
+    filteredProducts: {
+      type: Array,
+      required: false,
+    },
+  },
   created() {
     const category = this.$route.params.category;
     if (category) {
@@ -92,6 +98,11 @@ export default {
     },
     // if we have new incoming value for categoryList getter we set produlctList with these data
     categoryList: {
+      handler: function (data) {
+        this.productList = [...data];
+      },
+    },
+    filteredProducts: {
       handler: function (data) {
         this.productList = [...data];
       },

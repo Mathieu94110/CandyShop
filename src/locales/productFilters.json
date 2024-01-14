@@ -1,0 +1,47 @@
+{
+  "price": {
+    "label": "price",
+    "value": "prix",
+    "data": [
+      { "label": "min price", "value": "Prix minimum" },
+      { "label": "max price", "value": "Prix maximum" }
+    ]
+  },
+  "category": {
+    "label": "category",
+    "value": "catégories",
+    "data": [
+      {
+        "label": "candy cake",
+        "value": "Gâteaux de Bonbons",
+        "checked": false
+      },
+      { "label": "candy", "value": "Bonbons", "checked": false },
+      { "label": "retro candy", "value": "Bonbons Rétro", "checked": false },
+      { "label": "vegan candy", "value": "Bonbons Végan", "checked": false },
+      { "label": "halal candy", "value": "Bonbons Halal", "checked": false },
+      { "label": "gift ideas", "value": "Idées cadeaux", "checked": false }
+    ]
+  },
+  "bag": {
+    "label": "bag",
+    "value": "sachet de",
+    "data": [
+      { "label": "50g", "value": "50g", "checked": false },
+      { "label": "150g", "value": "150g", "checked": false },
+      { "label": "500g", "value": "500g", "checked": false }
+    ]
+  },
+  "batch": {
+    "label": "batch",
+    "value": "lot de",
+    "data": [
+      { "label": 1, "value": 1, "checked": false },
+      { "label": 3, "value": 3, "checked": false },
+      { "label": 5, "value": 5, "checked": false },
+      { "label": 10, "value": 10, "checked": false },
+      { "label": 20, "value": 20, "checked": false },
+      { "label": 30, "value": 30, "checked": false }
+    ]
+  }
+}

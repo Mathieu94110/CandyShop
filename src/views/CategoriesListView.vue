@@ -21,9 +21,12 @@
           Nous recherchons les meilleurs résultats selon vos critères
         </h2>
       </div>
-      <SearchCategoriesForm />
+      <SearchCategoriesForm
+        @updateSelection="updateCheckedCategories"
+        @priceRange="updatePrice"
+      />
     </div>
-    <CategoriesList />
+    <CategoriesList :filteredProducts="filteredProducts" />
   </div>
 </template>
 
@@ -36,11 +39,28 @@ export default {
   data() {
     return {
       isSearchActive: false,
+      filteredProducts: [],
+      filteredOptions: {
+        price: { "min price": null, "max price": null },
+        category: [],
+        batch: [],
+        bag: [],
+      },
     };
   },
   components: {
     SearchCategoriesForm,
     CategoriesList,
+  },
+  methods: {
+    updateCheckedCategories(selection) {
+      this.filteredOptions[selection.filter] = [
+        ...selection.options.map((v) => v.label),
+      ];
+    },
+    updatePrice(selection) {
+      this.price[selection.target] = selection.value;
+    },
   },
   computed: {
     ...mapState("product", {
