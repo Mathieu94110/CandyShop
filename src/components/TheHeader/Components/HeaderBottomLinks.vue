@@ -8,7 +8,6 @@
         :to="{
           path: item.name ? `/categories-list/${item.name}` : item.path,
         }"
-        :class="{ active: active }"
       >
         {{ item.text }}</router-link
       >
@@ -56,9 +55,6 @@ export default {
   }
   .menu-list > li > a {
     color: #fff;
-  }
-  .menu-list > li > a.router-link-exact-active {
-    color: var(--color-primary);
   }
 
   .menu-list > li:hover {
