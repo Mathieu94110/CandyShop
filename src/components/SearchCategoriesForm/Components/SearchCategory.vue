@@ -1,10 +1,6 @@
 <template>
   <div class="dropdown mx-2">
-    <div
-      class="selected-options"
-      @click="isDropdownOpen = !isDropdownOpen"
-      ref="dropdownList"
-    >
+    <div class="selected-options" @click="setDropdownsStatus(position)">
       <span v-if="selectedOptions.length === 0">{{
         filters.value.toUpperCase()
       }}</span>
@@ -13,7 +9,7 @@
       }}</span>
       <span v-else>{{ selectedOptions.length }} catégories</span>
     </div>
-    <div class="dropdown" v-show="isDropdownOpen">
+    <div class="dropdown" v-show="isLocalDropdownOpen">
       <div class="option" v-for="option in filters.data" :key="option.value">
         <label
           v-if="
@@ -47,20 +43,25 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex";
 export default {
   data() {
     return {
       filters: {},
       selectedOptions: [],
-      isDropdownOpen: false,
+      isLocalDropdownOpen: false,
     };
   },
   props: {
     productFilters: {
       type: Object,
     },
+    position: {
+      type: Number,
+    },
   },
   methods: {
+    ...mapMutations("dropDownsFilters", ["setDropdownsStatus"]),
     updateSelectedOptions() {
       this.selectedOptions = this.filters.data.filter(
         (option) => option.checked
@@ -70,13 +71,11 @@ export default {
         options: this.selectedOptions,
       });
     },
-    handleClickOutside(event) {
-      // on progress , this part will be on parent for the moment its not the expect behaviour
-      const dropDownElement = this.$refs.dropdownList;
-      if (!dropDownElement.contains(event.target)) {
-        this.isDropdownOpen = false;
-      }
-    },
+  },
+  computed: {
+    ...mapState("dropDownsFilters", {
+      isDropdownOpen: "dropdownsStatus",
+    }),
   },
   watch: {
     productFilters: {
@@ -85,13 +84,11 @@ export default {
       },
       immediate: true,
     },
-  },
-  mounted() {
-    document.addEventListener("click", this.handleClickOutside);
-  },
-  beforeDestroy() {
-    // Remove the click event listener when the component is about to be destroyed
-    document.removeEventListener("click", this.handleClickOutside);
+    isDropdownOpen: {
+      handler: function (newValue) {
+        this.isLocalDropdownOpen = newValue[this.position];
+      },
+    },
   },
 };
 </script>

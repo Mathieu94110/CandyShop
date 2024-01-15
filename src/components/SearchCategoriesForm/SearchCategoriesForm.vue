@@ -6,19 +6,10 @@
         <div class="search-categories-form-filter-inputs">
           <div>
             <SearchCategory
-              :productFilters="productFilters.price"
-              v-on="$listeners"
-            />
-            <SearchCategory
-              :productFilters="productFilters.category"
-              v-on="$listeners"
-            />
-            <SearchCategory
-              :productFilters="productFilters.bag"
-              v-on="$listeners"
-            />
-            <SearchCategory
-              :productFilters="productFilters.batch"
+              v-for="(value, _, index) in productFilters"
+              :key="value.label"
+              :position="index"
+              :productFilters="value"
               v-on="$listeners"
             />
           </div>
@@ -38,7 +29,6 @@ export default {
   data() {
     return {
       productFilters: productsFiltersList,
-      isDropdownOpen: false,
       selectedOptions: [],
     };
   },

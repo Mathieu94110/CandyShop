@@ -113,10 +113,24 @@ const cart = {
   },
 };
 
+const dropDownsFilters = {
+  namespaced: true,
+  state: {
+    dropdownsStatus: [false, false, false, false],
+  },
+  mutations: {
+    setDropdownsStatus(state, position) {
+      const switchedPositionValue = !state.dropdownsStatus[position];
+      state.dropdownsStatus.splice(position, 1, switchedPositionValue);
+    },
+  },
+};
+
 const store = new Vuex.Store({
   modules: {
     product,
     cart,
+    dropDownsFilters,
   },
 });
 
