@@ -1,6 +1,6 @@
 {
   "list": [
-    { "text": "Recherche approfondie", "path": "/categories-list" },
+    { "text": "Recherche approfondie", "path": "/advanced-search" },
     {
       "text": "Gâteaux de Bonbons",
       "name": "candy cake",

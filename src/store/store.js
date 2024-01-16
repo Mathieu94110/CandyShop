@@ -121,7 +121,15 @@ const dropDownsFilters = {
   mutations: {
     setDropdownsStatus(state, position) {
       const switchedPositionValue = !state.dropdownsStatus[position];
-      state.dropdownsStatus.splice(position, 1, switchedPositionValue);
+      const newDropdownsStatus = [];
+      for (let i = 0; i < state.dropdownsStatus.length; i++) {
+        if (i === position) {
+          newDropdownsStatus[i] = switchedPositionValue;
+        } else {
+          newDropdownsStatus[i] = false;
+        }
+      }
+      state.dropdownsStatus = newDropdownsStatus;
     },
   },
 };

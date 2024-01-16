@@ -5,6 +5,7 @@ import Admin from "./components/Admin/Admin";
 import Home from "./views/HomeView";
 import Product from "./views/ProductView";
 import CategoriesList from "./views/CategoriesListView";
+import AdvancedSearch from "./views/AdvancedSearchView";
 
 Vue.use(VueRouter);
 
@@ -21,9 +22,9 @@ const router = new VueRouter({
       component: Product,
     },
     {
-      path: "/categories-list",
-      name: "categories-list",
-      component: CategoriesList,
+      path: "/advanced-search",
+      name: "advanced-search",
+      component: AdvancedSearch,
     },
     {
       path: "/categories-list/:category",
