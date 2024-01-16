@@ -66,13 +66,13 @@ export const products = [
   },
   {
     id: 6,
-    img: "https://cdn.store-factory.com/www.confiserie-foraine.com/content/product_10761207b.jpg?v=1561538654",
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/67/dd/b3e263889af85c53dd80397eb447.jpeg",
     title: "Bonbons tendres fruités",
     category: "candy",
-    description: "Bonbons tendres aux goûts fruités assortis en sachet de 1 kg",
-    price: 5.0,
+    description: "Bonbons Fini Poulpes Acidulés Jelly Octopus",
+    price: 1.5,
     bag: [
-      { quantity: "150g", price: 2 },
+      { quantity: "150g", price: 1.5 },
       { quantity: "500g", price: 6 },
     ],
     batch: null,
@@ -170,10 +170,11 @@ export const products = [
   },
   {
     id: 14,
-    img: "https://www.eat-in-bio.fr/uploads/bonbon%20drag%C3%A9e%20chocolat_1583836316.jpg",
-    title: "Dragées",
-    category: "retro candy",
-    description: "Dragées au chocolat",
+    img: "https://www.happycandy.fr/media/cache/sylius_shop_product_thumbnail/c9/e7/5b913265640c4ed86b9bf0191dfc.jpeg",
+    title: "Bandos Fraise Hitschler",
+    category: "vegan candy",
+    description:
+      "Délicieuse sucrerie, aussi très souvent appelé bande ou ceinture ou encore bonbons Ruban. Le bandos goût de Fraise est un régal, de plus il est légèrement acidulé",
     price: 6.0,
     bag: null,
     batch: [

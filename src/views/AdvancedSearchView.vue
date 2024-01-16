@@ -39,6 +39,8 @@
 import { mapState } from "vuex";
 import ProductList from "../components/ProductList/ProductList.vue";
 import SearchCategoriesForm from "../components/SearchCategoriesForm/SearchCategoriesForm.vue";
+import { filteredSearch } from "../utils/filteredSearch";
+
 export default {
   data() {
     return {
@@ -63,9 +65,15 @@ export default {
       this.filteredOptions[selection.filter] = [
         ...selection.options.map((v) => v.label),
       ];
+      this.currentPage = 1;
     },
     updatePrice(selection) {
-      this.price[selection.target] = selection.value;
+      this.filteredOptions.price[selection.target] = selection.value;
+      if (
+        (selection.target === "min price" && selection.value !== 0) ||
+        selection.target === "max price"
+      )
+        this.currentPage = 1;
     },
     onPageChange(page) {
       this.currentPage = page;
@@ -100,6 +108,12 @@ export default {
         this.filteredProducts = [...data];
       },
       immediate: true,
+    },
+    filteredOptions: {
+      handler(newValue) {
+        this.filteredProducts = filteredSearch(this.products, newValue);
+      },
+      deep: true,
     },
   },
 };
