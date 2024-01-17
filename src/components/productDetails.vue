@@ -1,7 +1,7 @@
 <template>
   <body>
     <div class="container product-details">
-      <div class="row">
+      <div class="row product-details-card">
         <div class="product-details-img-container">
           <img class="product-details-img" :src="info.img" alt="" />
         </div>
@@ -84,6 +84,9 @@ button {
 .product-details {
   margin: auto;
   max-width: 1200px;
+}
+.product-details-card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .product-details-img-container {
   width: 100%;

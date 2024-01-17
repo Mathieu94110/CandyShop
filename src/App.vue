@@ -3,6 +3,13 @@
     <TheHeader
       :menuList="menuList"
       :products="products"
+      :showMobileMenu="showMobileMenu"
+      @switch-modal-display="switchModalDisplay"
+      @show-menu="showMenu"
+    />
+    <BurgerMenu
+      :showMobileMenu="showMobileMenu"
+      :menuList="menuList"
       @switch-modal-display="switchModalDisplay"
     />
     <div class="d-flex flex-column w-100">
@@ -22,22 +29,29 @@ import TheFooter from "./components/TheFooter/TheFooter.vue";
 import menuList from "./locales/menuList.json";
 import leftItems from "./locales/headerLeftItems.json";
 import SearchModal from "./components/searchModal/searchModal.vue";
+import BurgerMenu from "./components/BurgerMenu/BurgerMenu.vue";
+
 export default {
   name: "App",
   components: {
     TheHeader,
     TheFooter,
     SearchModal,
+    BurgerMenu,
   },
   data() {
     return {
       menuList: menuList.list,
       leftItems: leftItems.items,
+      showMobileMenu: false,
     };
   },
   methods: {
     switchModalDisplay() {
       this.$store.dispatch("product/switchModalDisplay");
+    },
+    showMenu() {
+      this.showMobileMenu = !this.showMobileMenu;
     },
   },
   computed: {

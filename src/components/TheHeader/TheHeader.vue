@@ -11,7 +11,11 @@
         }"
       >
         <div class="burger-menu">
-          <font-awesome-icon icon="fa-solid fa-bars" class="right-icons" />
+          <font-awesome-icon
+            icon="fa-solid fa-bars"
+            class="right-icons"
+            @click="$emit('show-menu')"
+          />
           <span>Menu</span>
         </div>
         <div class="search-text">
@@ -29,6 +33,7 @@
             :class="[
               scrollActive && width >= 1320 ? 'logo-scroll-active' : 'logo',
             ]"
+            @click="goToHome"
           >
             <img src="../../assets/candy-shop.png" class="candy-img" />
             <h1>Créateur de bonbons et gâteaux</h1>
@@ -95,6 +100,9 @@ export default {
     },
     showModal() {
       this.$store.dispatch("product/switchModalDisplay");
+    },
+    goToHome() {
+      if (this.$route.path != "/home") this.$router.replace({ path: "/" });
     },
   },
   computed: {
@@ -168,6 +176,7 @@ export default {
   font-size: 11px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
 .burger-menu > span {
   text-align: left !important;
@@ -182,6 +191,7 @@ export default {
 .logo {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 h1 {
   display: inline;
@@ -229,7 +239,6 @@ h1 {
     max-width: 100%;
   }
   .navbar {
-    height: auto;
     padding: 8px 0;
   }
   .navbar-right-links {

@@ -53,7 +53,8 @@ export default {
 <style scoped>
 .product-container {
   padding: 10px;
-  background-color: #ffe469;
+  background: url(https://png.pngtree.com/thumb_back/fh260/background/20201128/pngtree-colorful-polka-dot-background-image_500722.jpg)
+    repeat top center;
 }
 .product {
   max-width: 1200px;

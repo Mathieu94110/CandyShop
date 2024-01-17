@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-row">
+  <div class="shop-products-list-container">
     <div class="shop-products-list">
       <shop-product-item
         v-for="product in products"
@@ -29,9 +29,20 @@ export default {
 </script>
 
 <style>
+.shop-products-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .shop-products-list {
   display: flex;
+  justify-content: center;
   flex-flow: row wrap;
   gap: 10px 20px;
+}
+@media screen and (min-width: 660px) {
+  .shop-products-list {
+    justify-content: flex-start;
+  }
 }
 </style>

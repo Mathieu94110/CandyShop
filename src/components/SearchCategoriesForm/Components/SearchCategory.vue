@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown mx-2">
+  <div class="dropdown my-1 mx-2">
     <div class="selected-options" @click="setDropdownsStatus(position)">
       <span v-if="selectedOptions.length === 0">{{
         filters.value.toUpperCase()
@@ -104,9 +104,10 @@ export default {
 
 .dropdown .selected-options {
   display: block;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
   color: #fff;
+  font-size: 12px;
 }
 
 .dropdown .dropdown {
@@ -129,6 +130,7 @@ export default {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   transition: background-color 0.3s ease;
+  font-size: 12px;
 }
 
 .dropdown .dropdown .option:last-child {
@@ -161,5 +163,15 @@ label span {
 .dropdown .dropdown .option span {
   display: inline-block;
   width: calc(100% - 30px);
+}
+
+@media screen and (min-width: 600px) {
+  .dropdown .selected-options {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .dropdown .dropdown .option {
+    font-size: 13px;
+  }
 }
 </style>
