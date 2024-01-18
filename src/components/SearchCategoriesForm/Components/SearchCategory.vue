@@ -12,11 +12,11 @@
       }}</span>
       <span v-else>{{ selectedOptions.length }} catégories</span>
     </div>
-    <div class="search-category" v-show="isLocalDropdownOpen">
+    <div v-show="isLocalDropdownOpen" class="search-category">
       <div
-        class="search-category__option"
         v-for="option in filters.data"
         :key="option.value"
+        class="search-category__option"
       >
         <label
           v-if="
@@ -37,9 +37,9 @@
         </label>
         <label v-else>
           <input
+            v-model="option.checked"
             type="checkbox"
             :value="option.label"
-            v-model="option.checked"
             @change="updateSelectedOptions"
           />
           <span>{{ option.value }}</span>
@@ -52,13 +52,6 @@
 <script>
 import { mapState, mapMutations } from "vuex";
 export default {
-  data() {
-    return {
-      filters: {},
-      selectedOptions: [],
-      isLocalDropdownOpen: false,
-    };
-  },
   props: {
     productFilters: {
       type: Object,
@@ -66,6 +59,13 @@ export default {
     position: {
       type: Number,
     },
+  },
+  data() {
+    return {
+      filters: {},
+      selectedOptions: [],
+      isLocalDropdownOpen: false,
+    };
   },
   methods: {
     ...mapMutations("dropDownsFilters", ["setDropdownsStatus"]),

@@ -2,8 +2,8 @@
   <div>
     <ul
       v-show="filteredList.length"
-      class="search-input-list__list"
       ref="listElement"
+      class="search-input-list__list"
     >
       <li
         v-for="product in filteredList"
@@ -18,8 +18,8 @@
       </li>
     </ul>
     <div
-      class="search-input-list__list"
       v-show="isSearchActive && inputData && !filteredList.length"
+      class="search-input-list__list"
     >
       <p class="search-input-list__not-found">Aucun résultat trouvé !</p>
     </div>
@@ -28,27 +28,14 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isSearchActive: false,
-    };
-  },
   props: {
     filteredList: Array,
     inputData: String,
   },
-  methods: {
-    handleClickOutside(event) {
-      const filteredlistElement = this.$refs.listElement;
-      if (!filteredlistElement.contains(event.target)) {
-        this.$emit("remove-list");
-        this.isSearchActive = false;
-      }
-    },
-    goToPageDetails(id) {
-      this.$emit("remove-list");
-      this.$router.push({ name: "product", params: { productId: id } });
-    },
+  data() {
+    return {
+      isSearchActive: false,
+    };
   },
 
   //watcher below is used to not display no results text when filteredResults is set to [] on TheHeader
@@ -67,6 +54,19 @@ export default {
   beforeDestroy() {
     // Remove the click event listener when the component is about to be destroyed
     document.removeEventListener("click", this.handleClickOutside);
+  },
+  methods: {
+    handleClickOutside(event) {
+      const filteredlistElement = this.$refs.listElement;
+      if (!filteredlistElement.contains(event.target)) {
+        this.$emit("remove-list");
+        this.isSearchActive = false;
+      }
+    },
+    goToPageDetails(id) {
+      this.$emit("remove-list");
+      this.$router.push({ name: "product", params: { productId: id } });
+    },
   },
 };
 </script>

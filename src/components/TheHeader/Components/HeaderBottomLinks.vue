@@ -2,9 +2,9 @@
   <nav class="header-bottom-links">
     <ul class="header-bottom-links__list">
       <router-link
-        tag="li"
         v-for="item in menuList"
         :key="item.text"
+        tag="li"
         :to="{
           path: item.name ? `/categories-list/${item.name}` : item.path,
         }"

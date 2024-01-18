@@ -9,7 +9,7 @@
               v-for="(value, _, index) in productFilters"
               :key="value.label"
               :position="index"
-              :productFilters="value"
+              :product-filters="value"
               v-on="$listeners"
             />
           </div>

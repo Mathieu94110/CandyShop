@@ -8,8 +8,8 @@
     </div>
     <div class="carousel-layout__carousel">
       <div
-        class="carousel-layout__carousel-content"
         ref="inner"
+        class="carousel-layout__carousel-content"
         :style="innerStyles"
       >
         <ShopProductItem
@@ -31,6 +31,9 @@
 <script>
 import ShopProductItem from "../components/Shop/ShopProductItem.vue";
 export default {
+  components: {
+    ShopProductItem,
+  },
   props: {
     cards: {
       type: Array,
@@ -45,9 +48,6 @@ export default {
       step: "",
       transitioning: false,
     };
-  },
-  components: {
-    ShopProductItem,
   },
   mounted() {
     this.setStep();

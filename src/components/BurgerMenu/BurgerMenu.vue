@@ -7,14 +7,14 @@
       <ul class="burger-menu__nav-items">
         <li @click="$emit('switch-modal-display')">Rechercher</li>
         <router-link
-          tag="li"
           v-for="item in menuList"
           :key="item.text"
+          tag="li"
           :to="{
             path: item.name ? `/categories-list/${item.name}` : item.path,
           }"
         >
-          {{ item.text }}</router-link
+          <span data-testid="nav-list-item">{{ item.text }}</span></router-link
         >
       </ul>
     </div>

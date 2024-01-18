@@ -44,7 +44,7 @@ library.add(
   faLeftLong,
   faRightLong
 );
-Vue.component("font-awesome-icon", FontAwesomeIcon);
+Vue.component("FontAwesomeIcon", FontAwesomeIcon);
 Vue.config.productionTip = false;
 
 Object.keys(Filters).forEach((f) => {

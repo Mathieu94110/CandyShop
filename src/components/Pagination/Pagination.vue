@@ -14,15 +14,15 @@
     <li v-for="page in pages" :key="page.name" class="pagination__item">
       <button
         type="button"
-        @click="onClickPage(page.name)"
         :class="{ active: isPageActive(page.name) }"
+        @click="onClickPage(page.name)"
       >
         {{ page.name }}
       </button>
     </li>
     <!-- Visible Buttons Next-->
     <li class="pagination__item">
-      <button type="button" @click="onClickNextPage" v-show="!isInLastPage">
+      <button v-show="!isInLastPage" type="button" @click="onClickNextPage">
         <font-awesome-icon icon="fa-solid fa-right-long" />
       </button>
     </li>

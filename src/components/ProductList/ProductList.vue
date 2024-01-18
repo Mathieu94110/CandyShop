@@ -9,10 +9,10 @@
 
     <Pagination
       v-if="productList.length > productPerPage"
-      :totalPages="totalPages"
-      :maxVisibleButtons="3"
-      :perPage="productPerPage"
-      :currentPage="currentPage"
+      :total-pages="totalPages"
+      :max-visible-buttons="3"
+      :per-page="productPerPage"
+      :current-page="currentPage"
       v-on="$listeners"
     />
   </div>

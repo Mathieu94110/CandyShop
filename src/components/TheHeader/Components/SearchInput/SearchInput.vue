@@ -4,9 +4,9 @@
       <input
         type="text"
         :value="inputData"
-        @keyup="$emit('input', $event.target.value)"
         placeholder="Rechercher"
         class="search-input__input"
+        @keyup="$emit('input', $event.target.value)"
       />
       <font-awesome-icon
         icon="fa-solid fa-magnifying-glass"
@@ -15,8 +15,8 @@
     </form>
     <!-- v-if is used instead of v-show on below in order to avoid memory leaks with child ref -->
     <SearchInputList
-      :filteredList="filteredList"
-      :inputData="inputData"
+      :filtered-list="filteredList"
+      :input-data="inputData"
       v-on="$listeners"
     />
   </div>

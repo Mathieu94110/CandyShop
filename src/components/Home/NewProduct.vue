@@ -17,6 +17,10 @@ import CarouselLayout from "../../layout/CarouselLayout.vue";
 import CategorySeparators from "../../layout/CategorySeparators.vue";
 import newProducts from "../../locales/newProducts.json";
 export default {
+  components: {
+    CategorySeparators,
+    CarouselLayout,
+  },
   data() {
     return {
       cards: [...newProducts.items],
@@ -24,10 +28,6 @@ export default {
       step: "",
       transitioning: false,
     };
-  },
-  components: {
-    CategorySeparators,
-    CarouselLayout,
   },
 
   methods: {

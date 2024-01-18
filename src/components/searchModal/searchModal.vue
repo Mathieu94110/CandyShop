@@ -6,20 +6,20 @@
       aria-labelledby="modalTitle"
       aria-describedby="modalDescription"
     >
-      <header class="search-modal__header" id="modalTitle">
+      <header id="modalTitle" class="search-modal__header">
         <p>Rechercher des articles</p>
         <button
           type="button"
           class="search-modal__header-btn-close"
-          @click="$emit('switch-modal-display')"
           aria-label="Close modal"
+          @click="$emit('switch-modal-display')"
         >
           x
         </button>
       </header>
 
-      <section class="search-modal__body" id="modalDescription">
-        <input type="text" v-model="searchInput" />
+      <section id="modalDescription" class="search-modal__body">
+        <input v-model="searchInput" type="text" />
         <ul
           v-show="searchInput && filteredList.length"
           class="search-modal__body-list"
@@ -47,8 +47,8 @@
         <button
           type="button"
           class="btn-green btn-animation"
-          @click="$emit('switch-modal-display')"
           aria-label="Close modal"
+          @click="$emit('switch-modal-display')"
         >
           Fermer
         </button>

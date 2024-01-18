@@ -23,8 +23,8 @@
               class="product-details__info-qty-selector product-details__info-qty-selector--minus"
             >
               <font-awesome-icon
-                @click="decrease"
                 icon="fa-solid fa-circle-minus"
+                @click="decrease"
             /></span>
 
             <span class="product-details__info-qty-value">{{ quantity }}</span>
@@ -32,8 +32,8 @@
               class="product-details__info-qty-selector product-details__info-qty-selector--plus"
             >
               <font-awesome-icon
-                @click="increase"
                 icon="fa-solid fa-circle-plus"
+                @click="increase"
             /></span>
           </div>
           <h2 class="my-3">Details :</h2>
@@ -58,13 +58,13 @@
 
 <script>
 export default {
+  props: {
+    info: Object,
+  },
   data() {
     return {
       quantity: 0,
     };
-  },
-  props: {
-    info: Object,
   },
   methods: {
     increase() {

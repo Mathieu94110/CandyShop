@@ -20,8 +20,8 @@
         </div>
         <div class="the-header__navbar-search-text">
           <SearchInputVue
-            :inputData="searchInput"
-            :filteredList="filteredResults"
+            :input-data="searchInput"
+            :filtered-list="filteredResults"
             @input="setInputValue"
             @remove-list="removeFilteredResults"
             v-on="$listeners"
@@ -48,7 +48,7 @@
           <HeaderRightLinksVue v-on="$listeners" />
         </div>
       </div>
-      <HeaderBottomLinksVue :menuList="menuList" />
+      <HeaderBottomLinksVue :menu-list="menuList" />
     </div>
   </transition>
 </template>
@@ -63,6 +63,17 @@ export default {
     SearchInputVue,
     HeaderRightLinksVue,
     HeaderBottomLinksVue,
+  },
+  directives: {
+    resize: {
+      inserted(el, binding) {
+        const onResizeCallback = binding.value;
+        window.addEventListener("resize", () => {
+          const width = document.documentElement.clientWidth;
+          onResizeCallback({ width });
+        });
+      },
+    },
   },
   props: {
     menuList: {
@@ -82,6 +93,27 @@ export default {
       filteredResults: [],
       isSearchModalVisible: false,
     };
+  },
+  computed: {
+    scrollActive() {
+      return this.isScrollActive;
+    },
+  },
+  watch: {
+    scrollPosition(newValue) {
+      if (newValue > 0) {
+        if (this.width >= 1320) {
+          this.isScrollActive = true;
+        } else {
+          this.isScrollActive = false;
+        }
+      } else {
+        this.isScrollActive = false;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll, this.scrollActive);
   },
   methods: {
     updateScroll() {
@@ -109,38 +141,6 @@ export default {
     goToHome() {
       if (this.$route.path != "/home") this.$router.replace({ path: "/" });
     },
-  },
-  computed: {
-    scrollActive() {
-      return this.isScrollActive;
-    },
-  },
-  watch: {
-    scrollPosition(newValue) {
-      if (newValue > 0) {
-        if (this.width >= 1320) {
-          this.isScrollActive = true;
-        } else {
-          this.isScrollActive = false;
-        }
-      } else {
-        this.isScrollActive = false;
-      }
-    },
-  },
-  directives: {
-    resize: {
-      inserted(el, binding) {
-        const onResizeCallback = binding.value;
-        window.addEventListener("resize", () => {
-          const width = document.documentElement.clientWidth;
-          onResizeCallback({ width });
-        });
-      },
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.updateScroll, this.scrollActive);
   },
 };
 </script>

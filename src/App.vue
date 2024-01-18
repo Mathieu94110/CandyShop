@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <TheHeader
-      :menuList="menuList"
+      :menu-list="menuList"
       :products="products"
-      :showMobileMenu="showMobileMenu"
+      :show-mobile-menu="showMobileMenu"
       @switch-modal-display="switchModalDisplay"
       @show-menu="showMenu"
     />
     <BurgerMenu
-      :showMobileMenu="showMobileMenu"
-      :menuList="menuList"
+      :show-mobile-menu="showMobileMenu"
+    :menuList="menuList"
       @switch-modal-display="switchModalDisplay"
     />
     <div class="app__route-container">
@@ -18,7 +18,7 @@
     <div v-if="modalIsVisible" class="app__modal-calc">
       <SearchModal @switch-modal-display="switchModalDisplay" />
     </div>
-    <TheFooter :leftItems="leftItems" />
+    <TheFooter :left-items="leftItems" />
   </div>
 </template>
 

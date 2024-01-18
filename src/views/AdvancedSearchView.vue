@@ -25,11 +25,11 @@
       @priceRange="updatePrice"
     />
     <ProductList
-      :productList="filteredProducts"
-      :currentPage="currentPage"
-      :totalPages="total"
-      :productPerPage="productPerPage"
-      :currentProducts="currentProducts"
+      :product-list="filteredProducts"
+      :current-page="currentPage"
+      :total-pages="total"
+      :product-per-page="productPerPage"
+      :current-products="currentProducts"
       @pagechanged="onPageChange"
     />
   </div>
@@ -42,6 +42,10 @@ import SearchCategoriesForm from "../components/SearchCategoriesForm/SearchCateg
 import { filteredSearch } from "../utils/filteredSearch";
 
 export default {
+  components: {
+    SearchCategoriesForm,
+    ProductList,
+  },
   data() {
     return {
       currentPage: 1,
@@ -55,10 +59,6 @@ export default {
         bag: [],
       },
     };
-  },
-  components: {
-    SearchCategoriesForm,
-    ProductList,
   },
   methods: {
     updateCheckedCategories(selection) {

@@ -1,11 +1,11 @@
 <template>
   <div>
     <ProductListList
-      :currentPage="currentPage"
-      :productPerPage="productPerPage"
-      :productList="productList"
-      :currentProducts="currentProducts"
-      :totalPages="total"
+      :current-page="currentPage"
+      :product-per-page="productPerPage"
+      :product-list="productList"
+      :current-products="currentProducts"
+      :total-pages="total"
       @pagechanged="onPageChange"
     />
   </div>
