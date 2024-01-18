@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home-view">
     <WelcommeBanner />
     <NewProduct />
     <AssortmentSelection />
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style>
-.home {
+.home-view {
   width: 100%;
   margin: 80px 0;
 }

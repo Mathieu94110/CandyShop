@@ -4,8 +4,8 @@
       <span slot="main">Les délicieuses</span>
       <span slot="secondary">nouveautés</span>
     </category-separators>
-    <div class="new-product-content">
-      <div class="new-product-carousel-container">
+    <div class="new-product__content">
+      <div class="new-product__content-carousel">
         <carousel-layout :cards="cards" @prev="prev" @next="next" />
       </div>
     </div>
@@ -46,13 +46,13 @@ export default {
 </script>
 
 <style scoped>
-.new-product-content {
+.new-product__content {
   height: 350px;
   width: 100%;
   display: flex;
   position: relative;
 }
-.new-product-carousel-container {
+.new-product__content-carousel {
   width: 100%;
   height: 100%;
   padding: 0 10px;
@@ -65,7 +65,7 @@ export default {
   transform: translate(-50%, -50%);
 }
 @media only screen and (min-width: 600px) {
-  .new-product-carousel-container {
+  .new-product__content-carousel {
     padding: 0 20px;
   }
 }

@@ -1,20 +1,17 @@
 <template>
-  <div
-    class="p-3 product-container d-flex flex-column justify-content-between"
-    @click="goToDetails(product.id)"
-  >
-    <div class="d-flex flex-row justify-content-center">
-      <img style="height: 150px" :src="product.img" />
+  <div class="shop-product-item" @click="goToDetails(product.id)">
+    <div class="shop-product-item__img-container">
+      <img :src="product.img" />
     </div>
     <div>
       <h3>{{ product.title }}</h3>
       <hr />
     </div>
     <div>
-      <p class="product-description">{{ product.description }}</p>
+      <p class="shop-product-item__description">{{ product.description }}</p>
     </div>
     <div class="mt-2">
-      <span class="product-price">{{ product.price | price }}</span>
+      <span class="shop-product-item__price">{{ product.price | price }}</span>
       <button
         class="btn btn-sm float-right text-white btn-animation"
         style="background: var(--color-secondary)"
@@ -47,7 +44,11 @@ export default {
 </script>
 
 <style scoped>
-.product-container {
+.shop-product-item {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: auto;
   width: 200px;
   max-width: 200px;
@@ -55,13 +56,24 @@ export default {
   background-color: #fff;
   cursor: pointer;
 }
-.product-description {
+
+.shop-product-item__img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.shop-product-item__img-container > img {
+  height: 150px;
+}
+
+.shop-product-item__description {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.product-price,
+.shop-product-item__price,
 h3 {
   font: 600;
   font-family: "Oleo Script";
@@ -85,7 +97,7 @@ button {
   font-size: 11px;
 }
 @media only screen and (min-width: 600px) {
-  .product-container {
+  .shop-product-item {
     height: auto;
     max-width: 300px;
   }
@@ -102,7 +114,7 @@ button {
 }
 
 @media only screen and (min-width: 1200px) {
-  .product-container {
+  .shop-product-item {
     height: auto;
     width: 300px;
   }

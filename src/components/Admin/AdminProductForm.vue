@@ -1,7 +1,7 @@
 <template>
-  <form @submit="trySubmit" class="d-flex flex-column">
+  <form @submit="trySubmit" class="admin-product-form">
     <h4>Ajouter un produit :</h4>
-    <hr class="w-100" />
+    <hr class="admin-product-form__hr"/>
     <div class="form-group">
       <label>Image</label>
       <input v-model="form.img" type="text" class="form-control" />
@@ -77,4 +77,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.admin-product-form {
+  display: flex;
+  flex-direction: column;
+}
+.admin-product-form__hr {
+  width: 100%;
+}
+</style>

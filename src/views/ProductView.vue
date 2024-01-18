@@ -1,9 +1,15 @@
 <template>
-  <div class="product-container">
-    <div class="product">
-      <div class="go-back">
-        <button class="go-back-button" @click.prevent="goBack()">
-          <font-awesome-icon icon="arrow-left" class="go-back-button-icon" />
+  <div class="product-view">
+    <div class="product-view__product">
+      <div class="product-view__product-go-back">
+        <button
+          class="product-view__product-go-back-button"
+          @click.prevent="goBack()"
+        >
+          <font-awesome-icon
+            icon="arrow-left"
+            class="product-view__product-go-back-button-icon"
+          />
         </button>
       </div>
       <ProductDetails :info="productInfo[0]" @add-to-cart="addOne" />
@@ -13,7 +19,7 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-import ProductDetails from "../components/productDetails.vue";
+import ProductDetails from "../components/ProductDetails/ProductDetails.vue";
 export default {
   data() {
     return {
@@ -51,23 +57,23 @@ export default {
 </script>
 
 <style scoped>
-.product-container {
+.product-view {
   padding: 10px;
   background: url(https://png.pngtree.com/thumb_back/fh260/background/20201128/pngtree-colorful-polka-dot-background-image_500722.jpg)
     repeat top center;
 }
-.product {
+.product-view__product {
   max-width: 1200px;
   margin: auto;
 }
-.go-back {
+.product-view__product-go-back {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 10px 0;
   width: 100%;
 }
-.go-back-button {
+.product-view__product-go-back-button {
   width: 36px;
   padding: 4px;
   color: var(--color-dark-light);
@@ -75,34 +81,35 @@ export default {
   font-weight: 600;
   cursor: pointer;
 }
-.go-back-button:hover {
+.product-view__product-go-back-button:hover {
   background-color: var(--color-dark-light);
   color: #ffffff;
 }
-.go-back-button-icon {
+.product-view__product-go-back-button-icon {
   color: var(--color-dark-light);
 }
-.go-back-button:hover .go-back-button-icon {
+.product-view__product-go-back-button:hover
+  .product-view__product-go-back-button-icon {
   color: #ffffff;
 }
 
 @media only screen and (max-width: 767px) and (min-width: 450px) {
-  .product {
+  .product-view__product {
     width: 70%;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .product-container {
+  .product-view {
     padding: 20px;
   }
-  .product {
+  .product-view__product {
     margin: 50px auto;
   }
-  .go-back {
+  .product-view__product-go-back {
     margin: 20px 0;
   }
-  .go-back-button {
+  .product-view__product-go-back-button {
     width: 50px;
   }
 }

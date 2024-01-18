@@ -1,6 +1,6 @@
 <template>
-  <div class="shop-products-list-container">
-    <div class="shop-products-list">
+  <div class="shop-products-list">
+    <div class="shop-products-list__list">
       <shop-product-item
         v-for="product in products"
         :key="product.id"
@@ -29,19 +29,19 @@ export default {
 </script>
 
 <style>
-.shop-products-list-container {
+.shop-products-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.shop-products-list {
+.shop-products-list__list {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
   gap: 10px 20px;
 }
 @media screen and (min-width: 660px) {
-  .shop-products-list {
+  .shop-products-list__list {
     justify-content: flex-start;
   }
 }

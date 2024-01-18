@@ -1,10 +1,10 @@
 <template>
-  <div class="nav-menu" :class="[showMobileMenu ? 'open-menu' : 'closed-menu']">
-    <div
-      :class="[showMobileMenu ? 'open-menu' : 'closed-menu']"
-      class="nav-content"
-    >
-      <ul class="nav-items">
+  <div
+    class="burger-menu"
+    :class="[showMobileMenu ? 'burger-menu--open' : 'burger-menu--closed']"
+  >
+    <div class="burger-menu__nav">
+      <ul class="burger-menu__nav-items">
         <li @click="$emit('switch-modal-display')">Rechercher</li>
         <router-link
           tag="li"
@@ -36,22 +36,22 @@ export default {
 </script>
 
 <style>
-.nav-menu {
+.burger-menu {
   display: none;
 }
-.nav-items li {
+.burger-menu__nav-items li {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   font-size: 12px;
   cursor: pointer;
 }
 @media screen and (min-width: 600px) {
-  .nav-items li {
+  .burger-menu__nav-items li {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 1000px) {
-  .nav-menu {
+  .burger-menu {
     display: block;
     position: sticky;
     width: 100%;
@@ -61,15 +61,16 @@ export default {
     background: rgba(0, 0, 0, 0.7);
     height: 100%;
     color: white;
+    height: auto;
   }
-  .open-menu {
+  .burger-menu--open {
     height: auto;
     z-index: 2;
   }
-  .closed-menu {
+  .burger-menu--closed {
     display: none;
   }
-  .nav-content {
+  .burger-menu__nav {
     display: flex;
     flex-direction: column;
     z-index: 100;
@@ -77,7 +78,7 @@ export default {
     position: relative;
     transition: all 0.4s ease-out;
   }
-  .nav-items {
+  .burger-menu__nav-items {
     list-style: none;
     margin: 0;
     padding: 0;

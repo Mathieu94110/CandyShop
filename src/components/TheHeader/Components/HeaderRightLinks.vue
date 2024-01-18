@@ -1,33 +1,41 @@
 <template>
-  <ul class="clear-float">
-    <li class="navbar-li">
+  <ul class="header-right-links">
+    <li class="header-right-links__link">
       <font-awesome-icon
         icon="fa-solid fa-magnifying-glass"
-        class="right-icons"
+        class="header-right-links__right-icons"
       />
-      <span class="navbar-li-text pt-2" @click="$emit('switch-modal-display')"
+      <span
+        class="header-right-links__link-text"
+        @click="$emit('switch-modal-display')"
         >Rechercher</span
       >
     </li>
-    <li class="navbar-li">
-      <font-awesome-icon icon="fa-solid fa-mobile-retro" class="right-icons" />
-      <span class="navbar-li-text pt-2">0101010101</span>
+    <li class="header-right-links__link">
+      <font-awesome-icon
+        icon="fa-solid fa-mobile-retro"
+        class="header-right-links__right-icons"
+      />
+      <span class="header-right-links__link-text">0101010101</span>
     </li>
-    <li class="navbar-li">
-      <font-awesome-icon icon="fa-solid fa-user" class="right-icons" />
-      <span class="navbar-li-text pt-2">Mon compte</span>
+    <li class="header-right-links__link">
+      <font-awesome-icon
+        icon="fa-solid fa-user"
+        class="header-right-links__right-icons"
+      />
+      <span class="header-right-links__link-text">Mon compte</span>
     </li>
-    <li class="navbar-li" @click="goToShop()">
-      <div class="cart-li">
-        <span v-show="cartLength" class="navbar-cart-qty">{{
+    <li class="header-right-links__link" @click="goToShop()">
+      <div class="header-right-links__link-cart">
+        <span v-show="cartLength" class="header-right-links__link-cart-qty">{{
           cartLength
         }}</span>
         <font-awesome-icon
           icon="fa-solid fa-cart-shopping"
-          class="right-icons position-relative"
+          class="header-right-links__right-icons position-relative"
         />
       </div>
-      <span class="navbar-li-text pt-2"> Mon panier </span>
+      <span class="header-right-links__link-text"> Mon panier </span>
     </li>
   </ul>
 </template>
@@ -47,31 +55,34 @@ export default {
 </script>
 
 <style scoped>
-.clear-float {
+.header-right-links {
   display: flex;
   flex-direction: row;
 }
-.clear-float::after {
+.header-right-links::after {
   content: "";
   display: block;
   clear: both;
 }
-.navbar-li {
+.header-right-links__link {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
 }
-.cart-li {
+.header-right-links__link-text {
+  padding-top: 8px;
+}
+.header-right-links__link-cart {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.navbar-li:hover {
+.header-right-links__link:hover {
   color: var(--color-primary);
 }
-.navbar-cart-qty {
+.header-right-links__link-cart-qty {
   border-radius: 50%;
   width: 18px;
   height: 18px;
@@ -83,27 +94,27 @@ export default {
 }
 
 @media (max-width: 599px) {
-  .clear-float {
+  .header-right-links {
     max-width: 100%;
   }
-  .navbar-li {
+  .header-right-links__link {
     width: 50%;
     color: #fff;
   }
-  .navbar-li:nth-child(-n + 2) {
+  .header-right-links__link:nth-child(-n + 2) {
     display: none;
   }
-  .navbar-li-text {
+  .header-right-links__link-text {
     display: none;
   }
 }
 
 @media only screen and (max-width: 999px) and (min-width: 600px) {
-  .navbar-li {
+  .header-right-links__link {
     width: 25%;
     color: #fff;
   }
-  .navbar-li-text {
+  .header-right-links__link-text {
     display: flex;
     margin: auto;
     font-size: 11px;
@@ -124,33 +135,33 @@ export default {
   }
 }
 @media only screen and (min-width: 1000px) {
-  .clear-float {
+  .header-right-links {
     width: 100%;
     display: flex;
     justify-content: flex-end;
   }
-  .navbar-li:first-child {
+  .header-right-links__link:first-child {
     display: none;
   }
-  .navbar-li {
+  .header-right-links__link {
     width: calc(100% / 3);
     color: #fff;
   }
-  .navbar-li-text {
+  .header-right-links__link-text {
     text-align: center;
     font-size: 16px;
   }
-  .navbar-cart-qty {
+  .header-right-links__link-cart-qty {
     width: 22px;
     height: 22px;
     line-height: 22px;
   }
 }
 @media only screen and (min-width: 1320px) {
-  .navbar-li {
+  .header-right-links__link {
     color: #fff;
   }
-  .navbar-li:hover {
+  .header-right-links__link:hover {
     color: var(--color-primary);
   }
 }

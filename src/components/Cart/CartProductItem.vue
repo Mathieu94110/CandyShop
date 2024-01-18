@@ -1,9 +1,9 @@
 <template>
-  <div class="d-flex flex-row justify-content-between p-2">
+  <div class="cart-product-item">
     <span
       ><strong>{{ item.quantity }}</strong></span
     >
-    <span style="width: 130px">{{ item.title }}</span>
+    <span class="cart-product-item__title">{{ item.title }}</span>
     <span
       ><strong>{{ item.price | price }}</strong></span
     >
@@ -31,4 +31,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.cart-product-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+}
+.cart-product-item__title {
+  width: 130px;
+}
+</style>

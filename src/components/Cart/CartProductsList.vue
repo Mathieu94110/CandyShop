@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex flex-column p-5">
-    <h4 class="border-bottom pb-3">Mon panier</h4>
+  <div class="cart-products-list">
+    <h4 class="cart-product-list__title">Mon panier</h4>
     <template v-if="cart.length">
       <cart-product-item
         v-for="item in cart"
@@ -36,4 +36,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.cart-products-list {
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+}
+.cart-products-list__title {
+  border-bottom: 1px solid var(--color-dark);
+  padding-bottom: 12px;
+}
+</style>

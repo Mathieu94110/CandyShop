@@ -12,10 +12,10 @@
       :menuList="menuList"
       @switch-modal-display="switchModalDisplay"
     />
-    <div class="d-flex flex-column w-100">
+    <div class="app__route-container">
       <router-view></router-view>
     </div>
-    <div v-if="modalIsVisible" class="modal-calc">
+    <div v-if="modalIsVisible" class="app__modal-calc">
       <SearchModal @switch-modal-display="switchModalDisplay" />
     </div>
     <TheFooter :leftItems="leftItems" />
@@ -28,7 +28,7 @@ import TheHeader from "./components/TheHeader/TheHeader.vue";
 import TheFooter from "./components/TheFooter/TheFooter.vue";
 import menuList from "./locales/menuList.json";
 import leftItems from "./locales/headerLeftItems.json";
-import SearchModal from "./components/searchModal/searchModal.vue";
+import SearchModal from "./components/SearchModal/SearchModal.vue";
 import BurgerMenu from "./components/BurgerMenu/BurgerMenu.vue";
 
 export default {
@@ -119,7 +119,18 @@ button {
   opacity: 0.8;
   transform: translateY(2px);
 }
-.modal-calc {
+.color-primary {
+  color: var(--color-primary);
+}
+.color-tertiary {
+  color: var(--color-secondary);
+}
+.app__route-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.app__modal-calc {
   position: fixed;
   top: 0;
   left: 0;
@@ -127,11 +138,5 @@ button {
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   z-index: 2;
-}
-.color-primary {
-  color: var(--color-primary);
-}
-.color-tertiary {
-  color: var(--color-secondary);
 }
 </style>

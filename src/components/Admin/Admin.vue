@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex flex-row justify-content-center p-5">
-    <admin-product-form class="w-50"></admin-product-form>
+  <div class="admin">
+    <admin-product-form class="admin__form"></admin-product-form>
   </div>
 </template>
 
@@ -14,4 +14,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.admin {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+.admin__form {
+  width: 50%;
+}
+</style>

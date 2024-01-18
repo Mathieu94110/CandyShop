@@ -1,7 +1,7 @@
 <template>
   <ul class="pagination">
     <!-- Visible Buttons Previous-->
-    <li class="pagination-item">
+    <li class="pagination__item">
       <button
         v-show="!isInFirstPage"
         type="button"
@@ -11,7 +11,7 @@
       </button>
     </li>
     <!-- max Three visible buttons with page number-->
-    <li v-for="page in pages" :key="page.name" class="pagination-item">
+    <li v-for="page in pages" :key="page.name" class="pagination__item">
       <button
         type="button"
         @click="onClickPage(page.name)"
@@ -21,7 +21,7 @@
       </button>
     </li>
     <!-- Visible Buttons Next-->
-    <li class="pagination-item">
+    <li class="pagination__item">
       <button type="button" @click="onClickNextPage" v-show="!isInLastPage">
         <font-awesome-icon icon="fa-solid fa-right-long" />
       </button>
@@ -111,11 +111,11 @@ export default {
   margin: 10px;
 }
 
-.pagination-item {
+.pagination__item {
   display: inline-block;
 }
 
-.pagination-item button {
+.pagination__item button {
   width: 30px;
   height: 30px;
   margin: 0 4px;
@@ -130,7 +130,7 @@ button.active {
 }
 
 @media only screen and (min-width: 680px) {
-  .pagination-item button {
+  .pagination__item button {
     width: 40px;
     height: 40px;
   }

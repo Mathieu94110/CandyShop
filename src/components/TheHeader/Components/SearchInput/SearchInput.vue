@@ -1,16 +1,16 @@
 <template>
-  <div class="search-input-container">
+  <div class="search-input">
     <form>
       <input
         type="text"
         :value="inputData"
         @keyup="$emit('input', $event.target.value)"
         placeholder="Rechercher"
-        class="search-input"
+        class="search-input__input"
       />
       <font-awesome-icon
         icon="fa-solid fa-magnifying-glass"
-        class="search-icon"
+        class="search-input__icon"
       />
     </form>
     <!-- v-if is used instead of v-show on below in order to avoid memory leaks with child ref -->
@@ -36,11 +36,11 @@ export default {
 </script>
 
 <style scoped>
-.search-input-container {
+.search-input {
   position: relative;
   max-width: 300px;
 }
-.search-input {
+.search-input__input {
   width: 100%;
   border: none;
   padding: 5px 35px 5px 10px;
@@ -52,10 +52,10 @@ export default {
   border-radius: 0;
   outline: none;
 }
-.search-input::placeholder {
+.search-input__input::placeholder {
   color: #fff;
 }
-.search-icon {
+.search-input__icon {
   position: absolute;
   right: 10px;
   top: 50%;

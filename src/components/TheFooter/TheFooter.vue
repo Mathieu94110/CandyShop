@@ -1,13 +1,13 @@
 <template>
   <div class="footer">
-    <div class="footer-top">
-      <div class="footer-top-container">
-        <div class="footer-top-menu">
-          <div class="footer-top-left">
+    <div class="footer__top">
+      <div class="footer__top-container">
+        <div class="footer__top-menu">
+          <div class="footer__top-left">
             <div
               v-for="(items, index) in leftItems"
               :key="index"
-              class="footer-top-left-item"
+              class="footer__top-left-item"
             >
               <div v-for="(value, key, index) in items" :key="index">
                 <h4>{{ key }}</h4>
@@ -19,7 +19,7 @@
               </div>
             </div>
           </div>
-          <div class="footer-top-right">
+          <div class="footer__top-right">
             <h4>rejoigner la communauté</h4>
             <font-awesome-icon
               icon="fa-brands fa-instagram"
@@ -45,8 +45,8 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom-container">
-      <div class="footer-bottom">
+    <div class="footer__bottom">
+      <div class="footer__bottom-content">
         <img src="../../assets/candy-shop.png" class="candy-img" />
         <div>Copyright 2023 © Mathieu Enault</div>
       </div>
@@ -74,30 +74,30 @@ export default {
   background-color: var(--color-dark);
   color: #fff;
 }
-.footer-top-container,
-.footer-bottom-container {
+.footer__top-container,
+.footer__bottom {
   display: flex;
   place-content: center;
   justify-content: center;
 }
-.footer-top-container {
+.footer__top-container {
   display: flex;
   width: 1300px;
 }
-.footer-top {
+.footer__top {
   display: flex;
   justify-content: center;
 }
-.footer-top-menu {
+.footer__top-menu {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
 }
-.footer-top-left {
+.footer__top-left {
   width: auto;
 }
-.footer-top-left-item {
+.footer__top-left-item {
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -105,17 +105,17 @@ export default {
   margin: 25px 0;
   padding-left: 50px;
 }
-.footer-top-left li {
+.footer__top-left li {
   margin-bottom: 15px;
   font-size: 11px;
 }
-.footer-top-left li:hover {
+.footer__top-left li:hover {
   cursor: pointer;
 }
-.footer-top-left li:last-child {
+.footer__top-left li:last-child {
   margin-bottom: 0;
 }
-.footer-top-right {
+.footer__top-right {
   margin-top: 45px;
   text-align: center;
 }
@@ -140,7 +140,7 @@ export default {
 .customer-service-phone > p {
   margin-top: 12px;
 }
-.footer-bottom {
+.footer__bottom-content {
   padding: 10px;
   text-align: center;
   font-size: 12px;
@@ -159,27 +159,27 @@ h4,
   .footer {
     padding: 60px 0 25px 0;
   }
-  .footer-top-left {
+  .footer__top-left {
     width: 100%;
   }
-  .footer-top-menu {
+  .footer__top-menu {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .footer-top-left-item {
+  .footer__top-left-item {
     margin-top: 15px;
     padding-left: 20px;
     float: left;
     width: 33.333%;
   }
-  .footer-top-right {
+  .footer__top-right {
     padding-left: 25px;
     text-align: left;
   }
-  .footer-top-left li {
+  .footer__top-left li {
     font-size: 13px;
   }
-  .footer-bottom {
+  .footer__bottom-content {
     width: 1300px;
   }
   h4,
@@ -192,11 +192,11 @@ h4,
   }
 }
 @media only screen and (min-width: 1227px) {
-  .footer-top-left {
+  .footer__top-left {
     float: left;
     width: 75%;
   }
-  .footer-top-right {
+  .footer__top-right {
     margin-top: 15px;
     padding: 0 15px;
     text-align: center;

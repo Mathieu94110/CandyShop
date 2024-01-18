@@ -1,16 +1,16 @@
 <template>
   <transition appear>
-    <div v-resize="setDimensions" class="navbar-container">
-      <!-- On below dynamic style is used in order to change navbar 
+    <div v-resize="setDimensions" class="the-header">
+      <!-- On below dynamic style is used in order to change the navbar 
   size with transition when user scroll on main content -->
       <div
-        class="navbar"
+        class="the-header__navbar"
         :style="{
           height: scrollActive && width >= 1320 ? 80 + 'px' : '',
           transition: 'height 0.8s',
         }"
       >
-        <div class="burger-menu">
+        <div class="the-header__navbar-burger-menu">
           <font-awesome-icon
             icon="fa-solid fa-bars"
             class="right-icons"
@@ -18,7 +18,7 @@
           />
           <span>Menu</span>
         </div>
-        <div class="search-text">
+        <div class="the-header__navbar-search-text">
           <SearchInputVue
             :inputData="searchInput"
             :filteredList="filteredResults"
@@ -27,19 +27,24 @@
             v-on="$listeners"
           />
         </div>
-        <div class="navbar-brand">
+        <div class="the-header__navbar-brand">
           <!-- Same case as above -->
           <div
             :class="[
-              scrollActive && width >= 1320 ? 'logo-scroll-active' : 'logo',
+              scrollActive && width >= 1320
+                ? 'the-header__navbar-brand-logo-scroll-active'
+                : 'the-header__navbar-brand-logo',
             ]"
             @click="goToHome"
           >
-            <img src="../../assets/candy-shop.png" class="candy-img" />
+            <img
+              src="../../assets/candy-shop.png"
+              class="the-header__navbar-brand-candy-img"
+            />
             <h1>Créateur de bonbons et gâteaux</h1>
           </div>
         </div>
-        <div class="navbar-right-links">
+        <div class="the-header__navbar-right-links">
           <HeaderRightLinksVue v-on="$listeners" />
         </div>
       </div>
@@ -68,7 +73,7 @@ export default {
     },
   },
   data() {
-    // width and isScrollActive are used together in order to change navbar width only for screen size >= 1320px
+    // width and isScrollActive are used together in order to change the-header__navbar width only for screen size >= 1320px
     return {
       scrollPosition: 0,
       width: document.documentElement.clientWidth,
@@ -141,7 +146,7 @@ export default {
 </script>
 
 <style scoped>
-.navbar-container {
+.the-header {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -151,20 +156,21 @@ export default {
   z-index: 2;
   top: 0px;
 }
-.navbar {
+.the-header__navbar {
   display: flex;
   position: relative;
   max-width: 100%;
   height: 80px;
+  align-items: center;
 }
-.navbar-nav > :hover {
+.the-header__navbar-nav > :hover {
   cursor: pointer;
 }
-.candy-img {
+.the-header__navbar-brand-candy-img {
   height: 50px;
   margin: auto;
 }
-.burger-menu {
+.the-header__navbar-burger-menu {
   display: block;
   position: absolute;
   left: 0;
@@ -178,17 +184,17 @@ export default {
   color: #fff;
   cursor: pointer;
 }
-.burger-menu > span {
+.the-header__navbar-burger-menu > span {
   text-align: left !important;
 }
-.navbar-brand {
+.the-header__navbar-brand {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0px;
 }
-.logo {
+.the-header__navbar-brand-logo {
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -210,7 +216,7 @@ h1 {
 .v-enter-active {
   animation: fromtop 1s;
 }
-.navbar-right-links {
+.the-header__navbar-right-links {
   position: absolute;
   right: 0;
   top: 50%;
@@ -220,7 +226,7 @@ h1 {
   transform: translate(0, -50%);
   -webkit-transform: translate(0, -50%);
 }
-.search-text {
+.the-header__navbar-search-text {
   display: none;
 }
 @keyframes fromtop {
@@ -235,41 +241,40 @@ h1 {
   height: 25px;
 }
 @media only screen and (max-width: 999px) and (min-width: 600px) {
-  .navbar-container {
+  .the-header {
     max-width: 100%;
   }
-  .navbar {
+  .the-header__navbar {
     padding: 8px 0;
   }
-  .navbar-right-links {
+  .the-header__navbar-right-links {
     position: static;
     transform: none;
     flex: 1 1 auto;
     font-size: 12px;
   }
-  .navbar-brand {
+  .the-header__navbar-brand {
     position: static;
     transform: none;
     padding: 0;
   }
-  .navbar-li {
+  .the-header__navbar-li {
     width: 25%;
     color: #fff;
   }
-  .navbar-li-text {
+  .the-header__navbar-li-text {
     padding: 0;
   }
-  .candy-img {
+  .the-header__navbar-brand-candy-img {
     margin-left: 20px;
     width: 60px;
     height: 60px;
   }
-  .burger-menu {
+  .the-header__navbar-burger-menu {
     position: static;
-    padding: 13px 0 0 6px;
     transform: none;
   }
-  .navbar-li-text {
+  .the-header__navbar-li-text {
     margin: auto;
     font-size: 11px;
     font-weight: 600;
@@ -279,38 +284,38 @@ h1 {
   }
 }
 @media only screen and (max-width: 1000px) {
-  .navbar-container {
+  .the-header {
     padding: 0 15px;
   }
 }
 @media only screen and (min-width: 1000px) {
-  .navbar-container {
+  .the-header {
     display: block;
   }
-  .navbar {
+  .the-header__navbar {
     padding: 12px 16px;
     max-width: 1140px;
     margin: auto;
   }
-  .navbar-li {
+  .the-header__navbar-li {
     width: calc(100% / 3);
     color: #fff;
     cursor: pointer;
   }
-  .navbar-li:first-child {
+  .the-header__navbar-li:first-child {
     display: none;
   }
-  .navbar-li:hover {
+  .the-header__navbar-li:hover {
     color: var(--color-primary);
   }
-  .navbar-right-links {
+  .the-header__navbar-right-links {
     width: 380px;
   }
-  .navbar-brand {
+  .the-header__navbar-brand {
     position: static;
     transform: none;
   }
-  .logo {
+  .the-header__navbar-brand-logo {
     height: 64px;
     display: flex;
     justify-content: center;
@@ -320,17 +325,17 @@ h1 {
     transform: translate(-50%, -50%);
     transition: height 0.8s;
   }
-  .candy-img {
+  .the-header__navbar-brand-candy-img {
     width: 60px;
     margin: 0;
   }
-  .burger-menu {
+  .the-header__navbar-burger-menu {
     display: none;
   }
-  .search-text {
+  .the-header__navbar-search-text {
     display: flex;
   }
-  .navbar-li-text {
+  .the-header__navbar-li-text {
     text-align: center;
     font-size: 11px;
     font-weight: 600;
@@ -342,7 +347,7 @@ h1 {
   }
 }
 @media only screen and (min-width: 1320px) {
-  .logo-scroll-active {
+  .the-header__navbar-brand-logo-scroll-active {
     height: 64px;
     display: flex;
     justify-content: center;
@@ -352,24 +357,24 @@ h1 {
     transform: translate(-50%, -50%);
     transition: height 0.8s;
   }
-  .logo-scroll-active > img {
+  .the-header__navbar-brand-logo-scroll-active > img {
     height: 100%;
     width: auto;
   }
-  .candy-img {
+  .the-header__navbar-brand-candy-img {
     height: 160px;
     width: 160px;
     transition: height 0.8s;
   }
-  .navbar {
+  .the-header__navbar {
     max-width: 1300px;
     height: 180px;
     transition: height 0.8s;
   }
-  .navbar-li {
+  .the-header__navbar-li {
     color: #fff;
   }
-  .navbar-li:hover {
+  .the-header__navbar-li:hover {
     color: var(--color-primary);
   }
 }

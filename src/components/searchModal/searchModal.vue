@@ -1,16 +1,16 @@
 <template>
   <transition name="modal-fade">
     <div
-      class="modal"
+      class="search-modal"
       role="dialog"
       aria-labelledby="modalTitle"
       aria-describedby="modalDescription"
     >
-      <header class="modal-header" id="modalTitle">
+      <header class="search-modal__header" id="modalTitle">
         <p>Rechercher des articles</p>
         <button
           type="button"
-          class="btn-close"
+          class="search-modal__header-btn-close"
           @click="$emit('switch-modal-display')"
           aria-label="Close modal"
         >
@@ -18,29 +18,32 @@
         </button>
       </header>
 
-      <section class="modal-body" id="modalDescription">
+      <section class="search-modal__body" id="modalDescription">
         <input type="text" v-model="searchInput" />
         <ul
           v-show="searchInput && filteredList.length"
-          class="search-input-modal-product-list"
+          class="search-modal__body-list"
         >
           <li
             v-for="product in filteredList"
             :key="product.id"
-            class="search-input-modal-product-item"
+            class="search-modal__body-list-item"
             @click="navigateToProduct(product.id)"
           >
             <span>{{ product.title }}</span
             ><span
-              ><img :src="product.img" class="search-input-modal-product-img"
+              ><img :src="product.img" class="search-modal__body-list-item-img"
             /></span>
           </li>
         </ul>
-        <p v-if="searchInput && !filteredList.length" class="item-not-found">
+        <p
+          v-if="searchInput && !filteredList.length"
+          class="search-modal__no-result"
+        >
           Aucun résultat trouvé !
         </p>
       </section>
-      <footer class="modal-footer">
+      <footer class="search-modal__footer">
         <button
           type="button"
           class="btn-green btn-animation"
@@ -93,7 +96,7 @@ export default {
 </script>
 
 <style scoped>
-.modal {
+.search-modal {
   background: #ffffff;
   box-shadow: 2px 2px 20px 1px;
   overflow-x: auto;
@@ -107,25 +110,25 @@ export default {
   transform: translate(-50%, 0%);
 }
 
-.modal-header,
-.modal-footer {
+.search-modal__header,
+.search-modal__footer {
   padding: 15px;
   display: flex;
 }
 
-.modal-header {
+.search-modal__header {
   position: relative;
   border-bottom: 1px solid #eeeeee;
   color: var(--color-secondary);
   justify-content: space-between;
 }
 
-.modal-footer {
+.search-modal__footer {
   border-top: 1px solid #eeeeee;
   flex-direction: column;
 }
 
-.modal-body {
+.search-modal__body {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -133,38 +136,38 @@ export default {
   overflow-y: hidden;
   align-items: center;
 }
-.modal-body > input {
+.search-modal__body > input {
   padding: 4px 8px;
   width: 90%;
 }
-.search-input-modal-product-list {
+.search-modal__body-list {
   overflow-y: scroll;
   width: 90%;
 }
-.search-input-modal-product-item,
-.item-not-found {
+.search-modal__body-list-item,
+.search-modal__no-result {
   padding: 12px 7px;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
   font-weight: 600;
 }
-.search-input-modal-product-item:hover {
+.search-modal__body-list-item:hover {
   cursor: pointer;
   background: var(--color-secondary);
   color: #fff;
 }
-.search-input-modal-product-item > span {
+.search-modal__body-list-item > span {
   display: flex;
   align-items: center;
   max-width: 167px;
 }
-.search-input-modal-product-img {
+.search-modal__body-list-item-img {
   width: 30px;
   height: auto;
 }
 
-.btn-close {
+.search-modal__header-btn-close {
   position: absolute;
   top: 0;
   right: 0;
@@ -194,7 +197,7 @@ export default {
 }
 
 @media only screen and (min-width: 600px) {
-  .modal {
+  .search-modal {
     width: 300px;
   }
 }

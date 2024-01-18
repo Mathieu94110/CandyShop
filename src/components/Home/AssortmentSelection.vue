@@ -4,12 +4,13 @@
       <span slot="main">Notre sélection</span>
       <span slot="secondary">d'assortiments</span>
     </category-separators>
-    <div class="assortment-selection-content">
-      <div class="assortment-carousel-container">
+    <div class="assortment-selection__container">
+      <div class="assortment-selection__container-carousel">
+        assortment-selection__container
         <carousel-layout :cards="cards" @prev="prev" @next="next" />
       </div>
-      <div class="assortment-selection-left-side item"></div>
-      <div class="assortment-selection-right-side item"></div>
+      <div class="assortment-selection__container-left"></div>
+      <div class="assortment-selection__container-right"></div>
     </div>
   </div>
 </template>
@@ -46,13 +47,13 @@ export default {
 .assortment-selection {
   width: 100%;
 }
-.assortment-selection-content {
+.assortment-selection__container {
   height: 600px;
   width: 100%;
   display: flex;
   position: relative;
 }
-.assortment-carousel-container {
+.assortment-selection__container-carousel {
   width: 100%;
   height: 350px;
   padding: 0 10px;
@@ -64,20 +65,19 @@ export default {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.item {
-  height: 100%;
-}
-.assortment-selection-left-side {
+.assortment-selection__container-left {
   flex-basis: 700px;
   background-image: url("../../assets/sweets-assortment.jpeg");
+  height: 100%;
 }
-.assortment-selection-right-side {
+.assortment-selection__container-right {
   background-color: #ffe469;
   flex-grow: 1;
+  height: 100%;
 }
 
 @media only screen and (min-width: 600px) {
-  .assortment-carousel-container {
+  .assortment-selection__container-carousel {
     padding: 0 20px;
   }
 }

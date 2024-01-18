@@ -1,21 +1,27 @@
 <template>
   <div>
-    <ul v-show="filteredList.length" class="filtered-list" ref="listElement">
+    <ul
+      v-show="filteredList.length"
+      class="search-input-list__list"
+      ref="listElement"
+    >
       <li
         v-for="product in filteredList"
         :key="product.id"
-        class="search-input-product-item"
+        class="search-input-list__list-item"
         @click="goToPageDetails(product.id)"
       >
         <span>{{ product.title }}</span>
-        <span><img :src="product.img" class="search-input-product-img" /></span>
+        <span
+          ><img :src="product.img" class="search-input-list__list-img"
+        /></span>
       </li>
     </ul>
     <div
-      class="filtered-list"
+      class="search-input-list__list"
       v-show="isSearchActive && inputData && !filteredList.length"
     >
-      <p class="item-not-found">Aucun résultat trouvé !</p>
+      <p class="search-input-list__not-found">Aucun résultat trouvé !</p>
     </div>
   </div>
 </template>
@@ -66,7 +72,7 @@ export default {
 </script>
 
 <style scoped>
-.filtered-list {
+.search-input-list__list {
   position: absolute;
   left: 0;
   background: #444444;
@@ -75,20 +81,21 @@ export default {
   max-height: 300px;
   overflow-y: scroll;
 }
-.search-input-product-item,
-.item-not-found {
+.search-input-list__list-item,
+.search-input-list__not-found {
   padding: 12px 8px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #fff;
 }
-.search-input-product-item:hover {
+.search-input-list__list-item:hover {
   cursor: pointer;
   background: #fff;
   color: #444444;
 }
 
-.search-input-product-img {
+.search-input-list__list-img {
   width: 30px;
   height: auto;
 }

@@ -1,6 +1,6 @@
 <template>
-  <nav class="menu">
-    <ul class="menu-list">
+  <nav class="header-bottom-links">
+    <ul class="header-bottom-links__list">
       <router-link
         tag="li"
         v-for="item in menuList"
@@ -29,16 +29,16 @@ export default {
 </script>
 
 <style scoped>
-.menu {
+.header-bottom-links {
   display: none;
 }
 
 @media only screen and (min-width: 1000px) {
-  .menu {
+  .header-bottom-links {
     display: flex;
     background-color: var(--color-dark-light);
   }
-  .menu-list {
+  .header-bottom-links__list {
     color: #fff;
     display: table;
     text-align: center;
@@ -46,24 +46,24 @@ export default {
     max-width: 1319px;
     height: 64px;
   }
-  .menu-list > li {
+  .header-bottom-links__list > li {
     height: 100%;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
     font-weight: 600;
   }
-  .menu-list > li > a {
+  .header-bottom-links__list > li > a {
     color: #fff;
   }
 
-  .menu-list > li:hover {
+  .header-bottom-links__list > li:hover {
     background-color: var(--color-secondary);
     cursor: pointer;
   }
 }
 @media only screen and (min-width: 1320px) {
-  .menu-list {
+  .header-bottom-links__list {
     margin: auto;
   }
 }

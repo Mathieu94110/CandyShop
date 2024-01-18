@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="advanced-search-view-container">
-      <div class="advanced-search-view-top-container">
-        <div class="advanced-search-view-top">
+    <div class="advanced-search-view__top">
+      <div class="advanced-search-view__top-container">
+        <div class="advanced-search-view__top-container-content">
           <div class="text-center">
-            <h1 class="advanced-search-view-title">
+            <h1 class="advanced-search-view__top-container-content-title">
               {{
                 isSearchActive
                   ? "Résultat de recherche pour"
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div>
-      <h2 class="advanced-search-view-sub-title">
+      <h2 class="advanced-search-view__bottom-sub-title">
         Nous recherchons les meilleurs résultats selon vos critères
       </h2>
     </div>
@@ -120,76 +120,76 @@ export default {
 </script>
 
 <style scoped>
-.advanced-search-view-container {
+.advanced-search-view__top {
   padding: 20px 0 40px 0;
   background: url(https://png.pngtree.com/thumb_back/fh260/background/20201128/pngtree-colorful-polka-dot-background-image_500722.jpg)
     repeat top center;
   margin-bottom: 40px;
 }
-.advanced-search-view-top-container {
+.advanced-search-view__top-container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
-.advanced-search-view-top {
+.advanced-search-view__top-container-content {
   background: #fff;
   padding: 17px 20px;
 }
-.advanced-search-view-title {
+.advanced-search-view__top-container-content-title {
   font-size: 20px;
   color: #ff4089;
   padding: 10px;
   line-height: 80%;
   margin: 2% 0;
 }
-.advanced-search-view-sub-title {
+.advanced-search-view__bottom-sub-title {
   text-align: center;
   font-size: 15px;
   padding: 0 10px 16px;
 }
 
 @media only screen and (max-width: 767px) {
-  .advanced-search-view-container {
+  .advanced-search-view__top {
     margin-bottom: 20px;
     padding-top: 9px;
   }
-  .advanced-search-view-top {
+  .advanced-search-view__top-container-content {
     padding: 10px;
   }
 }
 
 @media only screen and (max-width: 1250px) {
-  .advanced-search-view-top-container {
+  .advanced-search-view__top-container {
     max-width: 100%;
   }
 }
 
 @media only screen and (min-width: 480px) {
-  .advanced-search-view-title {
+  .advanced-search-view__top-container-content-title {
     font-size: 28px;
   }
-  .advanced-search-view-sub-title {
+  .advanced-search-view__bottom-sub-title {
     font-size: 19px;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  .advanced-search-view-title {
+  .advanced-search-view__top-container-content-title {
     font-size: 32px;
   }
-  .advanced-search-view-sub-title {
+  .advanced-search-view__bottom-sub-title {
     font-size: 23px;
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .advanced-search-view-title {
+  .advanced-search-view__top-container-content-title {
     margin: 10px 0;
     font-size: 38px;
   }
-  .advanced-search-view-sub-title {
+  .advanced-search-view__bottom-sub-title {
     font-size: 30px;
   }
 }

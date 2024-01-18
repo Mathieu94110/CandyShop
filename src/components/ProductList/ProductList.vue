@@ -3,7 +3,7 @@
     <div v-if="currentProducts.length">
       <Shop :products="currentProducts" />
     </div>
-    <div v-else class="product-list-no-content">
+    <div v-else class="product-list__no-content">
       <h2 class="text-danger">Aucun article ne correspond à votre recherche</h2>
     </div>
 
@@ -38,19 +38,19 @@ export default {
 </script>
 
 <style scoped>
-.product-list-no-content {
+.product-list__no-content {
   margin: 40px 0;
   text-align: center;
 }
-.product-list-no-content h2 {
+.product-list__no-content h2 {
   font-size: 16px;
 }
 @media only screen and (min-width: 992px) {
-  .product-list-no-content {
+  .product-list__no-content {
     margin: 100px 0;
     font-size: 32px;
   }
-  .product-list-no-content h2 {
+  .product-list__no-content h2 {
     font-size: 32px;
   }
 }

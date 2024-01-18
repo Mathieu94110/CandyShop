@@ -1,13 +1,17 @@
 <template>
-  <div class="d-flex w-100 position-absolute top-0 left-0 h-100">
-    <div class="carousel-chevron-container" @click="prev">
+  <div class="carousel-layout">
+    <div class="carousel-layout__chevron-container" @click="prev">
       <font-awesome-icon
         icon="fa-solid fa-chevron-left"
-        class="carousel-chevron"
+        class="carousel-layout__chevron-container-icon"
       />
     </div>
-    <div class="carousel">
-      <div class="inner" ref="inner" :style="innerStyles">
+    <div class="carousel-layout__carousel">
+      <div
+        class="carousel-layout__carousel-content"
+        ref="inner"
+        :style="innerStyles"
+      >
         <ShopProductItem
           v-for="product in cards"
           :key="product.id"
@@ -15,10 +19,10 @@
         />
       </div>
     </div>
-    <div class="carousel-chevron-container" @click="next">
+    <div class="carousel-layout__chevron-container" @click="next">
       <font-awesome-icon
         icon="fa-solid fa-chevron-right"
-        class="carousel-chevron"
+        class="carousel-layout__chevron-container-icon"
       />
     </div>
   </div>
@@ -122,40 +126,46 @@ export default {
 </script>
 
 <style scoped>
-.carousel {
+.carousel-layout {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.carousel-layout__carousel {
   width: 100%;
   overflow: hidden;
   margin: 0 auto;
   display: flex;
 }
-.carousel-chevron-container {
-  width: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carousel-chevron-container:hover {
-  cursor: pointer;
-}
-.carousel-chevron {
-  height: 24px;
-  color: var(--color-secondary);
-}
-.inner {
+.carousel-layout__carousel-content {
   display: flex;
   white-space: nowrap;
   height: 100%;
   transition: transform 0.2s;
 }
-
+.carousel-layout__chevron-container {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-layout__chevron-container:hover {
+  cursor: pointer;
+}
+.carousel-layout__chevron-container-icon {
+  height: 24px;
+  color: var(--color-secondary);
+}
 @media only screen and (min-width: 600px) {
-  .carousel-chevron {
+  .carousel-layout__chevron-container-icon {
     height: 30px;
   }
 }
-
 @media only screen and (min-width: 992px) {
-  .carousel-chevron {
+  .carousel-layout__chevron-container-icon {
     height: 40px;
   }
 }

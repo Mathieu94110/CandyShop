@@ -1,6 +1,9 @@
 <template>
-  <div class="dropdown my-1 mx-2">
-    <div class="selected-options" @click="setDropdownsStatus(position)">
+  <div class="search-category my-1 mx-2">
+    <div
+      class="search-category__selected-options"
+      @click="setDropdownsStatus(position)"
+    >
       <span v-if="selectedOptions.length === 0">{{
         filters.value.toUpperCase()
       }}</span>
@@ -9,8 +12,12 @@
       }}</span>
       <span v-else>{{ selectedOptions.length }} catégories</span>
     </div>
-    <div class="dropdown" v-show="isLocalDropdownOpen">
-      <div class="option" v-for="option in filters.data" :key="option.value">
+    <div class="search-category" v-show="isLocalDropdownOpen">
+      <div
+        class="search-category__option"
+        v-for="option in filters.data"
+        :key="option.value"
+      >
         <label
           v-if="
             typeof option.label === 'string' && option.label.endsWith('price')
@@ -94,7 +101,7 @@ export default {
 </script>
 
 <style scoped>
-.dropdown {
+.search-category {
   position: relative;
   display: inline-block;
   width: 160px;
@@ -102,7 +109,7 @@ export default {
   border-radius: 4px;
 }
 
-.dropdown .selected-options {
+.search-category .search-category__selected-options {
   display: block;
   padding: 5px;
   cursor: pointer;
@@ -110,7 +117,7 @@ export default {
   font-size: 12px;
 }
 
-.dropdown .dropdown {
+.search-category .search-category {
   position: absolute;
   top: 100%;
   left: 0;
@@ -125,7 +132,7 @@ export default {
   width: 100%;
 }
 
-.dropdown .dropdown .option {
+.search-category__option {
   display: block;
   padding: 10px;
   border-bottom: 1px solid #ccc;
@@ -133,7 +140,7 @@ export default {
   font-size: 12px;
 }
 
-.dropdown .dropdown .option:last-child {
+.search-category__option:last-child {
   border-bottom: none;
 }
 
@@ -144,33 +151,33 @@ label span {
   color: var(--color-dark);
 }
 
-.dropdown .dropdown .option input[type="checkbox"] {
+.search-category__option input[type="checkbox"] {
   margin-right: 10px;
 }
 
-.dropdown .dropdown .option input[type="checkbox"]:checked + span {
+.search-category__option input[type="checkbox"]:checked + span {
   font-weight: bold;
 }
 
-.dropdown .dropdown .option input[type="checkbox"]:focus + span {
+.search-category__option input[type="checkbox"]:focus + span {
   outline: 2px solid #7fb3d5;
 }
 
-.dropdown .dropdown .option:hover {
+.search-category__option:hover {
   background-color: #f2f2f2;
 }
 
-.dropdown .dropdown .option span {
+.search-category__option span {
   display: inline-block;
   width: calc(100% - 30px);
 }
 
 @media screen and (min-width: 600px) {
-  .dropdown .selected-options {
+  .search-category .search-category__selected-options {
     padding: 10px;
     font-size: 14px;
   }
-  .dropdown .dropdown .option {
+  .search-category__option {
     font-size: 13px;
   }
 }
