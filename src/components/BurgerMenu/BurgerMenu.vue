@@ -5,7 +5,9 @@
   >
     <div class="burger-menu__nav">
       <ul class="burger-menu__nav-items">
-        <li @click="$emit('switch-modal-display')">Rechercher</li>
+        <li @click="$emit('switch-modal-display')" id="searchItem">
+          Rechercher
+        </li>
         <router-link
           v-for="item in menuList"
           :key="item.text"
@@ -14,13 +16,12 @@
             path: item.name ? `/categories-list/${item.name}` : item.path,
           }"
         >
-          <span data-testid="nav-list-item">{{ item.text }}</span></router-link
+          <span>{{ item.text }}</span></router-link
         >
       </ul>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   props: {

@@ -64,11 +64,6 @@
         }
       ]
     },
-    "babel": {
-      "presets": [
-        "@babel/preset-env"
-      ]
-    },
     "overrides": [
       {
         "files": [

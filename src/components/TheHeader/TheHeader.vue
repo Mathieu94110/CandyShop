@@ -14,6 +14,7 @@
           <font-awesome-icon
             icon="fa-solid fa-bars"
             class="right-icons"
+            id="burgerIcon"
             @click="$emit('show-menu')"
           />
           <span>Menu</span>
@@ -35,6 +36,7 @@
                 ? 'the-header__navbar-brand-logo-scroll-active'
                 : 'the-header__navbar-brand-logo',
             ]"
+            id="candyLogo"
             @click="goToHome"
           >
             <img
