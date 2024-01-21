@@ -136,9 +136,9 @@ const dropDownsFilters = {
 
 const store = new Vuex.Store({
   modules: {
-    product,
-    cart,
-    dropDownsFilters,
+    product: product,
+    cart: cart,
+    dropDownsFilters: dropDownsFilters,
   },
 });
 
