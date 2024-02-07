@@ -28,11 +28,20 @@ export default {
     Pagination,
   },
   props: {
-    currentPage: Number,
-    productPerPage: Number,
-    productList: Array,
-    currentProducts: Array,
-    totalPages: Number,
+    currentPage: { type: { Number }, default: 1 },
+    productPerPage: { type: { Number }, default: 0 },
+    productList: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
+    currentProducts: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
   },
 };
 </script>

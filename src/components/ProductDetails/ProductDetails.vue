@@ -59,7 +59,15 @@
 <script>
 export default {
   props: {
-    info: Object,
+    info: {
+      type: { Object },
+      default: {
+        img: String,
+        title: String,
+        price: Number,
+        description: String,
+      },
+    },
   },
   data() {
     return {

@@ -44,12 +44,12 @@
 import { mapGetters } from "vuex";
 export default {
   methods: {
+    computed: {
+      ...mapGetters("cart", ["cartLength"]),
+    },
     goToShop() {
       if (this.$route.path !== "/shop") this.$router.push("/shop");
     },
-  },
-  computed: {
-    ...mapGetters("cart", ["cartLength"]),
   },
 };
 </script>

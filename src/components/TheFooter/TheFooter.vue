@@ -9,10 +9,10 @@
               :key="index"
               class="footer__top-left-item"
             >
-              <div v-for="(value, key, index) in items" :key="index">
+              <div v-for="(value, key, idx) in items" :key="idx">
                 <h4>{{ key }}</h4>
                 <ul>
-                  <li v-for="(item, index) in value" :key="index">
+                  <li v-for="(item, id) in value" :key="id">
                     {{ item }}
                   </li>
                 </ul>

@@ -9,7 +9,7 @@
     />
     <BurgerMenu
       :show-mobile-menu="showMobileMenu"
-      :menuList="menuList"
+      :menu-list="menuList"
       @switch-modal-display="switchModalDisplay"
     />
     <div class="app__route-container">
@@ -45,14 +45,6 @@ export default {
       showMobileMenu: false,
     };
   },
-  methods: {
-    switchModalDisplay() {
-      this.$store.dispatch("product/switchModalDisplay");
-    },
-    showMenu() {
-      this.showMobileMenu = !this.showMobileMenu;
-    },
-  },
   computed: {
     ...mapState("product", {
       products: "datas",
@@ -63,6 +55,14 @@ export default {
     if (!this.products.length) {
       this.$store.dispatch("product/fetchDatas");
     }
+  },
+  methods: {
+    switchModalDisplay() {
+      this.$store.dispatch("product/switchModalDisplay");
+    },
+    showMenu() {
+      this.showMobileMenu = !this.showMobileMenu;
+    },
   },
 };
 </script>

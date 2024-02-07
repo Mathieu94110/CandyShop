@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { products } from "@/locales/products";
-import { newProducts } from "@/locales/newProducts";
+import newProducts from "@/locales/newProducts";
 Vue.use(Vuex);
 
 const product = {

@@ -29,8 +29,11 @@ export default {
     SearchInputList,
   },
   props: {
-    inputData: String,
-    filteredList: Array,
+    inputData: { type: String, default: "" },
+    filteredList: {
+      type: Array,
+      default: () => [{ id: 0, title: "", img: "" }],
+    },
   },
 };
 </script>

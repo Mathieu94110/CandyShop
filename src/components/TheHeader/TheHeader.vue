@@ -12,9 +12,9 @@
       >
         <div class="the-header__navbar-burger-menu">
           <font-awesome-icon
+            id="burgerIcon"
             icon="fa-solid fa-bars"
             class="right-icons"
-            id="burgerIcon"
             @click="$emit('show-menu')"
           />
           <span>Menu</span>
@@ -31,12 +31,12 @@
         <div class="the-header__navbar-brand">
           <!-- Same case as above -->
           <div
+            id="candyLogo"
             :class="[
               scrollActive && width >= 1320
                 ? 'the-header__navbar-brand-logo-scroll-active'
                 : 'the-header__navbar-brand-logo',
             ]"
-            id="candyLogo"
             @click="goToHome"
           >
             <img
@@ -80,9 +80,11 @@ export default {
   props: {
     menuList: {
       type: Array,
+      default: () => [],
     },
     products: {
       type: Array,
+      default: () => [],
     },
   },
   data() {

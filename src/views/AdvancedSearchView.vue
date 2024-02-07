@@ -60,25 +60,6 @@ export default {
       },
     };
   },
-  methods: {
-    updateCheckedCategories(selection) {
-      this.filteredOptions[selection.filter] = [
-        ...selection.options.map((v) => v.label),
-      ];
-      this.currentPage = 1;
-    },
-    updatePrice(selection) {
-      this.filteredOptions.price[selection.target] = selection.value;
-      if (
-        (selection.target === "min price" && selection.value !== 0) ||
-        selection.target === "max price"
-      )
-        this.currentPage = 1;
-    },
-    onPageChange(page) {
-      this.currentPage = page;
-    },
-  },
   computed: {
     ...mapState("product", {
       products: "datas",
@@ -114,6 +95,25 @@ export default {
         this.filteredProducts = filteredSearch(this.products, newValue);
       },
       deep: true,
+    },
+  },
+  methods: {
+    updateCheckedCategories(selection) {
+      this.filteredOptions[selection.filter] = [
+        ...selection.options.map((v) => v.label),
+      ];
+      this.currentPage = 1;
+    },
+    updatePrice(selection) {
+      this.filteredOptions.price[selection.target] = selection.value;
+      if (
+        (selection.target === "min price" && selection.value !== 0) ||
+        selection.target === "max price"
+      )
+        this.currentPage = 1;
+    },
+    onPageChange(page) {
+      this.currentPage = page;
     },
   },
 };

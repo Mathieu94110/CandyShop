@@ -26,20 +26,6 @@ export default {
       productList: [],
     };
   },
-  created() {
-    const category = this.$route.params.category;
-    if (category) {
-      this.getCategoryList(category);
-    }
-  },
-  methods: {
-    getCategoryList(payload) {
-      this.$store.dispatch("product/getCategoryList", payload);
-    },
-    onPageChange(page) {
-      this.currentPage = page;
-    },
-  },
   computed: {
     ...mapGetters("product", ["categoryList"]),
     ...mapState("product", {
@@ -79,6 +65,20 @@ export default {
       handler: function (data) {
         this.productList = [...data];
       },
+    },
+  },
+  created() {
+    const category = this.$route.params.category;
+    if (category) {
+      this.getCategoryList(category);
+    }
+  },
+  methods: {
+    getCategoryList(payload) {
+      this.$store.dispatch("product/getCategoryList", payload);
+    },
+    onPageChange(page) {
+      this.currentPage = page;
     },
   },
 };

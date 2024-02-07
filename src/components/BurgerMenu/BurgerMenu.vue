@@ -5,9 +5,10 @@
   >
     <div class="burger-menu__nav">
       <ul class="burger-menu__nav-items">
-        <li @click="$emit('switch-modal-display')" id="searchItem">
+        <li id="searchItem" @click="$emit('switch-modal-display')">
           Rechercher
         </li>
+
         <router-link
           v-for="item in menuList"
           :key="item.text"

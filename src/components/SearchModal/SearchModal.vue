@@ -66,6 +66,16 @@ export default {
       filteredResults: [],
     };
   },
+  computed: {
+    ...mapState("product", {
+      products: "datas",
+    }),
+    filteredList() {
+      return this.products.filter((p) => {
+        return p.title.toLowerCase().includes(this.searchInput.toLowerCase());
+      });
+    },
+  },
   methods: {
     setInputValue(value) {
       this.searchInput = value.toLowerCase();
@@ -80,16 +90,6 @@ export default {
     navigateToProduct(id) {
       this.$emit("switch-modal-display");
       this.$router.push({ name: "product", params: { productId: id } });
-    },
-  },
-  computed: {
-    ...mapState("product", {
-      products: "datas",
-    }),
-    filteredList() {
-      return this.products.filter((p) => {
-        return p.title.toLowerCase().includes(this.searchInput.toLowerCase());
-      });
     },
   },
 };

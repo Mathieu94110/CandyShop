@@ -54,10 +54,12 @@ import { mapState, mapMutations } from "vuex";
 export default {
   props: {
     productFilters: {
-      type: Object,
+      type: Array,
+      default: () => [{ label: "", value: "" }],
     },
     position: {
       type: Number,
+      default: 0,
     },
   },
   data() {
@@ -66,18 +68,6 @@ export default {
       selectedOptions: [],
       isLocalDropdownOpen: false,
     };
-  },
-  methods: {
-    ...mapMutations("dropDownsFilters", ["setDropdownsStatus"]),
-    updateSelectedOptions() {
-      this.selectedOptions = this.filters.data.filter(
-        (option) => option.checked
-      );
-      this.$emit("updateSelection", {
-        filter: this.filters.label,
-        options: this.selectedOptions,
-      });
-    },
   },
   computed: {
     ...mapState("dropDownsFilters", {
@@ -95,6 +85,18 @@ export default {
       handler: function (newValue) {
         this.isLocalDropdownOpen = newValue[this.position];
       },
+    },
+  },
+  methods: {
+    ...mapMutations("dropDownsFilters", ["setDropdownsStatus"]),
+    updateSelectedOptions() {
+      this.selectedOptions = this.filters.data.filter(
+        (option) => option.checked
+      );
+      this.$emit("updateSelection", {
+        filter: this.filters.label,
+        options: this.selectedOptions,
+      });
     },
   },
 };

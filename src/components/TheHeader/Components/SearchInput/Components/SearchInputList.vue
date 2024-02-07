@@ -29,8 +29,11 @@
 <script>
 export default {
   props: {
-    filteredList: Array,
-    inputData: String,
+    filteredList: {
+      type: Object,
+      default: () => ({ id: Number, title: String, img: String }),
+    },
+    inputData: { type: String, default: "" },
   },
   data() {
     return {

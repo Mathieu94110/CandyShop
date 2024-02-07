@@ -29,6 +29,18 @@ export default {
       productDetails: null,
     };
   },
+    computed: {
+    ...mapGetters("product", ["productInfo"]),
+  },
+  // evey time url params change we refresh card data
+  // it will be use when suggests category will be implement on this view
+  watch: {
+    "$route.params.productId": {
+      handler: function (productId) {
+        this.$store.dispatch("product/getProductDetails", productId);
+      },
+    },
+  },
   created() {
     let productId = Number(this.$route.params.productId);
     if (productId) {
@@ -39,18 +51,6 @@ export default {
     ...mapMutations("cart", ["addOne"]),
     goBack() {
       this.$router.go(-1);
-    },
-  },
-  computed: {
-    ...mapGetters("product", ["productInfo"]),
-  },
-  // evey time url params change we refresh card data
-  // it will be use when suggests category will be implement on this view
-  watch: {
-    "$route.params.productId": {
-      handler: function (productId) {
-        this.$store.dispatch("product/getProductDetails", productId);
-      },
     },
   },
 };
