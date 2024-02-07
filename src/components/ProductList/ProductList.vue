@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import Shop from "../Shop/Shop.vue";
-import Pagination from "../Pagination/Pagination.vue";
+import Shop from "@/components/Shop/Shop.vue";
+import Pagination from "@/components/Pagination/Pagination.vue";
 
 export default {
   components: {

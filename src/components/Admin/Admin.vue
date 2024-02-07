@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AdminProductForm from "./AdminProductForm";
+import AdminProductForm from "@/components/Admin/AdminProductForm";
 
 export default {
   components: {

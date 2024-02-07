@@ -37,9 +37,9 @@
 
 <script>
 import { mapState } from "vuex";
-import ProductList from "../components/ProductList/ProductList.vue";
-import SearchCategoriesForm from "../components/SearchCategoriesForm/SearchCategoriesForm.vue";
-import { filteredSearch } from "../utils/filteredSearch";
+import ProductList from "@/components/ProductList/ProductList.vue";
+import SearchCategoriesForm from "@/components/SearchCategoriesForm/SearchCategoriesForm.vue";
+import { filteredSearch } from "@/utils/filteredSearch";
 
 export default {
   components: {

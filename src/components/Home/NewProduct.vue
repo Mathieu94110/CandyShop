@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import CarouselLayout from "../../layout/CarouselLayout.vue";
-import CategorySeparators from "../../layout/CategorySeparators.vue";
-import newProducts from "../../locales/newProducts.json";
+import CarouselLayout from "@/layout/CarouselLayout.vue";
+import CategorySeparators from "@/layout/CategorySeparators.vue";
+import newProducts from "@/locales/newProducts.json";
 export default {
   components: {
     CategorySeparators,

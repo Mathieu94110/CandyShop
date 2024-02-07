@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import ShopProductItem from "../components/Shop/ShopProductItem.vue";
+import ShopProductItem from "@/components/Shop/ShopProductItem.vue";
 export default {
   components: {
     ShopProductItem,

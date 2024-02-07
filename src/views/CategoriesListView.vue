@@ -13,7 +13,7 @@
 
 <script>
 import { mapState, mapGetters } from "vuex";
-import ProductListList from "../components//ProductList/ProductList.vue";
+import ProductListList from "@/components/ProductList/ProductList.vue";
 
 export default {
   components: {

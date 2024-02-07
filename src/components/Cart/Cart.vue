@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import CartProductsList from "./CartProductsList.vue";
+import CartProductsList from "@/components/Cart/CartProductsList.vue";
 
 export default {
   components: {

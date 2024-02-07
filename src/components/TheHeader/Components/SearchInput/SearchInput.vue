@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import SearchInputList from "./Components/SearchInputList.vue";
+import SearchInputList from "@/components/TheHeader/Components/SearchInput/Components/SearchInputList.vue";
 export default {
   components: {
     SearchInputList,

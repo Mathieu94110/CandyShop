@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import productsFiltersList from "../../locales/productFilters.json";
-import SearchCategory from "./Components/SearchCategory.vue";
+import productsFiltersList from "@/locales/productFilters.json";
+import SearchCategory from "@/components/SearchCategoriesForm/Components/SearchCategory.vue";
 export default {
   components: {
     SearchCategory,

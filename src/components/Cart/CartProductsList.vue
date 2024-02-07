@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import CartProductItem from "./CartProductItem.vue";
+import CartProductItem from "@/components/Cart/CartProductItem.vue";
 import { mapGetters } from "vuex";
 
 export default {

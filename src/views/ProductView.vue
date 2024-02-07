@@ -19,7 +19,7 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-import ProductDetails from "../components/ProductDetails/ProductDetails.vue";
+import ProductDetails from "@/components/ProductDetails/ProductDetails.vue";
 export default {
   components: {
     ProductDetails,

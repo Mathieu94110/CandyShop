@@ -56,9 +56,9 @@
 </template>
 
 <script>
-import SearchInputVue from "./Components/SearchInput/SearchInput.vue";
-import HeaderRightLinksVue from "./Components/HeaderRightLinks.vue";
-import HeaderBottomLinksVue from "./Components/HeaderBottomLinks.vue";
+import SearchInputVue from "@/components/TheHeader/Components/SearchInput/SearchInput.vue";
+import HeaderRightLinksVue from "@/components/TheHeader/Components/HeaderRightLinks.vue";
+import HeaderBottomLinksVue from "@/components/TheHeader/Components/HeaderBottomLinks.vue";
 
 export default {
   components: {

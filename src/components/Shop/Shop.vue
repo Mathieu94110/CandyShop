@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ShopProductsList from "./ShopProductsList.vue";
+import ShopProductsList from "@/components/Shop/ShopProductsList.vue";
 
 export default {
   components: {
@@ -13,7 +13,7 @@ export default {
     products: {
       type: Array,
       default() {
-       return [];
+        return [];
       },
     },
   },
