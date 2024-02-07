@@ -1,9 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import ShopAndCard from "./components/ShopAndCard/ShopAndCard";
-import Admin from "./components/Admin/Admin";
 import Home from "./views/HomeView";
 import Product from "./views/ProductView";
+import Admin from "./components/Admin/Admin";
+import ShopAndCard from "./components/ShopAndCard/ShopAndCard";
 import CategoriesList from "./views/CategoriesListView";
 import AdvancedSearch from "./views/AdvancedSearchView";
 

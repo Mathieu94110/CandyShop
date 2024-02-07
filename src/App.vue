@@ -32,7 +32,6 @@ import SearchModal from "./components/SearchModal/SearchModal.vue";
 import BurgerMenu from "./components/BurgerMenu/BurgerMenu.vue";
 
 export default {
-  name: "App",
   components: {
     TheHeader,
     TheFooter,
