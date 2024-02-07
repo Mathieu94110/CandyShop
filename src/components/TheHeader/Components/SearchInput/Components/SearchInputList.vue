@@ -30,8 +30,8 @@
 export default {
   props: {
     filteredList: {
-      type: Object,
-      default: () => ({ id: Number, title: String, img: String }),
+      type: Array,
+      default: () => [],
     },
     inputData: { type: String, default: "" },
   },

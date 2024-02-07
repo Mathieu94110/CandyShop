@@ -5,20 +5,14 @@
   >
     <div class="burger-menu__nav">
       <ul class="burger-menu__nav-items">
-        <li id="searchItem" @click="$emit('switch-modal-display')">
-          Rechercher
-        </li>
-
-        <router-link
+        <li id="searchItem" @click="displaySearchModal">Rechercher</li>
+        <li
           v-for="item in menuList"
           :key="item.text"
-          tag="li"
-          :to="{
-            path: item.name ? `/categories-list/${item.name}` : item.path,
-          }"
+          @click="goToPageLink(item)"
         >
-          <span>{{ item.text }}</span></router-link
-        >
+          {{ item.text }}
+        </li>
       </ul>
     </div>
   </div>
@@ -32,6 +26,29 @@ export default {
       default() {
         return [];
       },
+    },
+  },
+  methods: {
+    displaySearchModal() {
+      this.$emit("switch-modal-display");
+      this.$emit("close-menu");
+    },
+    goToPageLink(item) {
+      this.$emit("close-menu");
+      if (
+        item.name &&
+        `/categories-list/${item.name}` !== this.$route.fullPath
+      ) {
+        this.$router.replace({
+          path: `/categories-list/${item.name}`,
+        });
+      } else if (!item.name && item.path) {
+        if (this.$route.path !== item.path) {
+          this.$router.replace({
+            path: item.path,
+          });
+        }
+      }
     },
   },
 };
@@ -68,6 +85,7 @@ export default {
   .burger-menu--open {
     height: auto;
     z-index: 2;
+    position: absolute;
   }
   .burger-menu--closed {
     display: none;

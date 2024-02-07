@@ -5,12 +5,13 @@
       :products="products"
       :show-mobile-menu="showMobileMenu"
       @switch-modal-display="switchModalDisplay"
-      @show-menu="showMenu"
+      @show-menu="toggleMenu"
     />
     <BurgerMenu
       :show-mobile-menu="showMobileMenu"
       :menu-list="menuList"
       @switch-modal-display="switchModalDisplay"
+      @close-menu="toggleMenu"
     />
     <div class="app__route-container">
       <router-view></router-view>
@@ -60,7 +61,7 @@ export default {
     switchModalDisplay() {
       this.$store.dispatch("product/switchModalDisplay");
     },
-    showMenu() {
+    toggleMenu() {
       this.showMobileMenu = !this.showMobileMenu;
     },
   },

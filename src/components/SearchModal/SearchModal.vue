@@ -138,7 +138,7 @@ export default {
 }
 .search-modal__body > input {
   padding: 4px 8px;
-  width: 90%;
+  border: 1px solid var(--color-secondary);
 }
 .search-modal__body-list {
   overflow-y: scroll;

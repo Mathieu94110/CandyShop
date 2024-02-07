@@ -103,6 +103,7 @@ h2 {
 }
 .product-details__card {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 50px;
 }
 .product-details__card-img-container {
   width: 100%;
@@ -113,6 +114,10 @@ h2 {
 .product-details__card-img-container-img {
   width: 60%;
   height: auto;
+}
+.product-details__info {
+  padding-right: 30px;
+  padding-left: 30px;
 }
 .product-details__info-qty {
   margin: 20px 0;
@@ -205,6 +210,8 @@ h2 {
   }
   .product-details__card-img-container-img {
     height: 100%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
   }
   .product-details__info-qty-selector,
   .product-details__info-qty-icon {
