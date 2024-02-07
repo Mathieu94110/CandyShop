@@ -9,7 +9,7 @@
     />
     <BurgerMenu
       :show-mobile-menu="showMobileMenu"
-    :menuList="menuList"
+      :menuList="menuList"
       @switch-modal-display="switchModalDisplay"
     />
     <div class="app__route-container">
